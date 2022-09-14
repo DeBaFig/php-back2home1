@@ -8,6 +8,9 @@
     </div>
 </p>
  
+ ## CONTATO
+
+    - back2home1.adm@gmail.com
 
 # OBJETIVO
 
@@ -83,4 +86,5 @@
 # PROFESSOR
 
 * Adriano Machado
-  Plataforma www.maxado.com.br
+
+-  Plataforma www.maxado.com.br
