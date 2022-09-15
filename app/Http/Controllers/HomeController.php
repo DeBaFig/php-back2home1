@@ -13,4 +13,12 @@ class HomeController extends Controller
         return view('building.index')->with("viewData", $viewData);
     }
 
+    public function about()
+    {
+        $viewData = [];
+        $viewData["title"] = "Sobre Back2Home1";
+        $viewData["subtitle"] =  "Quem somos";
+        $viewData["description"] =  "Somos alunas do curso de PHP - do Projeto Entra 21 - 2022. Esta é uma aplicação web, desenvolvida como trabalho de conclusão de curso, referente à linguagem de programação PHP, com banco de dados e a ferramenta Laravel. Este projeto está sendo orientado pelo Professor Adriano Machado.";
+        return view('home.about')->with("viewData", $viewData);
+    }    
 }
