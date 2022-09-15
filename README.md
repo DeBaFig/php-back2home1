@@ -1,4 +1,4 @@
-# Entra21 - Turma PHP - Grupo 05 
+## Entra21 - Turma PHP - Grupo 05 
 
 
 <p>
@@ -8,17 +8,17 @@
     </div>
 </p>
  
- ## CONTATO
+ ### CONTATO
 
     - back2home1.adm@gmail.com
 
-# OBJETIVO
+## OBJETIVO
 
  - Projeto para Conclusão de Curso de PHP - ENTRA21
 
  - Desenvolver uma aplicação web para compra e vendas e imóveis.
 
- # DETALHES
+ ## DETALHES
 
 ### USUÁRIO
 
@@ -49,11 +49,11 @@
   Hiroku
   Gmail
   
-# Inicialização: Repositório público
+## Inicialização: Repositório público
 
     https://github.com/DeBaFig/php-back2home1.git
 
-# Grupo Discussão e Reuniões
+## Grupo Discussão e Reuniões
 
  - Telegram
 
@@ -61,29 +61,23 @@
 
  - Google Meet 
 
-# Metodologia 
+## Metodologia 
 
 - Scrum
 - Kanban
 
-# ALUNAS
+## ALUNAS
 
 * Adriana Ewerling Ferreira da Rocha
 
- [![WhatsApp Badge](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsa.me/5549999733703)   
-[![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adriana-ewerling-ferreira-da-rocha/)  
-[![Gmail Badge](  https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:adrianalibras@gmail.com)  
-[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AdrianaEFRocha)   
+ [![WhatsApp Badge](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsa.me/5549999733703)   [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adriana-ewerling-ferreira-da-rocha/)  [![Gmail Badge](  https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:adrianalibras@gmail.com)  [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/AdrianaEFRocha)   
 
 
 * Denize Bassi Figueiredo
 
- [![WhatsApp Badge](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsa.me/5547988184372)   
-[![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dbfigueiredo/)  
-[![Gmail Badge](  https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:denize.f.bassi@gmail.com)  
-[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DeBaFig)  
+ [![WhatsApp Badge](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsa.me/5547988184372)   [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dbfigueiredo/)  [![Gmail Badge](  https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:denize.f.bassi@gmail.com)  [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DeBaFig)  
 
-# PROFESSOR
+## PROFESSOR
 
 * Adriano Machado
 
