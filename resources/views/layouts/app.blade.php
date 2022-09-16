@@ -32,7 +32,7 @@
                 <a href="{{ config('variables.creatorUrl') ? config('variables.creatorUrl') : '' }}" target="_blank" class="footer-link fw-bolder">Entra21 - 2022</a>
             </div>
             <div>
-                <a href="#" class="footer-link me-4" target="_blank">Sobre Nós</a>
+                <a href="{{ route('home.about_business') }}" class="footer-link me-4" target="_blank">Sobre a back2home1</a>
             </div>
         </div>
     </footer>
