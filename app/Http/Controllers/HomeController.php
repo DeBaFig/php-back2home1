@@ -34,6 +34,9 @@ class HomeController extends Controller
 
     public function about_business()
     {
+        $viewData = [];
+        $viewData["title"] = "Sobre Back2Home1";
+        $viewData["subtitle"] =  "Quem somos";
         $viewData["description1"] =  "A sua CASA precisa ser o seu LAR. Para isso, a Back 2 Home 1 - Imóveis, nasceu no ano de 2022, para atuar no mercado da compra e venda de imóveis, dispondo na sua carteira os melhores imóveis à venda. 
         Usamos a tecnologia e práticas inovadoras para criar soluções, visando a concretização de negócios que resultem em realização de sonhos.   
         Oferece aos seus clientes assessoria especializada para financiamento, e uma capacitada equipe de corretores.
@@ -49,7 +52,7 @@ class HomeController extends Controller
     public function about()
   {
         $viewData = [];
-        $viewData["title"] = "Sobre Back2Home1";
+        $viewData["title"] = "Sobre Adriana e Denize";
         $viewData["subtitle"] =  "Quem somos";
         $viewData["description"] =  "Somos alunas do curso de PHP - do Projeto Entra 21 - 2022. Esta é uma aplicação web, desenvolvida como trabalho de conclusão de curso, referente à linguagem de programação PHP, com banco de dados e a ferramenta Laravel. Este projeto está sendo orientado pelo Professor Adriano Machado.";
         return view('home.about')->with("viewData", $viewData);
