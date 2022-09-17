@@ -19,7 +19,7 @@
 
 ### USUÁRIO
 
- - A aplicação irá disponibilizar ao usuário acessar um catálogo com os imóveis à venda e realizar o cadastro de imóvies que deseja anunciar.
+ - A aplicação irá disponibilizar ao usuário acessar um catálogo com os imóveis à venda e realizar o cadastro de imóveis que deseja anunciar.
 
 ### ADMINISTRATIVO
 

@@ -1,5 +1,4 @@
 @extends('layouts.app')
-@section('title', $viewData["title"])
 @section('content')
 <div class="container text-center">
   <div class="container-xxl container-p-y">
