@@ -20,6 +20,7 @@
     <!-- Include Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -83,9 +84,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
             @yield('content')
-        </main>
     </div>
     <footer class="content-footer footer bg-footer-theme fixed-bottom">
         <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">

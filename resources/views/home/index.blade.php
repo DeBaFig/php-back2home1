@@ -1,23 +1,14 @@
 @extends('layouts.appNavbar')
+@section('title', $viewData["title"])
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-                        TESTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+<div id="carouselExampleInterval" class="carousel slide " style="max-height: 500px;" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        @foreach($viewData['images'] as $key => $image)
+        <div class="carousel-item {{ $key == 0 ? 'active' : '' }}" data-bs-interval="2000">
+            <img src="{{ asset('assets/img/home/' . $image)  }}" class="d-block w-100" style="max-height: 500px; opacity: 0.7; object-fit: cover; " alt="...">
         </div>
+        @endforeach
     </div>
-</div>
 
+</div>
 @endsection
