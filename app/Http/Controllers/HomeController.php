@@ -26,7 +26,6 @@ class HomeController extends Controller
         $viewData = [];
         $viewData["title"] = "Home-Back2Home1";
         $viewData["images"] = ['home1.jpg', 'home2.jpg','home3.jpg','home4.jpg','home5.jpg','home6.jpg'];
-        // $viewData["images"] = [1 => 'home1.jpg', 2 => 'home2.jpg',3 => 'home3.jpg',4 => 'home4.jpg',5 => 'home5.jpg',6 => 'home6.jpg'];
         return view('home.index')->with("viewData", $viewData);
     }
     public function building()

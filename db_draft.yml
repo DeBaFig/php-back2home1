@@ -31,7 +31,7 @@ models:
     bedrooms: nullable enum:1+,2+,3+,4+,5+
     bathroom: nullable enum:1+,2+,3+,4+,5+
     parking_lot: nullable enum:1+,2+,3+,4+,5+
-    property_type: enum:Apartamento,Kitnet,Cobertura,Área,Casa,Chácara,Comercial,Residencial,Geminado,Loja,Pousada,SObrado,Terreno,Triplex
+    property_type: enum:Apartamento,Kitnet,Cobertura,Área,Casa,Chácara,Comercial,Geminado,Loja,Pousada,SObrado,Terreno,Triplex
     publish_at: timestamp
     status: enum:Ativo,Excluído,Pausado default:'ativo'
     purpose: enum:comprar,alugar

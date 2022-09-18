@@ -15,6 +15,7 @@ class CreatePropertiesTable extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
+            $table->string('title', 255);
             $table->integer('reference')->unique();
             $table->string('description', 255)->nullable();
             $table->string('address', 150)->nullable();
@@ -27,10 +28,10 @@ class CreatePropertiesTable extends Migration
             $table->enum('bedrooms', ["1+","2+","3+","4+","5+"])->nullable();
             $table->enum('bathroom', ["1+","2+","3+","4+","5+"])->nullable();
             $table->enum('parking_lot', ["1+","2+","3+","4+","5+"])->nullable();
-            $table->enum('property_type', ["Apartamento","Kitnet","Cobertura","\u00c1rea","Casa","Ch\u00e1cara","Comercial","Residencial","Geminado","Loja","Pousada","SObrado","Terreno","Triplex"]);
+            $table->enum('property_type', ["Apartamento","Kitnet","Cobertura","Triplex","Casa","Chácara","Comercial","Geminado","Loja","Pousada","Sobrado","Terreno"]);
             $table->timestamp('publish_at');
-            $table->enum('status', ["Ativo","Exclu\u00eddo","Pausado"])->default('ativo');
-            $table->enum('purpose', ["comprar","alugar"]);
+            $table->enum('status', ["Ativo","Excluído","Pausado"])->default('Ativo');
+            $table->enum('purpose', ["Comprar","Alugar"]);
             $table->timestamps();
         });
     }
