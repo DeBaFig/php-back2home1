@@ -5,8 +5,9 @@
 <div class="container">
   <div class="row">
     <div style="text-align:center">
-      <p class="lead">{{ $viewData["description1"] }}</p>
-      <p class="lead">{{ $viewData["description2"] }}</p>
+      <img src="./assets/img/building/business.jpg" width="200px" height="200px">
+      <p class="lead">{{ $viewData["description1"] }}</p><br>
+      <p class="lead">{{ $viewData["description2"] }}</p><br>
       <p class="lead">{{ $viewData["description3"] }}</p>
     </div>
   </div>

@@ -15,6 +15,7 @@ class HomeController extends Controller
 
     public function about_business()
     {
+        $b = "<br>";
         $viewData = [];
         $viewData["title"] = "Sobre Back2Home1";
         $viewData["subtitle"] =  "Quem somos";
@@ -22,12 +23,8 @@ class HomeController extends Controller
         Usamos a tecnologia e práticas inovadoras para criar soluções, visando a concretização de negócios que resultem em realização de sonhos.   
         Oferece aos seus clientes assessoria especializada para financiamento, e uma capacitada equipe de corretores.
         Por tudo isso, estamos aptos à prestar aos nossos clientes os melhores serviços, atendendo às suas expectativas e necessidades.";
-        $viewData["description2"] = "        MISSÃO:Transformar sonhos em realidade é o que nos motiva! Trabalhamos com pessoas que têm sonhos e objetivos, e, para nós, é um prazer saber que fazemos parte da transformação de histórias e conquistas.";
-        $viewData["description3"] = "        VALORES:
-        CLIENTE – Satisfeito e valorizado;
-        CONFIABILIDADE – Ética, Transparência e Integridade;
-        RESPONSABILIDADE – Ambiental, Empresarial e Social;
-        DESENVOLVIMENTO – Pessoal e Profissional.";
+        $viewData["description2"] = "MISSÃO" . $b . "Transformar sonhos em realidade é o que nos motiva! Trabalhamos com pessoas que têm sonhos e objetivos, e, para nós, é um prazer saber que fazemos parte da transformação de histórias e conquistas.";
+        $viewData["description3"] = "VALORES" . $b . "CLIENTE – Satisfeito e valorizado. CONFIABILIDADE – Ética, Transparência e Integridade. RESPONSABILIDADE – Ambiental, Empresarial e Social. DESENVOLVIMENTO – Pessoal e Profissional.";
         return view('home.about_business')->with("viewData", $viewData);
     }    
 }
