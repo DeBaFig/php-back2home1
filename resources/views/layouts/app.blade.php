@@ -15,6 +15,10 @@
     <!-- Include Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+
+    <!-- Ícones -->
+    <script src="https://kit.fontawesome.com/6e7aa9ccc9.js" crossorigin="anonymous"></script> 
 </head>
 
 <body>
@@ -25,7 +29,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <footer class="content-footer footer bg-footer-theme fixed-bottom">
+    <footer class="content-footer footer bg-footer-theme bg-light">
         <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
             <div class="mb-2 mb-md-0">
                 © Adriana e Denize ❤️ trabalharam juntas para realizar o projeto no 
