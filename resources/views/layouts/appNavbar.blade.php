@@ -25,7 +25,7 @@
     <link rel='stylesheet' href='https://static.fontawesome.com/css/fontawesome-app.css'>
     <link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.2.0/css/all.css'>
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
-    <link rel="stylesheet" href="{{asset('assets/css/cards.css') }}">
+    <!-- <link rel="stylesheet" href="{{asset('assets/css/cards.css') }}"> -->
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
