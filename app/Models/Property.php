@@ -28,11 +28,11 @@ class Property extends Model
         'bathroom',
         'parking_lot',
         'property_type',
-        'publish_at',
-        'status',
         'purpose',
     ];
-
+    protected $hidden = [
+        'status',
+    ];
     /**
      * The attributes that should be cast to native types.
      *

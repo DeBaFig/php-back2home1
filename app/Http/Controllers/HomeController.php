@@ -25,7 +25,8 @@ class HomeController extends Controller
     {
         $viewData = [];
         $viewData["title"] = "Home-Back2Home1";
-        $viewData["images"] = ['home1.jpg', 'home2.jpg','home3.jpg','home4.jpg','home5.jpg','home6.jpg'];
+        $viewData["images"] = ['home1.jpg', 'home2.jpg', 'home3.jpg', 'home4.jpg', 'home5.jpg', 'home6.jpg'];
+        $viewData["casas"] = PropertyController::$casas;
         return view('home.index')->with("viewData", $viewData);
     }
     public function building()
@@ -34,7 +35,12 @@ class HomeController extends Controller
         $viewData["title"] = "Back2Home1";
         return view('building.index');
     }
-
+    public function teste()
+    {
+        $viewData = [];
+        $viewData["casas"] = PropertyController::$casas;
+        return view('home.cards')->with("viewData", $viewData);
+    }
     public function about_business()
     {
         $viewData = [];
@@ -51,13 +57,13 @@ class HomeController extends Controller
         RESPONSABILIDADE – Ambiental, Empresarial e Social;
         DESENVOLVIMENTO – Pessoal e Profissional.";
         return view('home.about_business')->with("viewData", $viewData);
-        }
+    }
     public function about()
-  {
+    {
         $viewData = [];
         $viewData["title"] = "Sobre Adriana e Denize";
         $viewData["subtitle"] =  "Quem somos";
         $viewData["description"] =  "Somos alunas do curso de PHP - do Projeto Entra 21 - 2022. Esta é uma aplicação web, desenvolvida como trabalho de conclusão de curso, referente à linguagem de programação PHP, com banco de dados e a ferramenta Laravel. Este projeto está sendo orientado pelo Professor Adriano Machado.";
         return view('home.about')->with("viewData", $viewData);
-    }    
+    }
 }
