@@ -23,7 +23,8 @@ Route::get('/123', [App\Http\Controllers\HomeController::class, 'teste'])->name(
 Route::get('/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
 Route::get('/aboutus', [App\Http\Controllers\HomeController::class, 'about'])->name('home.about');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about_business'])->name('home.about_business');
-Route::get('/admin', [App\Http\Controllers\HomeController::class, 'add'])->name('add.add');
+// Route::get('/admin', [App\Http\Controllers\HomeController::class, 'add'])->name('add.add');
+Route::get('/app', [App\Http\Controllers\AddController::class, 'index'])->name('add.add');
 Route::get('/home', [App\Http\Controllers\AddController::class, 'index']);
 
 
