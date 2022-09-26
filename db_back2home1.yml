@@ -1,0 +1,40 @@
+models:
+  User:
+    name: string:50
+    surname: string:50
+    username: unique string:25
+    password: string:50
+    employee_id: unique integer
+    email: unique string:100
+    ddd_phone: integer
+    phone: integer
+    email_verified_at: timestamp
+    create_at: timestamp
+    
+
+  Feature:
+    title: string:50
+
+  Photo:
+    photo_image: string 
+    create_at: timestamp
+   
+  Property:
+    reference: unique integer
+    description: nullable string:255
+    address: nullable string:150
+    total_size: integer
+    useful_size: integer
+    private_size: integer
+    price: integer
+    townhouse_price: nullable integer
+    master_bedrooms: nullable enum:1+,2+,3+,4+,5+
+    bedrooms: nullable enum:1+,2+,3+,4+,5+
+    bathroom: nullable enum:1+,2+,3+,4+,5+
+    parking_lot: nullable enum:1+,2+,3+,4+,5+
+    property_type: enum:Apartamento,Kitnet,Cobertura,Área,Casa,Chácara,Comercial,Residencial,Geminado,Loja,Pousada,SObrado,Terreno,Triplex
+    publish_at: timestamp
+    status: enum:Ativo,Excluído,Pausado default:'ativo'
+    purpose: enum:comprar,alugar
+    relationships:
+      hasMany: Photo, Feature, User

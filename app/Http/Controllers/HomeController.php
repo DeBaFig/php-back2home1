@@ -6,11 +6,28 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function building()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        $viewData = [];
-        $viewData["title"] = "Back2Home1";
-        return view('building.index')->with("viewData", $viewData);
+        $this->middleware('auth');
     }
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('home');
+    }
+
+    public function adminHome()
+    {
+        return view('admin.home');
+    }
 }
