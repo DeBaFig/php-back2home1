@@ -9,13 +9,14 @@ use Auth;
 class PropertyController extends Controller
 {
     /**
+
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-            return view('property.index');
+            return view('property.add');
     }
 
     /**
@@ -25,7 +26,6 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**

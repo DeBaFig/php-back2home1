@@ -18,10 +18,10 @@ class CreatePropertiesTable extends Migration
             $table->integer('reference')->unique();
             $table->string('description', 255)->nullable();
             $table->string('address', 150)->nullable();
-            $table->integer('total_size');
-            $table->integer('useful_size');
-            $table->integer('private_size');
-            $table->integer('price');
+            $table->integer('total_size')->nullable();
+            $table->integer('useful_size')->nullable();
+            $table->integer('private_size')->nullable();
+            $table->integer('price')->nullable();
             $table->integer('townhouse_price')->nullable();
             $table->enum('master_bedrooms', ["1+","2+","3+","4+","5+"])->nullable();
             $table->enum('bedrooms', ["1+","2+","3+","4+","5+"])->nullable();

@@ -18,6 +18,7 @@ use App\Http\Controllers\PropertyController;
 
 Auth::routes();
 
+
 // Não precisa autenticação 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/sobreb2h1', [HomeController::class, 'about'])->name('home.about');
@@ -32,6 +33,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::prefix('admin')->group(function(){
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
-    Route::get('/cadastrar', [PropertyController::class, 'index'])->name('admin.add')->middleware('is_admin');
+    Route::get('/cadastrar/form', [PropertyController::class, 'index'])->name('property.index')->middleware('is_admin');
+    Route::post('/cadastrar', [PropertyController::class, 'store'])->name('property.store')->middleware('is_admin');
 
 });
