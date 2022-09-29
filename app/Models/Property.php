@@ -28,11 +28,11 @@ class Property extends Model
         'bathroom',
         'parking_lot',
         'property_type',
+        'publish_at',
+        'status',
         'purpose',
     ];
-    protected $hidden = [
-        'status',
-    ];
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -53,8 +53,8 @@ class Property extends Model
         return $this->hasMany(Feature::class);
     }
 
-    public function users()
+    public function user()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsTo(User::class);
     }
 }

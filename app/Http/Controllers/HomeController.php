@@ -26,22 +26,28 @@ class HomeController extends Controller
         $viewData = [];
         $viewData["title"] = "Home-Back2Home1";
         $viewData["images"] = ['home1.jpg', 'home2.jpg', 'home3.jpg', 'home4.jpg', 'home5.jpg', 'home6.jpg'];
-        $viewData["casas"] = PropertyController::$casas;
+        // $viewData["casas"] = PropertyController::$casas;
         return view('home.index')->with("viewData", $viewData);
     }
-    public function building()
+    public function contact()
     {
-        $viewData = [];
-        $viewData["title"] = "Back2Home1";
-        return view('building.index');
+        return view('home.contact');
+    }
+    public function sell()
+    {
+        return view('home.sell');
+    }
+    public function rent()
+    {
+        return view('home.rent');
     }
     public function teste()
     {
         $viewData = [];
-        $viewData["casas"] = PropertyController::$casas;
+        // $viewData["casas"] = PropertyController::$casas;
         return view('home.cards')->with("viewData", $viewData);
     }
-    public function about_business()
+    public function about_b2h1()
     {
         $viewData = [];
         $viewData["title"] = "Sobre Back2Home1";
@@ -56,7 +62,7 @@ class HomeController extends Controller
         CONFIABILIDADE – Ética, Transparência e Integridade;
         RESPONSABILIDADE – Ambiental, Empresarial e Social;
         DESENVOLVIMENTO – Pessoal e Profissional.";
-        return view('home.about_business')->with("viewData", $viewData);
+        return view('home.about_b2h1')->with("viewData", $viewData);
     }
     public function about()
     {
@@ -65,5 +71,11 @@ class HomeController extends Controller
         $viewData["subtitle"] =  "Quem somos";
         $viewData["description"] =  "Somos alunas do curso de PHP - do Projeto Entra 21 - 2022. Esta é uma aplicação web, desenvolvida como trabalho de conclusão de curso, referente à linguagem de programação PHP, com banco de dados e a ferramenta Laravel. Este projeto está sendo orientado pelo Professor Adriano Machado.";
         return view('home.about')->with("viewData", $viewData);
+    }
+
+
+    public function adminHome()
+    {
+        return view('admin.home');
     }
 }
