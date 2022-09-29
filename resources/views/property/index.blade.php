@@ -1,4 +1,4 @@
 @extends('layouts.app')
 @section('content')
-TESTE INDEX ADMIN
+Aqui fica uma lista de todos os imoveis ativos
 @endsection

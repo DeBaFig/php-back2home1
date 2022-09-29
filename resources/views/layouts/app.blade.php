@@ -73,9 +73,11 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}">
+                            @if(Auth::check() && auth()->user()->is_admin == 1)
+                            <a class="dropdown-item" href="{{ route('admin.add') }}">
                                 {{ __('Adicionar Imóvel') }}
                             </a>
+                            @endif
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
