@@ -1,0 +1,14 @@
+created:
+    - database/factories/FeatureFactory.php
+    - database/factories/PhotoFactory.php
+    - database/factories/PropertyFactory.php
+    - database/migrations/2022_09_26_193244_create_features_table.php
+    - database/migrations/2022_09_26_193245_create_photos_table.php
+    - database/migrations/2022_09_26_193246_create_properties_table.php
+    - app/Models/Feature.php
+    - app/Models/Photo.php
+    - app/Models/Property.php
+models:
+    Feature: { title: 'string:50' }
+    Photo: { photo_image: string, create_at: timestamp }
+    Property: { reference: 'unique integer', description: 'nullable string:255', address: 'nullable string:150', total_size: 'integer nullable', useful_size: 'integer nullable', private_size: 'integer nullable', price: 'integer nullable', townhouse_price: 'nullable integer', master_bedrooms: 'nullable enum:1+,2+,3+,4+,5+', bedrooms: 'nullable enum:1+,2+,3+,4+,5+', bathroom: 'nullable enum:1+,2+,3+,4+,5+', parking_lot: 'nullable enum:1+,2+,3+,4+,5+', property_type: 'enum:Apartamento,Kitnet,Cobertura,Área,Casa,Chácara,Comercial,Residencial,Geminado,Loja,Pousada,SObrado,Terreno,Triplex', publish_at: timestamp, status: "enum:Ativo,Excluído,Pausado default:'ativo'", purpose: 'enum:comprar,alugar', relationships: { hasMany: 'Photo, Feature', belongsTo: User } }
