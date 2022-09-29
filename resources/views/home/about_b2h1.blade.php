@@ -1,14 +1,12 @@
 @extends('layouts.app')
-@section('title', $viewData["title"])
-@section('subtitle', $viewData["subtitle"])
 @section('content')
-<div class="container">
-  <div class="row">
-    <div style="text-align:center">
-      <p class="lead">{{ $viewData["description1"] }}</p>
-      <p class="lead">{{ $viewData["description2"] }}</p>
-      <p class="lead">{{ $viewData["description3"] }}</p>
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="container-md text-center">
+        <div class="card">
+          
+      </div>
     </div>
   </div>
-</div>
-@endsection
+  @endsection

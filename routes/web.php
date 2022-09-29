@@ -21,8 +21,8 @@ Auth::routes();
 
 // Não precisa autenticação 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
-Route::get('/sobreb2h1', [HomeController::class, 'about'])->name('home.about');
-Route::get('/sobre', [HomeController::class, 'about_b2h1'])->name('home.aboutb2h1');
+Route::get('/sobre', [HomeController::class, 'about'])->name('home.about');
+Route::get('/sobreb2h1', [HomeController::class, 'about_b2h1'])->name('home.aboutb2h1');
 Route::get('/contato', [HomeController::class, 'contact'])->name('home.contact');
 Route::get('/alugar', [HomeController::class, 'rent'])->name('home.rent');
 Route::get('/comprar', [HomeController::class, 'sell'])->name('home.sell');
