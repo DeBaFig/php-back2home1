@@ -29,11 +29,17 @@ class HomeController extends Controller
         // $viewData["casas"] = PropertyController::$casas;
         return view('home.index')->with("viewData", $viewData);
     }
-    public function building()
+    public function contact()
     {
-        $viewData = [];
-        $viewData["title"] = "Back2Home1";
-        return view('building.index');
+        return view('home.contact');
+    }
+    public function sell()
+    {
+        return view('home.sell');
+    }
+    public function rent()
+    {
+        return view('home.rent');
     }
     public function teste()
     {
@@ -41,7 +47,7 @@ class HomeController extends Controller
         // $viewData["casas"] = PropertyController::$casas;
         return view('home.cards')->with("viewData", $viewData);
     }
-    public function about_business()
+    public function about_b2h1()
     {
         $viewData = [];
         $viewData["title"] = "Sobre Back2Home1";
@@ -56,7 +62,7 @@ class HomeController extends Controller
         CONFIABILIDADE – Ética, Transparência e Integridade;
         RESPONSABILIDADE – Ambiental, Empresarial e Social;
         DESENVOLVIMENTO – Pessoal e Profissional.";
-        return view('home.about_business')->with("viewData", $viewData);
+        return view('home.about_b2h1')->with("viewData", $viewData);
     }
     public function about()
     {
