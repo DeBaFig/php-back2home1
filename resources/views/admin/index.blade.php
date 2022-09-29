@@ -1,4 +1,4 @@
 @extends('layouts.appNavbar')
 @section('content')
-TESTE
+TESTE INDEX ADMIN
 @endsection

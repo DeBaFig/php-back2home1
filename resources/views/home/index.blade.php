@@ -1,4 +1,4 @@
-@extends('layouts.appNavbar')
+@extends('layouts.app')
 @section('title', $viewData["title"])
 @section('content')
 <div class="position-relative">

@@ -16,13 +16,13 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
-Route::get('/123', [App\Http\Controllers\HomeController::class, 'teste'])->name('home.cards');
-Route::get('/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
 Route::get('/aboutus', [App\Http\Controllers\HomeController::class, 'about'])->name('home.about');
 Route::get('/about', [App\Http\Controllers\HomeController::class, 'about_business'])->name('home.about_business');
 
 
 
-// admin
-// Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
-// Route::get('/', [App\Http\Controllers\HomeController::class, 'building'])->name('building');
+
+
+Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+Route::get('/home', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
