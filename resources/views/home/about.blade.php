@@ -4,7 +4,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="container-md text-center">
-        <div class="card">
+        <div class="card m-1">
           <div class="card-header h1">Sobre Nós</div>
           <div class="container">
             Somos alunas do curso de PHP - do Projeto Entra 21 - 2022.<br>
@@ -13,7 +13,7 @@
           </div>
           <h2 style="text-align:center">❤️ Nosso Time ❤️ </h2>
           <div class="card-body row">
-            <div class="col-6 p-2">
+            <div class="col-5 p-2 m-4">
               <div class="card text-center justify-content-between">
                 <div class="card-header">
                   Adriana E F Rocha
@@ -33,7 +33,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-6 p-2">
+            <div class="col-5 p-2 m-4">
               <div class="card text-center justify-content-between">
                 <div class="card-header">
                   Denize B Figueiredo
