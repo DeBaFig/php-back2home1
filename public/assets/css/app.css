@@ -1,0 +1,19 @@
+.meufundo{
+    background: url('https://img2.gratispng.com/20180309/ptw/kisspng-johns-hopkins-hospital-the-cancer-institute-hospit-city-%E2%80%8B%E2%80%8Bbuilding-5aa26d6ad58496.3931490715205942828746.jpg') center center no-repeat fixed; 
+    -webkit-background-size: center;
+    -moz-background-size: center;
+    -o-background-size: center;
+    background-size: center;
+    background-color: #DFDFDF;
+  }
+
+  .dashboard-box {
+    float: center;
+    background-color: #DFDFDF;
+    color: #FFF;
+    padding: 550px;
+    /* box-sizing: border-box; */
+    height: 30px;
+    width: 5%;
+    text-align: center;
+}
