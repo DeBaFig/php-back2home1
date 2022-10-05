@@ -35,5 +35,10 @@ Route::prefix('admin')->group(function(){
     Route::get('/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
     Route::get('/cadastrar/form', [PropertyController::class, 'index'])->name('property.index')->middleware('is_admin');
     Route::post('/cadastrar', [PropertyController::class, 'store'])->name('property.store')->middleware('is_admin');
+    Route::get('/cadastrar/owner', [OwnerController::class, 'index'])->name('owner.index')->middleware('is_admin');
+    Route::post('/cadastrarOwner', [OwnerController::class, 'store'])->name('owner.store')->middleware('is_admin');
 
+    // Route::post('/user.add', function () {
+    //  return view('user.add');
+    //  });
 });

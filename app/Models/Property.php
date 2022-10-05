@@ -16,8 +16,14 @@ class Property extends Model
      */
     protected $fillable = [
         'reference',
+        'title',
         'description',
-        'address',
+        'address_immobile',
+        'number_immobile',
+        'district_immobile',
+        'city_immobile',
+        'state_immobile',
+        'cep_immobile',
         'total_size',
         'useful_size',
         'private_size',
@@ -31,6 +37,10 @@ class Property extends Model
         'publish_at',
         'status',
         'purpose',
+        'useful_size',
+        'private-size',
+        'total_size',
+        'comments',
     ];
 
     /**
@@ -41,6 +51,7 @@ class Property extends Model
     protected $casts = [
         'id' => 'integer',
         'publish_at' => 'timestamp',
+        'reference'=> 'integer',
     ];
 
     public function photos()
@@ -56,5 +67,10 @@ class Property extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(Owner::class);
     }
 }

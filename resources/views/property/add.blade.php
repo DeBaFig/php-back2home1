@@ -13,7 +13,8 @@
                         Dados do Proprietário
                     </button>
                     <div class="collapse" id="owner">
-                        <form class="container flex-column w-100 d-flex justify-content-evenly" method="POST">
+                        <form action="{{ route('owner.store') }}" class="container flex-column w-100 d-flex justify-content-evenly" method="POST">
+                            @csrf 
                             <label for="exampleInputEmail1">Nome</label>
                             <input type="text" id="desc" name="descrition" class="form-control" required="true">
                             <br>
@@ -89,7 +90,8 @@
                 </button>
                 <div class="collapse" id="immobile">
                     <div class="card-body">
-                        <form class="container flex-column w-30 d-flex justify-content-evenly" method="POST">
+                        <form action="{{ route('property.store') }}" class="container flex-column w-30 d-flex justify-content-evenly" method="POST">
+                            @csrf    
                             <div class="form-group">
                                 <label class="mt-3">Referência: "Aqui colocar o ID automático"</label>
                                 <!-- Ver aqui como fazer o campo Referência: se é colocado aleatório do se é gerado automaticamente. -->
@@ -202,6 +204,7 @@
                                     <option value="7">7</option>
                                     <option value="8">8</option>
                                 </select>
+                                <br>
                                 <label class="form-group">Quantidade de Banheiros:</label>
                                 <select class="form-select " id="bathroom">
                                     <option selected>Selecione</option>
@@ -245,29 +248,35 @@
                                 <textarea name="comments" class="form-control" required=""></textarea>
                             </div>
                             <br>
-                            <div class="wrapper">
-                                <label class="upload__button"> Fotos: </label>
-                                <form action="imagem.php" method="post" enctype="multipart/form-data">
-                                    <input type="file" name="image[]" multiple="multiple"></label>
-                                    <input type="submit" form="frm" class="btn btn-block btn-outline-success float-right" style="width:20%" value="Enviar">
-                                </form>
-                                <!-- Os colchetes no name do input indicam que os dados serão enviados em forma de array. É necessário para que o servidor receba corretamente os dados de todos os arquivos. -->
-                            </div>
+                            <input type="submit" form="frm" class="btn btn-block btn-outline-success float-right" style="width:20%" value="Salvar">
                         </form>
-                        <br><br>
-
-                        <!-- Upload Button -->
-
-                        <div class="row mt-2">
-                            <div class="col-md-4 offset-md-8 text-center mb-4">
-                                <button id="btnContinue" type="submit" form="frm" class="btn btn-block btn-outline-success float-right" data-toggle="tooltip" data-trigger="manual" data-placement="top" data-title="Continue">
-                                    Continue<span id="btnContinueIcon" class="fa fa-chevron-circle-right ml-2"></span><span id="btnContinueLoading" class="fa fa-spin fa-spinner ml-2" style="display:none"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </div>    
+                </div>        
             </div>
+            <div class="card mb-4">
+                <button type="button" class="card-header" data-bs-toggle="collapse" data-bs-target="#photos">
+                    Fotos do Imóvel
+                </button>
+                <div class="wrapper">
+                    <label class="upload__button"> Fotos: </label>
+                    <form action="imagem.php" method="post" enctype="multipart/form-data">
+                        <input type="file" name="image[]" multiple="multiple"></label>
+                        <input type="submit" form="frm" class="btn btn-block btn-outline-success float-right" style="width:20%" value="Enviar">
+                    </form>
+                         <!-- Os colchetes no name do input indicam que os dados serão enviados em forma de array. É necessário para que o servidor receba corretamente os dados de todos os arquivos. -->
+                </div>
+                <br><br>
+            </div>
+            
+            <!-- Upload Button -->
+
+            <div class="row mt-2">
+                <div class="col-md-4 offset-md-8 text-center mb-4"> 
+                    <button id="btnContinue" type="submit" form="frm" class="btn btn-block btn-outline-success float-right"  data-toggle="tooltip" data-trigger="manual" data-placement="top" data-title="Continue">
+                        Continue<span id="btnContinueIcon" class="fa fa-chevron-circle-right ml-2"></span><span id="btnContinueLoading" class="fa fa-spin fa-spinner ml-2" style="display:none"></span>
+                    </button>
+                </div>
+            </div>  
         </div>
     </div>
 </div>

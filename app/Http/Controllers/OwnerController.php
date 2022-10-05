@@ -2,22 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Property;
-// use App\Models\Owner;
+use App\Models\Owner;
 use Illuminate\Http\Request;
-use Auth;
 
-class PropertyController extends Controller
+class OwnerController extends Controller
 {
     /**
-
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-            return view('property.add');
+        return view('user.add');
     }
 
     /**
@@ -25,9 +22,9 @@ class PropertyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        // 
+        //
     }
 
     /**
@@ -39,16 +36,15 @@ class PropertyController extends Controller
     public function store(Request $request)
     {
         dd($request);
-        
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Property  $property
+     * @param  \App\Models\owner  $owner
      * @return \Illuminate\Http\Response
      */
-    public function show(Property $property)
+    public function show(owner $owner)
     {
         //
     }
@@ -56,10 +52,10 @@ class PropertyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Property  $property
+     * @param  \App\Models\owner  $owner
      * @return \Illuminate\Http\Response
      */
-    public function edit(Property $property)
+    public function edit(owner $owner)
     {
         //
     }
@@ -68,10 +64,10 @@ class PropertyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Property  $property
+     * @param  \App\Models\owner  $owner
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Property $property)
+    public function update(Request $request, owner $owner)
     {
         //
     }
@@ -79,10 +75,10 @@ class PropertyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Property  $property
+     * @param  \App\Models\owner  $owner
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Property $property)
+    public function destroy(owner $owner)
     {
         //
     }
