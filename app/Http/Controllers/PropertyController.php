@@ -39,7 +39,7 @@ class PropertyController extends Controller
     public function store(Request $request)
     {
         $property = new Property();
-        $email = Auth::user()->email;
+        $email_user = Auth::user()->email;
         $title = $request->title;
         $price = $request->price;
         $purpose = $request->purpose;
@@ -61,11 +61,8 @@ class PropertyController extends Controller
         $townhouse_price = $request->townhouse_price;
         $comments = $request->comments;
         $status = $request->status;
-        // $reference = $request->reference; 
-        // $publish_at = $request->publish_at;
-
-
-        // $property->reference = $reference;
+        
+        $property->create_by = $email_user;
         $property->title = $title;
         $property->description = $description;
         $property->address_immobile = $address_immobile;
@@ -84,11 +81,12 @@ class PropertyController extends Controller
         $property->bathroom = $bathroom;
         $property->parking_lot = $parking_lot;
         $property->property_type = $property_type;
-        // $property->publish_at = $publish_at;
         $property->status = $status;
         $property->purpose = $purpose;
         $property->comments = $comments;
         $property->save();
+
+        // return "Imóvel cadastrado com sucesso!";
         
     }
 
@@ -98,9 +96,10 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function show(Property $property)
+    public function show($id)
     {
-        //
+        $property = Property::findOrFail($id);
+        return view('property.show', ['property'=> $property]);
     }
 
     /**

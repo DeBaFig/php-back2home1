@@ -37,7 +37,8 @@ class Owner extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'publish_at' => 'timestamp'
+        'publish_at' => 'timestamp',
+        'email_user' => 'string'
         
     ];
 

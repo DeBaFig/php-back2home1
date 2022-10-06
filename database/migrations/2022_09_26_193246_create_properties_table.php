@@ -15,6 +15,7 @@ class CreatePropertiesTable extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
+            $table->string('create_by');
             $table->string('owner'); 
             $table->integer('reference')->unique();
             $table->string('title', 100);

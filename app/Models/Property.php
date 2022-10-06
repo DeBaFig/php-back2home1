@@ -52,6 +52,7 @@ class Property extends Model
         'id' => 'integer',
         'publish_at' => 'timestamp',
         'reference'=> 'integer',
+        
     ];
 
     public function photos()

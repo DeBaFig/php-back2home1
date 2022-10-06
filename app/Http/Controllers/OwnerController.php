@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Owner;
+// use App\Http\Controllers\Property;
 use Illuminate\Http\Request;
+use Auth;
 
 class OwnerController extends Controller
 {
@@ -36,7 +38,7 @@ class OwnerController extends Controller
     public function store(Request $request)
     {
         $owner = new Owner();
-        $email = Auth::user()->email;
+        $email_user = Auth::user()->email;
         $name = $request->name;
         $cpf = $request->cpf;
         $email_owner = $request->email_owner;
@@ -48,9 +50,9 @@ class OwnerController extends Controller
         $cep = $request->cep;
         $phone1 = $request->phone1;
         $phone2 = $request->phone2;
-        // $publish_at = $request->publish_at;
+        
 
-        $owner->email = $email;
+        $owner->create_by = $email_user;
         $owner->name = $name;
         $owner->cpf = $cpf;
         $owner->email_owner = $email_owner;
@@ -62,8 +64,11 @@ class OwnerController extends Controller
         $owner->cep = $cep;
         $owner->phone1 = $phone1;
         $owner->phone2 = $phone2;
-        // $owner->publish_at = $pulish_at;
+        
         $owner->save();
+
+        // return "Proprietário cadastrado com sucesso!";
+
     }
 
     /**
@@ -72,9 +77,10 @@ class OwnerController extends Controller
      * @param  \App\Models\owner  $owner
      * @return \Illuminate\Http\Response
      */
-    public function show(owner $owner)
+    public function show($id)
     {
-        //
+        $owner = Owner::findOrFail($id);
+        return view('property.show', ['owner'=> $owner]);
     }
 
     /**

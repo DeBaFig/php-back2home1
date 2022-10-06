@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('owners', function (Blueprint $table) {
             $table->id();
+            $table->string('create_by', 50); 
             $table->string('name', 100);
             $table->string('cpf',14);
             $table->string('email_owner', 50)->nullable();
