@@ -16,16 +16,16 @@
                         <form action="{{ route('owner.store') }}" class="container flex-column w-100 d-flex justify-content-evenly" method="POST">
                             @csrf 
                             <label for="exampleInputEmail1">Nome</label>
-                            <input type="text" id="desc" name="descrition" class="form-control" required="true">
+                            <input type="text" id="desc" name="name" class="form-control" required="true">
                             <br>
                             <label for="exampleInputEmail1">CPF</label>
                             <input type="text" id="cpf" name="cpf" class="form-control cpf-mask" placeholder="Ex.: 000.000.000-00" data-mask="000.000.000-00" maxlength="14" autocomplete="off" required="true">
                             <br>
                             <label for="exampleInputEmail1">Email</label>
-                            <input type="email" name="emailInput" class="form-control" required="true">
+                            <input type="email" name="email_owner" class="form-control" required="true">
                             <br>
                             <label for="exampleInputEmail1">Endereço</label>
-                            <input type="text" id="adress" name="adress" class="form-control" placeholder="Rua" required="true">
+                            <input type="text" id="address" name="adress" class="form-control" placeholder="Rua" required="true">
                             <br>
                             <label for="exampleInputEmail1">Número</label>
                             <input type="text" id="number" name="number" class="form-control" required="true">
@@ -78,7 +78,7 @@
                             <input type="text" id="phone2" name="phone2" class="form-control" placeholder="Ex: (00) 00000-0000" data-mask="(00) 00000-0000" maxlength="15" required="true">
                             <br>
 
-                            <input type="submit" form="frm" class="btn btn-block btn-outline-success float-right" style="width:20%" value="Salvar">
+                            <input type="submit" class="btn btn-block btn-outline-success float-right" style="width:20%" value="Salvar">
                         </form>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                                 <textarea name="description" id="description" class="form-control" required=""></textarea>
                                 <br>
                                 <label for="exampleInputEmail1">Endereço</label>
-                                <input type="text" id="adress_immobile" name="adress_immobile" class="form-control" placeholder="Rua" required="true">
+                                <input type="text" id="address_immobile" name="adress_immobile" class="form-control" placeholder="Rua" required="true">
                                 <br>
                                 <label for="exampleInputEmail1">Número</label>
                                 <input type="text" id="number_immobile" name="number_immobile" class="form-control" required="true">
@@ -248,7 +248,7 @@
                                 <textarea name="comments" class="form-control" required=""></textarea>
                             </div>
                             <br>
-                            <input type="submit" form="frm" class="btn btn-block btn-outline-success float-right" style="width:20%" value="Salvar">
+                            <input type="submit" class="btn btn-block btn-outline-success float-right" style="width:20%" value="Salvar">
                         </form>
                     </div>    
                 </div>        

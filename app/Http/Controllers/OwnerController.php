@@ -14,7 +14,7 @@ class OwnerController extends Controller
      */
     public function index()
     {
-        return view('user.add');
+        return view('property.add');
     }
 
     /**
@@ -35,7 +35,35 @@ class OwnerController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $owner = new Owner();
+        $email = Auth::user()->email;
+        $name = $request->name;
+        $cpf = $request->cpf;
+        $email_owner = $request->email_owner;
+        $address = $request->address;
+        $number = $request->number;
+        $district = $request->district;
+        $city = $request->city;
+        $state = $request->state;
+        $cep = $request->cep;
+        $phone1 = $request->phone1;
+        $phone2 = $request->phone2;
+        // $publish_at = $request->publish_at;
+
+        $owner->email = $email;
+        $owner->name = $name;
+        $owner->cpf = $cpf;
+        $owner->email_owner = $email_owner;
+        $owner->address = $address;
+        $owner->number = $number;
+        $owner->district = $district;
+        $owner->city = $city;
+        $owner->state = $state;
+        $owner->cep = $cep;
+        $owner->phone1 = $phone1;
+        $owner->phone2 = $phone2;
+        // $owner->publish_at = $pulish_at;
+        $owner->save();
     }
 
     /**
