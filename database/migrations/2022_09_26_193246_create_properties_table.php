@@ -16,7 +16,7 @@ class CreatePropertiesTable extends Migration
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
             $table->string('create_by');
-            $table->integer('reference')->unique();
+            $table->integer('reference_n')->unique();
             $table->string('title', 100);
             $table->string('description', 255)->nullable();
             $table->string('address_immobile', 100)->nullable();
@@ -30,11 +30,11 @@ class CreatePropertiesTable extends Migration
             $table->integer('private_size')->nullable();
             $table->integer('price')->nullable();
             $table->integer('townhouse_price')->nullable();
-            $table->enum('master_bedrooms', ["1+","2+","3+","4+","5+"])->nullable();
-            $table->enum('bedrooms', ["1+","2+","3+","4+","5+"])->nullable();
-            $table->enum('bathroom', ["1+","2+","3+","4+","5+"])->nullable();
-            $table->enum('parking_lot', ["1+","2+","3+","4+","5+"])->nullable();
-            $table->enum('property_type', ["Apartamento","Kitnet","Cobertura","\u00c1rea","Casa","Ch\u00e1cara","Comercial","Residencial","Geminado","Loja","Pousada","SObrado","Terreno","Triplex"]);
+            $table->enum('master_bedrooms', ["1","2","3","4","5+"])->nullable();
+            $table->enum('bedrooms', ["1","2","3","4","5+"])->nullable();
+            $table->enum('bathroom', ["1","2","3","4","5+"])->nullable();
+            $table->enum('parking_lot', ["1","2","3","4","5+"])->nullable();
+            $table->enum('property_type', ["Apartamento","Kitnet","Cobertura","Área","Casa","Chácara","Comercial","Residencial","Geminado","Loja","Pousada","Sobrado","Terreno","Triplex"]);
             $table->timestamp('publish_at');
             $table->enum('purpose', ["comprar","alugar"]);
             $table->string('comments', 255)->nullable();

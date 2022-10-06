@@ -25,9 +25,10 @@ class PropertyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        // 
+        $reference = Property::count() + 1;
+        return view('property.add', ['reference_n'=> $reference]);
     }
 
     /**
@@ -40,6 +41,7 @@ class PropertyController extends Controller
     {
         $property = new Property();
         $email_user = Auth::user()->email;
+        $reference_n = $request->reference_n;
         $title = $request->title;
         $price = $request->price;
         $purpose = $request->purpose;
@@ -66,6 +68,7 @@ class PropertyController extends Controller
         $property->description = $description;
         $property->address_immobile = $address_immobile;
         $property->number_immobile = $number_immobile;
+        $property->reference_n = $reference_n;
         $property->district_immobile = $district_immobile;
         $property->city_immobile = $city_immobile;
         $property->state_immobile = $state_immobile;

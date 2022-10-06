@@ -15,8 +15,9 @@ class Property extends Model
      * @var array
      */
     protected $fillable = [
-        
+        'create_by',
         'title',
+        'reference_n',
         'description',
         'address_immobile',
         'number_immobile',
@@ -50,8 +51,6 @@ class Property extends Model
     protected $casts = [
         'id' => 'integer',
         'publish_at' => 'timestamp',
-        'reference'=> 'integer',
-        
     ];
 
     public function photos()

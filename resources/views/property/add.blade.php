@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('reference_n', $reference_n)
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -14,7 +14,7 @@
                     </button>
                     <div class="collapse" id="owner">
                         <form action="{{ route('owner.store') }}" class="container flex-column w-100 d-flex justify-content-evenly" method="POST">
-                            @csrf 
+                            @csrf
                             <label for="exampleInputEmail1">Nome</label>
                             <input type="text" id="desc" name="name" class="form-control" required="true">
                             <br>
@@ -91,9 +91,11 @@
                 <div class="collapse" id="immobile">
                     <div class="card-body">
                         <form action="{{ route('property.store') }}" class="container flex-column w-30 d-flex justify-content-evenly" method="POST">
-                            @csrf    
+                            @csrf
                             <div class="form-group">
-                                <label class="mt-3">Referência: "Aqui colocar o ID automático"</label>
+                                <label class="mt-3">Referência: {{ $reference_n }}</label>
+                                <input type="hidden" name="reference_n" value="{{ $reference_n }}" />
+
                                 <br>
                                 <!-- Ver aqui como fazer o campo Referência: se é colocado aleatório do se é gerado automaticamente. -->
                                 <label for="exampleInputEmail1">Imóvel:</label>
@@ -254,8 +256,8 @@
                             <br>
                             <input type="submit" class="btn btn-block btn-outline-success float-right" style="width:20%" value="Salvar">
                         </form>
-                    </div>    
-                </div>        
+                    </div>
+                </div>
             </div>
             <div class="card mb-4">
                 <button type="button" class="card-header" data-bs-toggle="collapse" data-bs-target="#photos">
@@ -267,20 +269,20 @@
                         <input type="file" name="image[]" multiple="multiple"></label>
                         <input type="submit" form="frm" class="btn btn-block btn-outline-success float-right" style="width:20%" value="Enviar">
                     </form>
-                         <!-- Os colchetes no name do input indicam que os dados serão enviados em forma de array. É necessário para que o servidor receba corretamente os dados de todos os arquivos. -->
+                    <!-- Os colchetes no name do input indicam que os dados serão enviados em forma de array. É necessário para que o servidor receba corretamente os dados de todos os arquivos. -->
                 </div>
                 <br><br>
             </div>
-            
+
             <!-- Upload Button -->
 
             <div class="row mt-2">
-                <div class="col-md-4 offset-md-8 text-center mb-4"> 
-                    <button id="btnContinue" type="submit" form="frm" class="btn btn-block btn-outline-success float-right"  data-toggle="tooltip" data-trigger="manual" data-placement="top" data-title="Continue">
+                <div class="col-md-4 offset-md-8 text-center mb-4">
+                    <button id="btnContinue" type="submit" form="frm" class="btn btn-block btn-outline-success float-right" data-toggle="tooltip" data-trigger="manual" data-placement="top" data-title="Continue">
                         Continue<span id="btnContinueIcon" class="fa fa-chevron-circle-right ml-2"></span><span id="btnContinueLoading" class="fa fa-spin fa-spinner ml-2" style="display:none"></span>
                     </button>
                 </div>
-            </div>  
+            </div>
         </div>
     </div>
 </div>
