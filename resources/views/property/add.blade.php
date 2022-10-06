@@ -94,21 +94,25 @@
                             @csrf    
                             <div class="form-group">
                                 <label class="mt-3">Referência: "Aqui colocar o ID automático"</label>
+                                <br>
                                 <!-- Ver aqui como fazer o campo Referência: se é colocado aleatório do se é gerado automaticamente. -->
+                                <label for="exampleInputEmail1">Imóvel:</label>
+                                <textarea name="title" id="title" class="form-control" required=""></textarea>
+                                <br>
                             </div>
                             <label for="exampleInputEmail1">Valor de Venda</label>
-                            <input type="text" id="prize" name="prize" class="form-control" placeholder="R$ 0,00" required="true">
+                            <input type="text" id="price" name="price" class="form-control" placeholder="R$ 0,00" required="true">
                             <br>
                             <div class="col">
                                 <label class="form-group">Objetivo:</label>
-                                <select class="form-select" id="purpose">
+                                <select class="form-select" id="purpose" name="purpose">
                                     <option selected>Selecione</option>
                                     <option value="1">Vender</option>
                                     <option value="2">Alugar</option>
                                 </select>
                                 <br>
                                 <label class="form-group">Tipo do Imóvel:</label>
-                                <select class="form-select " id="property_type">
+                                <select class="form-select " id="property_type" name="property_type">
                                     <option selected>Selecione</option>
                                     <option value="1">Apartamento</option>
                                     <option value="2">Kitnet</option>
@@ -126,7 +130,7 @@
                             </div>
                             <br>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Descrição:</label>
+                                <label for="exampleInputEmail1">Imóvel:</label>
                                 <textarea name="description" id="description" class="form-control" required=""></textarea>
                                 <br>
                                 <label for="exampleInputEmail1">Endereço</label>
@@ -142,7 +146,7 @@
                                 <input type="text" id="city_immobile" name="city_immobile" class="form-control" required="true">
                                 <br>
                                 <label class="form-group">Estado</label>
-                                <select class="form-select " id="state_immobile">
+                                <select class="form-select " id="state_immobile" name="state_immobile">
                                     <option selected>Selecione</option>
                                     <option value="1">Acre</option>
                                     <option value="2">Alagoas</option>
@@ -180,7 +184,7 @@
                             <br>
                             <div class="col">
                                 <label class="form-group">Quantidade de Suítes:</label>
-                                <select class="form-select " id="master_bedrooms">
+                                <select class="form-select " id="master_bedrooms" name="master_bedrooms">
                                     <option selected>Selecione</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -193,7 +197,7 @@
                                 </select>
                                 <br>
                                 <label class="form-group">Quantidade de Quartos:</label>
-                                <select class="form-select " id="bedrooms">
+                                <select class="form-select " id="bedrooms" name="bedrooms">
                                     <option selected>Selecione</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -206,7 +210,7 @@
                                 </select>
                                 <br>
                                 <label class="form-group">Quantidade de Banheiros:</label>
-                                <select class="form-select " id="bathroom">
+                                <select class="form-select " id="bathroom" name="bathroom">
                                     <option selected>Selecione</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -219,7 +223,7 @@
                                 </select>
                                 <br>
                                 <label class="form-group">Vagas de Garagem:</label>
-                                <select class="form-select " id="parking_lot">
+                                <select class="form-select " id="parking_lot" name="parking_lot">
                                     <option selected>Selecione</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -234,13 +238,13 @@
                             <br>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Área Útil:</label>
-                                <input type="text" id="useful" name="useful" class="form-control" placeholder="m²" data-mask="m²" maxlength="15" autocomplete="off" required="true">
+                                <input type="text" id="useful_size" name="useful_size" class="form-control" placeholder="m²" data-mask="m²" maxlength="15" autocomplete="off" required="true">
                                 <br>
                                 <label for="exampleInputEmail1"> Área Privativa: </label>
-                                <input type="text" id="private" name="private" class="form-control" placeholder="m²" data-mask="m²" maxlength="15" autocomplete="off" required="true">
+                                <input type="text" id="private_size" name="private_size" class="form-control" placeholder="m²" data-mask="m²" maxlength="15" autocomplete="off" required="true">
                                 <br>
                                 <label for="exampleInputEmail1">Tamanho Total:</label>
-                                <input type="text" id="full_size" name="full_size" class="form-control" placeholder="m²" data-mask="m²" maxlength="15" autocomplete="off" required="true">
+                                <input type="text" id="total_size" name="total_size" class="form-control" placeholder="m²" data-mask="m²" maxlength="15" autocomplete="off" required="true">
                             </div>
                             <br>
                             <div>
