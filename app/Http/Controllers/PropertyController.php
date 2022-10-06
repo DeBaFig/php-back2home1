@@ -60,7 +60,6 @@ class PropertyController extends Controller
         $total_size = $request->total_size;
         $townhouse_price = $request->townhouse_price;
         $comments = $request->comments;
-        $status = $request->status;
         
         $property->create_by = $email_user;
         $property->title = $title;
@@ -81,7 +80,6 @@ class PropertyController extends Controller
         $property->bathroom = $bathroom;
         $property->parking_lot = $parking_lot;
         $property->property_type = $property_type;
-        $property->status = $status;
         $property->purpose = $purpose;
         $property->comments = $comments;
         $property->save();

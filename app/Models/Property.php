@@ -15,7 +15,7 @@ class Property extends Model
      * @var array
      */
     protected $fillable = [
-        'reference',
+        
         'title',
         'description',
         'address_immobile',
@@ -35,7 +35,6 @@ class Property extends Model
         'parking_lot',
         'property_type',
         'publish_at',
-        'status',
         'purpose',
         'useful_size',
         'private-size',
