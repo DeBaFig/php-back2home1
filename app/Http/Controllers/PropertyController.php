@@ -18,7 +18,7 @@ class PropertyController extends Controller
     public function index()
     {   
         $viewData["property"] = Property::all();
-        return view('property.add')->with("viewData", $viewData);
+        return view('property.index')->with("viewData", $viewData);
     }
 
     /**
@@ -29,7 +29,7 @@ class PropertyController extends Controller
     public function create()
     {
         $reference = Property::count() + 1;
-        return view('property.add', ['reference_n'=> $reference]);
+        return view('property.index', ['reference_n'=> $reference]);
     }
 
     /**
@@ -102,7 +102,7 @@ class PropertyController extends Controller
     public function show($id)
     {
         $property = Property::findOrFail($id);
-        return view('property.teste', ['property'=> $property]);
+        return view('property.show', ['property'=> $property]);
     }
 
     /**

@@ -16,7 +16,7 @@ class OwnerController extends Controller
      */
     public function index()
     {
-        return view('property.add');
+        return view('property.index');
     }
 
     /**
@@ -27,7 +27,7 @@ class OwnerController extends Controller
     public function create()
     {
         $reference = Owner::count() + 1;
-        return view('property.add', ['reference_n'=> $reference]);
+        return view('property.add_owner', ['reference_n'=> $reference]);
     }
 
     /**
