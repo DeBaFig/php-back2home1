@@ -13,13 +13,14 @@
                         Dados do Proprietário
                     </button>
                     <div class="collapse" id="owner">
+                        @foreach($property as $key => $detalhes)
                         <!-- <form action="{{ route('owner.store') }}" class="container flex-column w-100 d-flex justify-content-evenly" method="POST"> -->
                             <!-- @csrf  -->
                             <label for="exampleInputEmail1">Nome</label>
-                            <input type="text" id="desc" name="name" class="form-control" value="{{ $owner->name }}">
+                            <input type="text" id="name" name="name" class="form-control" value="{{ $detalhes['name'] }}">
                             <br>
                             <label for="exampleInputEmail1">CPF</label>
-                            <input type="text" id="cpf" name="cpf" class="form-control cpf-mask" placeholder="Ex.: 000.000.000-00" data-mask="000.000.000-00" maxlength="14" autocomplete="off" value="{{ $owner->cpf }}">
+                            <input type="text" id="cpf" name="cpf" class="form-control cpf-mask" placeholder="Ex.: 000.000.000-00" data-mask="000.000.000-00" maxlength="14" autocomplete="off" value="{{ $detalhes['cp']}}">
                             <br>
                             <label for="exampleInputEmail1">Email</label>
                             <input type="email" name="email_owner" class="form-control" value="{{ $owner->email_owner }}">
@@ -80,6 +81,7 @@
 
                             <!-- <input type="submit" class="btn btn-block btn-outline-success float-right" style="width:20%" value="Salvar"> -->
                         <!-- </form> -->
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -90,6 +92,7 @@
                 </button>
                 <div class="collapse" id="immobile">
                     <div class="card-body">
+                    @foreach($property as $key => $detalhes)
                         <!-- <form action="{{ route('property.store') }}" class="container flex-column w-30 d-flex justify-content-evenly" method="POST"> -->
                             <!-- @csrf     -->
                             <div class="form-group">
@@ -254,6 +257,7 @@
                             <br>
                             <!-- <input type="submit" class="btn btn-block btn-outline-success float-right" style="width:20%" value="Salvar"> -->
                         <!-- </form> -->
+                        @endforeach
                     </div>    
                 </div>        
             </div>

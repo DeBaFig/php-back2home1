@@ -37,8 +37,8 @@ Route::prefix('admin')->group(function(){
     Route::get('/property/new', [PropertyController::class, 'create'])->name('property.add')->middleware('is_admin');
     Route::post('/property/new', [PropertyController::class, 'store'])->name('property.store')->middleware('is_admin');
     Route::post('/owner/new', [OwnerController::class, 'store'])->name('owner.store')->middleware('is_admin');
-    Route::get('/property/show{id}', [PropertyController::class, 'show'])->name('property.show')->middleware('is_admin');
-    Route::get('/owner/show{id}', [OwnerController::class, 'show'])->name('owner.show')->middleware('is_admin');
+    Route::get('/property/teste/{id}', [PropertyController::class, 'show'])->name('property.teste')->middleware('is_admin');
+    // Route::get('/owner/show{id}', [OwnerController::class, 'show'])->name('owner.show')->middleware('is_admin');
    
  
 });

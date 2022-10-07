@@ -278,9 +278,11 @@
 
             <div class="row mt-2">
                 <div class="col-md-4 offset-md-8 text-center mb-4">
-                    <button id="btnContinue" type="submit" form="frm" class="btn btn-block btn-outline-success float-right" data-toggle="tooltip" data-trigger="manual" data-placement="top" data-title="Continue">
-                        Continue<span id="btnContinueIcon" class="fa fa-chevron-circle-right ml-2"></span><span id="btnContinueLoading" class="fa fa-spin fa-spinner ml-2" style="display:none"></span>
-                    </button>
+                    <form action="{{ route('property.teste', ['id'=> $reference_n ]) }}" method='GET'>
+                     <input type="submit" class="btn btn-block btn-outline-success float-right" data-trigger="manual" data-placement="top" data-title="Continue" value="Continue">
+                        <!-- Continue<span id="btnContinueIcon" class="fa fa-chevron-circle-right ml-2"></span> -->
+                        <!-- <span id="btnContinueLoading" class="fa fa-spin fa-spinner ml-2" style="display:none"></span> -->    
+                    </form>
                 </div>
             </div>
         </div>

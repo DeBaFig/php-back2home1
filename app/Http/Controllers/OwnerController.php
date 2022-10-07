@@ -26,7 +26,8 @@ class OwnerController extends Controller
      */
     public function create()
     {
-        //
+        $reference = Owner::count() + 1;
+        return view('property.add', ['reference_n'=> $reference]);
     }
 
     /**
@@ -67,6 +68,7 @@ class OwnerController extends Controller
         
         $owner->save();
 
+        return redirect()->back();
         // return "Proprietário cadastrado com sucesso!";
 
     }
@@ -79,7 +81,9 @@ class OwnerController extends Controller
      */
     public function show($id)
     {
+
         $owner = Owner::findOrFail($id);
+        dd($owner);
         return view('property.show', ['owner'=> $owner]);
     }
 
