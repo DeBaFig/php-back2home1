@@ -29,7 +29,7 @@ class PropertyController extends Controller
     public function create()
     {
         $reference = Property::count() + 1;
-        return view('property.index', ['reference_n'=> $reference]);
+        return view('property.add_property', ['reference_n'=> $reference]);
     }
 
     /**
@@ -86,10 +86,12 @@ class PropertyController extends Controller
         $property->property_type = $property_type;
         $property->purpose = $purpose;
         $property->comments = $comments;
+        
         $property->save();
 
         // return "Imóvel cadastrado com sucesso!";
         return redirect()->back();
+        
 
     }
 

@@ -99,7 +99,7 @@
                                 <br>
                                 <!-- Ver aqui como fazer o campo Referência: se é colocado aleatório do se é gerado automaticamente. -->
                                 <label for="exampleInputEmail1">Imóvel:</label>
-                                <textarea name="title" id="title" class="form-control" required=""></textarea>
+                                <input type="text" name="title" id="title" class="form-control" required="">
                                 <br>
                             </div>
                             <label for="exampleInputEmail1">Valor de Venda</label>
