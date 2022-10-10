@@ -23,7 +23,7 @@
                                 <br>
                                 <!-- Ver aqui como fazer o campo Referência: se é colocado aleatório do se é gerado automaticamente. -->
                                 <label for="exampleInputEmail1">Imóvel:</label>
-                                <input type="text" name="title" id="title" class="form-control" required="">
+                                <input type="text" name="title" id="title" class="form-control" required="true">
                                 <br>
                             </div>
                             <label for="exampleInputEmail1">Valor de Venda</label>
@@ -181,30 +181,6 @@
                             <input type="submit" class="btn btn-block btn-outline-success float-right" style="width:20%" value="Salvar">
                         </form>
                     </div>
-                </div>
-            </div>
-            <div class="card mb-4">
-                <button type="button" class="card-header" data-bs-toggle="collapse" data-bs-target="#photos">
-                    Fotos do Imóvel
-                </button>
-                <div class="wrapper">
-                    <label class="upload__button"> Fotos: </label>
-                    <form action="imagem.php" method="post" enctype="multipart/form-data">
-                        <input type="file" name="image[]" multiple="multiple"></label>
-                        <input type="submit" form="frm" class="btn btn-block btn-outline-success float-right" style="width:20%" value="Enviar">
-                    </form>
-                    <!-- Os colchetes no name do input indicam que os dados serão enviados em forma de array. É necessário para que o servidor receba corretamente os dados de todos os arquivos. -->
-                </div>
-                <br><br>
-            </div>
-
-            <!-- Upload Button -->
-
-            <div class="row mt-2">
-                <div class="col-md-4 offset-md-8 text-center mb-4">
-                    <button id="btnContinue" type="submit" form="frm" class="btn btn-block btn-outline-success float-right" data-toggle="tooltip" data-trigger="manual" data-placement="top" data-title="Continue">
-                        Continue<span id="btnContinueIcon" class="fa fa-chevron-circle-right ml-2"></span><span id="btnContinueLoading" class="fa fa-spin fa-spinner ml-2" style="display:none"></span>
-                    </button>
                 </div>
             </div>
         </div>

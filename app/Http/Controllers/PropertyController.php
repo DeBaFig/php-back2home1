@@ -16,8 +16,9 @@ class PropertyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-            return view('property.add');
+    {   
+        $viewData["property"] = Property::all();
+        return view('property.index')->with("viewData", $viewData);
     }
 
     /**
@@ -85,10 +86,13 @@ class PropertyController extends Controller
         $property->property_type = $property_type;
         $property->purpose = $purpose;
         $property->comments = $comments;
+        
         $property->save();
 
         // return "Imóvel cadastrado com sucesso!";
+        return redirect()->back();
         
+
     }
 
     /**

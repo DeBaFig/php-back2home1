@@ -16,7 +16,7 @@ class OwnerController extends Controller
      */
     public function index()
     {
-        return view('property.add');
+        return view('property.index');
     }
 
     /**
@@ -67,6 +67,7 @@ class OwnerController extends Controller
         
         $owner->save();
 
+        return redirect()->back();
         // return "Proprietário cadastrado com sucesso!";
 
     }
@@ -79,7 +80,9 @@ class OwnerController extends Controller
      */
     public function show($id)
     {
+
         $owner = Owner::findOrFail($id);
+        dd($owner);
         return view('property.show', ['owner'=> $owner]);
     }
 
