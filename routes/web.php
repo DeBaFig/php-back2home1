@@ -34,11 +34,12 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::prefix('admin')->group(function(){
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
-    Route::get('/property/new', [PropertyController::class, 'create'])->name('property.add')->middleware('is_admin');
+
+    Route::get('/property/new', [PropertyController::class, 'create'])->name('property.property')->middleware('is_admin');
+    Route::get('/owner/new', [OwnerController::class, 'create'])->name('property.owner')->middleware('is_admin');
+
     Route::post('/property/new', [PropertyController::class, 'store'])->name('property.store')->middleware('is_admin');
     Route::post('/owner/new', [OwnerController::class, 'store'])->name('owner.store')->middleware('is_admin');
     Route::get('/property/show{id}', [PropertyController::class, 'show'])->name('property.show')->middleware('is_admin');
     Route::get('/owner/show{id}', [OwnerController::class, 'show'])->name('owner.show')->middleware('is_admin');
-   
- 
 });

@@ -28,7 +28,7 @@ class PropertyController extends Controller
     public function create()
     {
         $reference = Property::count() + 1;
-        return view('property.add', ['reference_n'=> $reference]);
+        return view('property.property')->with('reference_n', $reference);
     }
 
     /**
