@@ -15,20 +15,23 @@ class CreatePropertiesTable extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
-            $table->string('create_by');
+            $table->integer('popular')->default(0);
+            $table->integer('destaque')->default(0);
+            $table->string('user_id');
             $table->integer('reference_n')->unique();
-            $table->string('title', 100);
+            $table->string('title');
             $table->string('description', 255)->nullable();
-            $table->string('address_immobile', 100)->nullable();
-            $table->string('number_immobile', 50)->nullable();
-            $table->string('district_immobile', 100)->nullable();
-            $table->string('city_immobile', 100)->nullable();
-            $table->string('cep_immobile', 10)->nullable();
-            $table->enum('state_immobile', ["1+","2+","3+","4+","5+","6+","7+","8+","9+","10+","11+","12+","13+","14+","15+","16+","17+","18+","19+","20+","21+","22+","23+","24+","25+","26+","27+"])->nullable();
+            $table->string('address')->nullable();
+            $table->string('number', 50)->nullable();
+            $table->string('district', 100)->nullable();
+            $table->string('city', 100)->nullable();
+            $table->string('cep', 10)->nullable();
+            $table->enum('state', ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27"])->nullable();
             $table->integer('total_size')->nullable();
             $table->integer('useful_size')->nullable();
             $table->integer('private_size')->nullable();
             $table->integer('price')->nullable();
+            $table->integer('isActive')->default(1);
             $table->integer('townhouse_price')->nullable();
             $table->enum('master_bedrooms', ["1","2","3","4","5+"])->nullable();
             $table->enum('bedrooms', ["1","2","3","4","5+"])->nullable();

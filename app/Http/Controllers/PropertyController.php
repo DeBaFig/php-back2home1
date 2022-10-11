@@ -17,8 +17,7 @@ class PropertyController extends Controller
      */
     public function index()
     {   
-        $viewData["property"] = Property::all();
-        return view('property.index')->with("viewData", $viewData);
+        return view('property.index');
     }
 
     /**
@@ -103,8 +102,9 @@ class PropertyController extends Controller
      */
     public function show($id)
     {
-        $property = Property::findOrFail($id);
-        return view('property.show', ['property'=> $property]);
+        $viewData = Property::where('id', '=', $id)->get();
+        return view('property.show')
+            ->with('viewData', $viewData);
     }
 
     /**

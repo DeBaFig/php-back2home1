@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Property;
+use App\Models\Photo;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,9 +28,21 @@ class HomeController extends Controller
         $viewData = [];
         $viewData["title"] = "Home-Back2Home1";
         $viewData["images"] = ['home1.jpg', 'home2.jpg', 'home3.jpg', 'home4.jpg', 'home5.jpg', 'home6.jpg'];
-        // $viewData["casas"] = PropertyController::$casas;
+        $viewData['popular'] = Property::select('photo_image', 'properties.id','title', 'property_id')
+            ->join('photos', 'properties.id', '=', 'photos.property_id')
+            ->where('properties.popular', '=','1')
+            ->limit(6)
+            ->get();
+        $viewData['destaque'] = Property::select('photo_image', 'properties.id','title', 'property_id')
+            ->join('photos', 'properties.id', '=', 'photos.property_id')
+            ->where('properties.destaque', '=', '1')
+            ->limit(6)
+            ->get();
+        $viewData["title"] = "Home-Back2Home1";
+        $viewData["images"] = ['home1.jpg', 'home2.jpg', 'home3.jpg', 'home4.jpg', 'home5.jpg', 'home6.jpg'];
         return view('home.index')->with("viewData", $viewData);
     }
+
     public function contact()
     {
         return view('home.contact');
@@ -41,10 +55,10 @@ class HomeController extends Controller
     {
         return view('home.rent');
     }
-    
+
     public function about_b2h1()
     {
-       
+
         return view('home.about_b2h1');
     }
     public function about()
