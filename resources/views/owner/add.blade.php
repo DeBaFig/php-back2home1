@@ -5,7 +5,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card mb-4">
-                    <h5 class="card-header">Cadastro de Imóveis</h5>
+                    <h5 class="card-header"> Cadastro do Proprietário</h5>
                 </div>
                 <div class="card mb-4">
                     <button type="button" class="card-header" data-bs-toggle="collapse" data-bs-target="#owner">

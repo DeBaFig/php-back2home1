@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Owner;
-// use App\Http\Controllers\Property;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -26,7 +25,7 @@ class OwnerController extends Controller
      */
     public function create()
     {
-        return view('property.owner');
+        return view('owner.add');
     }
 
     /**
@@ -66,8 +65,8 @@ class OwnerController extends Controller
         $owner->phone2 = $phone2;
         
         $owner->save();
-
-        return redirect()->back();
+        
+        return back();
         // return "Proprietário cadastrado com sucesso!";
 
     }
@@ -83,7 +82,7 @@ class OwnerController extends Controller
 
         $owner = Owner::findOrFail($id);
         dd($owner);
-        return view('property.show', ['owner'=> $owner]);
+        return view('owner.show', ['owner'=> $owner]);
     }
 
     /**
@@ -106,7 +105,22 @@ class OwnerController extends Controller
      */
     public function update(Request $request, owner $owner)
     {
-        //
+
+        // $owner->create_by = $email_user;
+        $owner->name = $request->name;
+        $owner->cpf = $request->cpf;
+        $owner->email_owner = $request->email_owner;
+        $owner->address = $request->address;
+        $owner->number = $request->number;
+        $owner->district = $request->district;
+        $owner->city = $request->city;
+        $owner->state = $request->state;
+        $owner->cep = $request->cep;
+        $owner->phone1 = $request->phone1;
+        $owner->phone2 = $request->phone2;
+        $owner->save();
+
+        
     }
 
     /**

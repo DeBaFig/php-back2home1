@@ -75,7 +75,7 @@
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             @if(Auth::check() && auth()->user()->is_admin == 1)
-                            <a class="dropdown-item" href="{{ route('property.owner') }}">
+                            <a class="dropdown-item" href="{{ route('owner.add') }}">
                                 {{ __('Adicionar Proprietário') }}
                             </a>
                             <a class="dropdown-item" href="{{ route('property.property') }}">
