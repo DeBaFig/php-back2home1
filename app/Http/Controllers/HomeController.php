@@ -47,13 +47,32 @@ class HomeController extends Controller
     {
         return view('home.contact');
     }
-    public function sell()
+    public function buy()
     {
-        return view('home.sell');
+        $viewData = [];
+        $viewData["title"] = "Home-Back2Home1";
+        $viewData['comprar'] = Property::select('photo_image', 'properties.id','properties.title', 'property_id')
+            ->join('photos', 'properties.id', '=', 'photos.property_id')
+            ->where('purpose', '=','comprar')
+            ->limit(48)
+            ->orderby('publish_at')
+            ->get();
+        // dd($viewData);
+        return view('home.buy')
+            ->with('viewData', $viewData);
     }
     public function rent()
     {
-        return view('home.rent');
+        $viewData = [];
+        $viewData["title"] = "Home-Back2Home1";
+        $viewData['comprar'] = Property::select('photo_image', 'properties.id','properties.title', 'property_id')
+            ->join('photos', 'properties.id', '=', 'photos.property_id')
+            ->where('purpose', '=','alugar')
+            ->limit(48)
+            ->orderby('publish_at')
+            ->get();
+        return view('home.rent')
+            ->with('viewData', $viewData);
     }
 
     public function about_b2h1()

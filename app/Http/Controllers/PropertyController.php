@@ -16,7 +16,7 @@ class PropertyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         return view('property.index');
     }
 
@@ -62,7 +62,7 @@ class PropertyController extends Controller
         $total_size = $request->total_size;
         $townhouse_price = $request->townhouse_price;
         $comments = $request->comments;
-        
+
         $property->create_by = $email_user;
         $property->title = $title;
         $property->description = $description;
@@ -85,13 +85,11 @@ class PropertyController extends Controller
         $property->property_type = $property_type;
         $property->purpose = $purpose;
         $property->comments = $comments;
-        
+
         $property->save();
 
         // return "Imóvel cadastrado com sucesso!";
         return redirect()->back();
-        
-
     }
 
     /**
@@ -102,11 +100,13 @@ class PropertyController extends Controller
      */
     public function show($id)
     {
-        $viewData = Property::where('id', '=', $id)->get();
+        $viewData = [];
+        $viewData["title"] = "Home-Back2Home1";
+        $viewData['comprar'] = Property::where('id', '=', $id)->get();
         return view('property.show')
             ->with('viewData', $viewData);
     }
-
+   
     /**
      * Show the form for editing the specified resource.
      *

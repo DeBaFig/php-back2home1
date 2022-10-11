@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row mb-5 align-items-center">
       <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
-        <h2>Imovéis para Alugar</h2>
+        <h2>Imovéis para Venda</h2>
       </div>
     </div>
     <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
