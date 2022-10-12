@@ -32,55 +32,87 @@
             <div class="col-lg-7 mt-5">
                 <div class="card">
                     <div class="card-body">
-                    @foreach($viewData['property'] as $key => $detalhes)
+                        @foreach($viewData['property'] as $key => $detalhes)
 
-                        <h3 >{{ $detalhes['title']}}</h3>
+                        <h3>{{ $detalhes['title']}}</h3>
                         <p>Ref.{{ $detalhes['reference_n']}}</p>
-                        <p class="h3 py-1">Valor: {{ number_format((float)($detalhes['price'] / 100), 2, ',', '') }}</p>
-                        <h6>Descrição:</h6>
-                        <p>{{ $detalhes['description'] }}</p>
-                        <form action="" method="GET">
-                            <input type="hidden" name="product-title" value="Activewear">
-                            <div class="row">
-                                <div class="col-auto">
-                                    <ul class="list-inline pb-3">
-                                        <li class="list-inline-item">Size :
-                                            <input type="hidden" name="product-size" id="product-size" value="S">
-                                        </li>
-                                        <li class="list-inline-item"><span class="btn btn-success btn-size">S</span></li>
-                                        <li class="list-inline-item"><span class="btn btn-success btn-size">M</span></li>
-                                        <li class="list-inline-item"><span class="btn btn-success btn-size">L</span></li>
-                                        <li class="list-inline-item"><span class="btn btn-success btn-size">XL</span></li>
-                                    </ul>
+                        <p class="h4 py-1">Valor {{ $detalhes['purpose'] == 'comprar' ?'de venda':'do aluguel' }}: {{ number_format((float)($detalhes['price'] / 100), 2, ',', '') }}</p>
+                        <p>{{ ($detalhes['purpose'] == 'alugar' && $detalhes['townhouse_price'] < 0)? ('Valor do condomínio:' . $detalhes['townhouse_price']): " "}}</p>
+                        <h5>Cidade: {{ $detalhes['city'] . "-" . $detalhes['state'] }}</h5>
+                        <h5>Bairro: {{ $detalhes['district'] }}</h5><br>
+                            <div class="row align-items-center col-7">
+                                @if($detalhes['master_bedrooms'] >= 1)
+                                <div class="col-2">
+                                    <small><img src="{{asset('assets/img/icons/bed-solid.svg')}}"></small>
+                                    <p class="text-center">{{ $detalhes['master_bedrooms'] }}</p>
                                 </div>
-                                <div class="col-auto">
-                                    <ul class="list-inline pb-3">
-                                        <li class="list-inline-item text-right">
-                                            Quantity
-                                            <input type="hidden" name="product-quanity" id="product-quanity" value="1">
-                                        </li>
-                                        <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
-                                        <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
-                                        <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
-                                    </ul>
+                                @endif
+                                @if($detalhes['parking_lot'] >= 1)
+                                <div class="col-2">
+                                    <small><img src="{{asset('assets/img/icons/car-solid.svg')}}"></small>
+                                    <p class="text-center">{{ $detalhes['parking_lot']}}</p>
                                 </div>
+                                @endif
+                                @if($detalhes['bedrooms'] >= 1)
+                                <div class="col-2">
+                                    <small><img src="{{asset('assets/img/icons/bed-solid.svg')}}"></small>
+                                    <p class="text-center">{{ $detalhes['bedrooms'] }}</p>
+                                </div>
+                                @endif
+                                @if($detalhes['bathroom'] >= 1)
+                                <div class="col-2">
+                                    <small><img src="{{asset('assets/img/icons/shower-solid.svg')}}"></small>
+                                    <p class="text-center">{{ $detalhes['bathroom'] }}</p>
+                                </div>
+                                @endif
+                                @if($detalhes['private_size'] >= 1) <div class="col-2">
+                                    <small><img src="{{asset('assets/img/icons/ruler-solid.svg')}}"></small>
+                                    <p class="text-center">{{ number_format((float)($detalhes['private_size'] / 100), 2, ',', '') . 'm²'}}</p>
+                                </div>
+                                @endif
                             </div>
-                            <div class="row pb-3">
-                                <div class="col d-grid">
-                                    <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Buy</button>
-                                </div>
-                                <div class="col d-grid">
-                                    <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
-                                </div>
-                            </div>
-                        </form>
-                        @endforeach
                     </div>
+
                 </div>
-                <!-- termina card -->
+                @endforeach
             </div>
         </div>
+        <!-- termina card -->
+    </div>
+    
+</section>
+<section class="bg-light">
+    <div class="container pb-5">
+    <div class="row">
+        <div class="col-lg-5 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    @foreach($viewData['property'] as $key => $detalhes)
+
+                    <h4>Descrição</h4>
+                    <p>{{ $detalhes['description']}}</p>
+                    <br>
+                    <h4>Metragem:</h4>
+                    <p>Área terreno: {{ number_format((float)($detalhes['total_size'] / 100), 2, ',', ''). 'm²' }}<br>
+                        Área útil: {{ number_format((float)($detalhes['useful_size'] / 100), 2, ',', ''). 'm²' }}<br>
+                        Área privativa: {{ number_format((float)($detalhes['private_size'] / 100), 2, ',', ''). 'm²' }}</p>
+                    <h4>Outras Informações</h4>
+                    <p>{{ $detalhes['comments']}}</p>
+                    @endforeach
+                </div>
+            </div>
+            <!-- termina card -->
+        </div>
+        <div class="col-lg-7 mt-5">
+            <div class="card">
+                <!-- map  -->
+                <div class="card-body">
+                   
+                </div>
+            </div>
+            <!-- termina card -->
+        </div>
+    </div>
     </div>
 </section>
-
 @endsection

@@ -18,7 +18,7 @@ class CreatePropertiesTable extends Migration
             $table->integer('popular')->default(0);
             $table->integer('destaque')->default(0);
             $table->string('user_id');
-            $table->integer('reference_n')->unique();
+            $table->integer('reference_n');
             $table->string('title');
             $table->string('description', 255)->nullable();
             $table->string('address')->nullable();

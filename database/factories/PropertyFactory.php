@@ -23,12 +23,17 @@ class PropertyFactory extends Factory
     public function definition()
     {
         return [
-            'reference_n' => $this->faker->numberBetween(0, 10),
-            'description' => $this->faker->sentence(4),
+            'reference_n' => $this->faker->numberBetween(200, 400),
+            'description' => $this->faker->sentence(5),
             'title' => $this->faker->sentence(1),
+            'comments' => $this->faker->sentence(3),
             'user_id' => $this->faker->numberBetween(1,10),
             'destaque' => $this->faker->numberBetween(0,1),
             'popular' => $this->faker->numberBetween(0,1),
+            'number' => $this->faker->numberBetween(1,150),
+            'district' => $this->faker->sentence(1),
+            'city' => $this->faker->sentence(1),
+            'state' => $this->faker->numberBetween(1,27),
             'address' => $this->faker->regexify('[A-Za-z0-9]{150}'),
             'total_size' => $this->faker->numberBetween(0, 10000),
             'useful_size' => $this->faker->numberBetween(0, 10000),

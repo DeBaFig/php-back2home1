@@ -54,8 +54,8 @@
                     </div>
                     <div class="row g-3">
                         <div class="col-md-6">
-                            <label for="address_immobile" class="form-label">Endereço</label>
-                            <input type="text" id="address" name="adress_immobile" class="form-control" >
+                            <label for="address" class="form-label">Endereço</label>
+                            <input type="text" id="address" name="adress" class="form-control" >
                         </div>
                         <div class="col-md-2">
                             <label for="number" class="form-label">Número</label>
@@ -73,11 +73,11 @@
                         </div>
                         <div class="col-md-4">
                             <label for="city" class="form-label">Cidade</label>
-                            <input type="text" id="city_immobile" name="city_immobile" class="form-control">
+                            <input type="text" id="city" name="city" class="form-control">
                         </div>
                         <div class="col-md-4">
-                            <label for="state_immobile" class="form-label">Estado</label>
-                            <select class="form-select " id="state_immobile" name="state_immobile">
+                            <label for="state" class="form-label">Estado</label>
+                            <select class="form-select " id="state" name="state">
                                 <option value="1">Acre</option>
                                 <option value="2">Alagoas</option>
                                 <option value="3">Amapá</option>
@@ -157,10 +157,6 @@
                             <div class="col-md-3">
                                 <label for="private_size" class="form-label"> Área Privada: </label>
                                 <input type="number"  min="0" id="private_size" name="private_size" class="form-control" placeholder="m²">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="private_size" class="form-label"> Área Privativa: </label>
-                                <input type="number"  min="0" id="private_size" name="private_size" class="form-control" placeholder="m²" >
                             </div>
                             <div class="col-md-3">
                                 <label for="total_size" class="form-label">Tamanho Total:</label>

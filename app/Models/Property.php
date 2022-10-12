@@ -15,7 +15,7 @@ class Property extends Model
      * @var array
      */
     protected $fillable = [
-        'create_by',
+        'user_id',
         'title',
         'reference_n',
         'description',
