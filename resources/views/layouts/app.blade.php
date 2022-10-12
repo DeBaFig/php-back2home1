@@ -107,6 +107,7 @@
         <div class="container py-4">
             <div class="row gy-4 gx-5">
                 <div class="col-lg-4 col-md-10">
+                    <img src="{{ asset('assets/img/home/b2h1-2.png') }}" width="200" alt="b2h1 Logo">
                     <h3 class="h1 text-white">Back 2 Home 1</h3>
                     <p class="small text-white">Avenida XXXXX, 00 - Sala 00</p>
                     <p class="small text-white">Bairro - Cidade - Estado</p>
