@@ -28,12 +28,12 @@ class HomeController extends Controller
         $viewData = [];
         $viewData["title"] = "Home-Back2Home1";
         $viewData["images"] = ['home1.jpg', 'home2.jpg', 'home3.jpg', 'home4.jpg', 'home5.jpg', 'home6.jpg'];
-        $viewData['popular'] = Property::select('photo_image', 'properties.id','title', 'property_id')
+        $viewData['popular'] = Property::select('photo_image', 'properties.id', 'title', 'property_id')
             ->join('photos', 'properties.id', '=', 'photos.property_id')
-            ->where('properties.popular', '=','1')
+            ->where('properties.popular', '=', '1')
             ->limit(6)
             ->get();
-        $viewData['destaque'] = Property::select('photo_image', 'properties.id','title', 'property_id')
+        $viewData['destaque'] = Property::select('photo_image', 'properties.id', 'title', 'property_id')
             ->join('photos', 'properties.id', '=', 'photos.property_id')
             ->where('properties.destaque', '=', '1')
             ->limit(6)
@@ -47,9 +47,9 @@ class HomeController extends Controller
     {
         $viewData = [];
         $viewData["title"] = "Home-Back2Home1";
-        $viewData['comprar'] = Property::select('photo_image', 'properties.id','properties.title', 'property_id')
+        $viewData['comprar'] = Property::select('photo_image', 'properties.id', 'properties.title', 'property_id')
             ->join('photos', 'properties.id', '=', 'photos.property_id')
-            ->where('purpose', '=','comprar')
+            ->where('purpose', '=', 'comprar')
             ->limit(48)
             ->orderby('publish_at')
             ->get();
@@ -61,16 +61,23 @@ class HomeController extends Controller
     {
         $viewData = [];
         $viewData["title"] = "Home-Back2Home1";
-        $viewData['comprar'] = Property::select('photo_image', 'properties.id','properties.title', 'property_id')
+        $viewData['comprar'] = Property::select('photo_image', 'properties.id', 'properties.title', 'property_id')
             ->join('photos', 'properties.id', '=', 'photos.property_id')
-            ->where('purpose', '=','alugar')
+            ->where('purpose', '=', 'alugar')
             ->limit(48)
             ->orderby('publish_at')
             ->get();
         return view('home.rent')
             ->with('viewData', $viewData);
     }
+    public function simulador()
+    {
+        $viewData = [];
+        $viewData["title"] = "Home-Back2Home1";
 
+        return view('home.simulador')
+            ->with('viewData', $viewData);
+    }
     public function about_b2h1()
     {
 

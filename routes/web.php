@@ -28,6 +28,7 @@ Route::get('/sobreb2h1', [HomeController::class, 'about_b2h1'])->name('home.abou
 Route::get('/alugar', [HomeController::class, 'rent'])->name('home.rent');
 Route::get('/comprar', [HomeController::class, 'buy'])->name('home.buy');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/simulador', [HomeController::class, 'simulador'])->name('home.simulador');
 Route::get('/propriedade/{id}', [PropertyController::class, 'show'])->name("property.show");
 
 
