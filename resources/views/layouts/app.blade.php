@@ -22,6 +22,9 @@
 
 
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets/show/css/templatemo.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/show/css/slick.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/show/css/slick-theme.css') }}">
     <!-- Ícones -->
     <script src="https://kit.fontawesome.com/6e7aa9ccc9.js" crossorigin="anonymous"></script>
     <!-- Scripts -->
@@ -58,9 +61,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home.aboutb2h1') }}">{{ __('Sobre Back2Home1') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home.contact') }}">{{ __('Contato') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

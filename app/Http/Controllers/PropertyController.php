@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Photo;
 use App\Models\Property;
 // use App\Models\Owner;
 use Illuminate\Http\Request;
@@ -102,7 +103,10 @@ class PropertyController extends Controller
     {
         $viewData = [];
         $viewData["title"] = "Home-Back2Home1";
-        $viewData['comprar'] = Property::where('id', '=', $id)->get();
+        $viewData['property'] = Property::where('id', '=', $id)->get();
+        $viewData['photos'] = Photo::join('properties','properties.id','=', 'photos.property_id')
+        ->where('properties.id','=', $id)->get();
+        // dd($viewData);
         return view('property.show')
             ->with('viewData', $viewData);
     }

@@ -43,10 +43,6 @@ class HomeController extends Controller
         return view('home.index')->with("viewData", $viewData);
     }
 
-    public function contact()
-    {
-        return view('home.contact');
-    }
     public function buy()
     {
         $viewData = [];

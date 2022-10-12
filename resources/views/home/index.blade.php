@@ -1,10 +1,9 @@
 @extends('layouts.app')
 @section('title', $viewData["title"])
 @section('content')
-@php
-@endphp
 <div class="position-relative">
     <div id="carouselExampleInterval" class="carousel slide " style="max-height: 500px;" data-bs-ride="carousel">
+
         <div class="carousel-inner">
             @foreach($viewData['images'] as $key => $image)
             <div class="carousel-item {{ $key == 0 ? 'active' : '' }}" data-bs-interval="2000">

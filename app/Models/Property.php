@@ -24,7 +24,7 @@ class Property extends Model
         'district',
         'city',
         'state',
-        'cepe',
+        'cep',
         'total_size',
         'useful_size',
         'popular',
