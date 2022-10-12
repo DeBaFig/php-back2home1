@@ -1,10 +1,25 @@
 @extends('layouts.app')
+@section('title', $viewData["title"])
 @section('content')
-<div class="container">
-  <div class="row">
-    <div class="col-lg-4 ms-auto">
-      <p class="lead">RENT VIEW</p>
+<section class="section ">
+  <div class="container">
+    <div class="row mb-5 align-items-center">
+      <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
+        <h2>Imovéis para Alugar</h2>
+      </div>
+    </div>
+    <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
+      @foreach($viewData['comprar'] as $key => $detalhe)
+      <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
+        <a href="{{ route('property.show', ['id' => $detalhe['id'] ] ) }}" class="item-wrap fancybox">
+          <div class="work-info">
+            <h3>{{ $detalhe['title'] }}</h3>
+          </div>
+          <img class="img-fluid rounded" src="{{  $detalhe['photo_image'] }}" style="overflow: hidden;">
+        </a>
+      </div>
+      @endforeach
     </div>
   </div>
-</div>
+</section>
 @endsection

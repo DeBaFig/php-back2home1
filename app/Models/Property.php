@@ -15,11 +15,20 @@ class Property extends Model
      * @var array
      */
     protected $fillable = [
-        'reference',
+        'user_id',
+        'title',
+        'reference_n',
         'description',
         'address',
+        'number',
+        'district',
+        'city',
+        'state',
+        'cep',
         'total_size',
         'useful_size',
+        'popular',
+        'destaque',
         'private_size',
         'price',
         'townhouse_price',
@@ -29,8 +38,11 @@ class Property extends Model
         'parking_lot',
         'property_type',
         'publish_at',
-        'status',
         'purpose',
+        'useful_size',
+        'private-size',
+        'total_size',
+        'comments',
     ];
 
     /**
@@ -56,5 +68,10 @@ class Property extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(Owner::class);
     }
 }

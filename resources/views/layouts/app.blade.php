@@ -21,6 +21,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
+    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/app.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets/show/css/templatemo.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/show/css/slick.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/show/css/slick-theme.css') }}">
     <!-- Ícones -->
     <script src="https://kit.fontawesome.com/6e7aa9ccc9.js" crossorigin="anonymous"></script>
     <!-- Scripts -->
@@ -47,7 +52,7 @@
                     @guest
                     @if (Route::has('login'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home.sell') }}">{{ __('Comprar') }}</a>
+                        <a class="nav-link" href="{{ route('home.buy') }}">{{ __('Comprar') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('home.rent') }}">{{ __('Alugar') }}</a>
@@ -59,13 +64,11 @@
                         <a class="nav-link" href="{{ route('home.aboutb2h1') }}">{{ __('Sobre Back2Home1') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home.contact') }}">{{ __('Contato') }}</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @endif
                     @else
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
@@ -73,7 +76,10 @@
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             @if(Auth::check() && auth()->user()->is_admin == 1)
-                            <a class="dropdown-item" href="{{ route('property.index') }}">
+                            <a class="dropdown-item" href="{{ route('owner.add') }}">
+                                {{ __('Adicionar Proprietário') }}
+                            </a>
+                            <a class="dropdown-item" href="{{ route('property.property') }}">
                                 {{ __('Adicionar Imóvel') }}
                             </a>
                             @endif
@@ -95,17 +101,55 @@
     <div id="app">
         @yield('content')
     </div>
-    <footer class="content-footer footer bg-footer-theme fixed-bottom">
-        <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-            <div class="mb-2 mb-md-0">
-                © Adriana e Denize ❤️ trabalharam juntas para realizar o projeto no
-                <a href="{{ config('variables.creatorUrl') ? config('variables.creatorUrl') : '' }}" target="_blank" class="footer-link fw-bolder">Entra21 - 2022</a>
-            </div>
-            <div>
-                <a href="{{ route('home.about') }}" class="footer-link me-4">Sobre Nós</a>
+
+
+    <footer class="w-100 py-4 flex-shrink-0">
+        <div class="container py-4">
+            <div class="row gy-4 gx-5">
+                <div class="col-lg-4 col-md-10">
+                    <h3 class="h1 text-white">Back 2 Home 1</h3>
+                    <p class="small text-white">Avenida XXXXX, 00 - Sala 00</p>
+                    <p class="small text-white">Bairro - Cidade - Estado</p>
+                    <br><br>
+                    <p class="small text-white mb-0">&copy; Copyrights. All rights reserved. <a class="text-white" href="https://back2home1.herokuapp.com/">h2b1</a></p>
+                </div>
+                <div class="col-lg-3 col-md-10">
+                    <h5 class="text-white mb-3">Instituição</h5>
+                    <ul class="list-unstyled text-white">
+                        <li><a class="text-white" href="{{ route('home.index') }}">Início</a></li>
+                        <li><a class="text-white" href="{{ route('home.about') }}">Sobre nós</a></li>
+                        <li><a class="text-white" href="{{ route('home.buy') }}">Venda</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-10">
+                    <h5 class="text-white mb-3">Imóveis</h5>
+                    <ul class="list-unstyled text-white">
+                        <!-- <li><a class="text-white" href="#">Cadastre seu Imóvel</a></li> -->
+                        <!-- <li><a class="text-white" href="#">Peça um imóvel do seu jeito</a></li> -->
+                        <li><a class="text-white" href="{{ route('home.simulador') }}">Financiamentos e bancos</a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-10">
+                    <h5 class="text-white mb-3">Contato</h5>
+                    <ul class="list-unstyled text-white">
+                        <li><a class="text-white" href="#">Fale conosco</a></li>
+                        <li><a class="text-white" href="#">Política de privacidade</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 

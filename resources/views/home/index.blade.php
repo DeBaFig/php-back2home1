@@ -3,6 +3,7 @@
 @section('content')
 <div class="position-relative">
     <div id="carouselExampleInterval" class="carousel slide " style="max-height: 500px;" data-bs-ride="carousel">
+
         <div class="carousel-inner">
             @foreach($viewData['images'] as $key => $image)
             <div class="carousel-item {{ $key == 0 ? 'active' : '' }}" data-bs-interval="2000">
@@ -11,49 +12,46 @@
             @endforeach
         </div>
     </div>
-    <div class="position-absolute top-0 start-50 translate-middle-x mt-5">
+    <div class="position-absolute top-50 start-50 translate-middle-x ">
         <img src="{{  asset('assets/img/home/b2h1-2.png')}}" style="width: 10rem;">
     </div>
-    <div class="rounded bg-light p-1 position-absolute top-50 start-50 translate-middle">
-        <div class="d-flex justify-content-around">
-            <form method="post">
-                <div class="input-group row">
-                    <div class="col">
-                        <select class="form-select" id="purpose_input">
-                            <option selected>Propósito</option>
-                            <option value="1">Comprar</option>
-                            <option value="2">Alugar</option>
-                        </select>
+</div>
+<section class="section ">
+    <div class="container">
+        <div class="row mb-5 align-items-center">
+            <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
+                <h2>Destaques</h2>
+            </div>
+        </div>
+        <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
+            @foreach($viewData['destaque'] as $key => $detalhe)
+            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
+                <a href="{{ route('property.show', ['id' => $detalhe['id'] ] ) }}" class="item-wrap fancybox">
+                    <div class="work-info">
+                        <h3>{{ $detalhe['title'] }}</h3>
                     </div>
-                    <div class="col">
-                        <select class="form-select " id="property_type">
-                            <option selected>Tipo</option>
-                            <option value="1">Apartamento</option>
-                            <option value="2">Kitnet</option>
-                            <option value="3">Cobertura</option>
-                            <option value="4">Triplex</option>
-                            <option value="5">Casa</option>
-                            <option value="6">Chácara</option>
-                            <option value="7">Comercial</option>
-                            <option value="8">Geminado</option>
-                            <option value="9">Loja</option>
-                            <option value="10">Pousada</option>
-                            <option value="11">Sobrado</option>
-                            <option value="12">Terreno</option>
-                        </select>
+                    <img class="img-fluid" src="{{  $detalhe['photo_image'] }}" style="overflow: hidden;">
+                </a>
+            </div>
+            @endforeach
+        </div>
+        <div class="row mb-5 align-items-center">
+            <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
+                <h2>Populares</h2>
+            </div>
+        </div>
+        <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
+            @foreach($viewData['popular'] as $key => $detalhe)
+            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
+                <a href="{{ route('property.show', ['id' => $detalhe['id'] ] ) }}" class="item-wrap fancybox">
+                    <div class="work-info">
+                        <h3>{{ $detalhe['title'] }}</h3>
                     </div>
-                    <div class="col-4 row">
-                        <label class="input-group-text col-3" for="location" style="min-width:80px;">Bairro</label>
-                        <input type="text" class="form-control col" id="location" aria-label="location" aria-describedby="location">
-                    </div>
-                    <button type="submit" class="btn col-1">
-                        <img src="{{ asset('assets/img/icons/lupa-de-pesquisa.png') }}" style="width: 1.5rem;">
-                    </button>
-                </div>
-            </form>
+                    <img class="img-fluid" src="{{  $detalhe['photo_image'] }}" style="overflow: hidden;">
+                </a>
+            </div>
+            @endforeach
         </div>
     </div>
-</div>
-
-
+</section>
 @endsection

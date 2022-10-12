@@ -16,6 +16,7 @@ class Photo extends Model
      */
     protected $fillable = [
         'photo_image',
+        'property_id',
         'create_at',
     ];
 
@@ -28,4 +29,9 @@ class Photo extends Model
         'id' => 'integer',
         'create_at' => 'timestamp',
     ];
+
+    public function property()
+    {
+        return $this->belongsTo(Property::class);
+    }
 }
