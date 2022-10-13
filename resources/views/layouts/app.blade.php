@@ -107,11 +107,12 @@
         <div class="container py-4">
             <div class="row gy-4 gx-5">
                 <div class="col-lg-4 col-md-10">
+                    <img src="/assets/img/logo/b2h1-6.png" width="200" alt="b2h1 Logo">
                     <h3 class="h1 text-white">Back 2 Home 1</h3>
                     <p class="small text-white">Avenida XXXXX, 00 - Sala 00</p>
                     <p class="small text-white">Bairro - Cidade - Estado</p>
                     <br><br>
-                    <p class="small text-white mb-0">&copy; Copyrights. All rights reserved. <a class="text-white" href="https://back2home1.herokuapp.com/">h2b1</a></p>
+                    <p class="small text-white mb-0">&copy; Copyrights. All rights reserved.  <a class="text-white" href="https://back2home1.herokuapp.com/"> ---  h2b1</a></p>
                 </div>
                 <div class="col-lg-3 col-md-10">
                     <h5 class="text-white mb-3">Instituição</h5>
