@@ -134,7 +134,7 @@
                 <div class="col-lg-2 col-md-10">
                     <h5 class="text-white mb-3">Contato</h5>
                     <ul class="list-unstyled text-white">
-                        <li><a class="text-white" href="#">Fale conosco</a></li>
+                        <li><a class="text-white" href="mailto:h2h1@gmai.com">Fale conosco</a></li>
                         <li><a class="text-white" href="#">Política de privacidade</a></li>
                     </ul>
                 </div>
