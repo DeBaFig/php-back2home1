@@ -15,11 +15,12 @@
           <div class="work-info">
             <h3>{{ $detalhe['title'] }}</h3>
           </div>
-          <img class="img-fluid rounded" src="{{  $detalhe['photo_image'] }}" style="overflow: hidden;">
+          <img class="img-fluid rounded" src="{{  asset($detalhe['photo_image']) }}" style="overflow: hidden;">
         </a>
       </div>
       @endforeach
     </div>
   </div>
 </section>
+
 @endsection

@@ -23,7 +23,7 @@ class PropertyFactory extends Factory
     public function definition()
     {
         return [
-            'reference_n' => $this->faker->numberBetween(200, 400),
+            'reference_n' => $this->faker->numberBetween(1, 20),
             'description' => $this->faker->sentence(5),
             'title' => $this->faker->sentence(1),
             'comments' => $this->faker->sentence(3),

@@ -101,8 +101,6 @@
     <div id="app">
         @yield('content')
     </div>
-
-
     <footer class="w-100 py-4 flex-shrink-0">
         <div class="container py-4">
             <div class="row gy-4 gx-5">

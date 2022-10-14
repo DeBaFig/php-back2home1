@@ -17,7 +17,6 @@ class CreatePhotosTable extends Migration
             $table->id();
             $table->string('photo_image');
             $table->string('property_id');
-            $table->timestamp('create_at');
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\OwnerController;
 
 /*
@@ -45,4 +46,9 @@ Route::prefix('admin')->group(function(){
     Route::post('/owner/new', [OwnerController::class, 'store'])->name('owner.store')->middleware('is_admin');
     Route::get('/owner/show/{id}', [OwnerController::class, 'show'])->name('owner.show')->middleware('is_admin');
     
+});
+
+Route::controller(PhotoController::class)->group(function(){
+    Route::get('image-mostra', 'mostra');
+    Route::post('image-upload', 'store')->name('image.store');
 });

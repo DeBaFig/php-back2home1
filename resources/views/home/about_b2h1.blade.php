@@ -62,11 +62,11 @@
                   <h4><strong>Transparência</strong></h4>
                   A transparência é o princípio nas relações da Imobiliária, comprometidos com a prestação de contas de nossas atividades e dos recursos por nós geridos.
                   Valorizamos o processo de comunicação interna, disseminando informações relevantes relacionadas aos negócios e às decisões corporativas.
-                  </div>
+                </div>
               </div>
               <div class="row g-3 py-3">
                 <div class="col-md-12">
-                <h4><strong>Compromisso</strong></h4>
+                  <h4><strong>Compromisso</strong></h4>
                   Temos o comprimosso ético com todos procedimentos no exercício de suas atribuições profissionais, e com o permanente cumprimento das leis, das normas e dos regulamentos internos e externos que regem a nossa atividade.
                   Preservamos o sigilo e a segurança das informações.
                 </div>

@@ -11,6 +11,7 @@
                     <div class="col-md-2">
                         <label class="mt-3" class="form-label">Referência: {{ $reference_n }}</label>
                         <input type="hidden" name="reference_n" value="{{ $reference_n }}" />
+                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" />
                     </div>
                     <div class="col-md-10">
                         <label for="title" class="form-label">Titúlo do Anúncio:</label>
@@ -50,16 +51,16 @@
                     </div>
                     <div class="col-md-6">
                         <label for="townhouse_price" class="form-label">Valor Condomínio</label>
-                        <input type="number" id="townhouse_price" name="townhouse_price" class="form-control" >
+                        <input type="number" id="townhouse_price" name="townhouse_price" class="form-control">
                     </div>
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label for="address" class="form-label">Endereço</label>
-                            <input type="text" id="address" name="address" class="form-control" >
+                            <input type="text" id="address" name="address" class="form-control">
                         </div>
                         <div class="col-md-2">
                             <label for="number" class="form-label">Número</label>
-                            <input type="number" min="0" id="number" name="number_property" class="form-control" >
+                            <input type="number" min="0" id="number" name="number_property" class="form-control">
                         </div>
                         <div class="col-md-4">
                             <label for="cep_" class="form-label">CEP</label>
@@ -69,7 +70,7 @@
                     <div class="row g-3">
                         <div class="col-md-4">
                             <label for="district" class="form-label">Bairro</label>
-                            <input type="text" id="district" name="district" class="form-control" >
+                            <input type="text" id="district" name="district" class="form-control">
                         </div>
                         <div class="col-md-4">
                             <label for="city" class="form-label">Cidade</label>
@@ -152,15 +153,15 @@
                         <div class="row g-3">
                             <div class="col-md-3">
                                 <label for="useful_size" class="form-label">Área Útil:</label>
-                                <input type="number" min="0" id="useful_size" name="useful_size" class="form-control" placeholder="m²" >
+                                <input type="number" min="0" id="useful_size" name="useful_size" class="form-control" placeholder="m²">
                             </div>
                             <div class="col-md-3">
                                 <label for="private_size" class="form-label"> Área Privada: </label>
-                                <input type="number"  min="0" id="private_size" name="private_size" class="form-control" placeholder="m²">
+                                <input type="number" min="0" id="private_size" name="private_size" class="form-control" placeholder="m²">
                             </div>
                             <div class="col-md-3">
                                 <label for="total_size" class="form-label">Tamanho Total:</label>
-                                <input type="number"  min="0" id="total_size" name="total_size" class="form-control" placeholder="m²" >
+                                <input type="number" min="0" id="total_size" name="total_size" class="form-control" placeholder="m²">
                             </div>
                         </div>
                         <div class="row g-3">
@@ -172,16 +173,20 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label for="comments" class="form-label">Observações:</label>
-                                <textarea name="comments" id="comments" class="form-control" ></textarea>
+                                <textarea name="comments" id="comments" class="form-control"></textarea>
                             </div>
-                            <div class="col-md-6">
-                                <label for="image_property" class="form-label">Imagens do Imóvel:</label>
-                                <input type="file" name="image_property[]" id="image_property" multiple="multiple"></label>
-                            </div>
-                        </div>
 
-                        <input type="submit" class="btn btn-block btn-outline-success" style="width:20%" value="Salvar">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="inputImage">Adicionar Fotos:</label>
+                            <input type="file" name="images[]" id="inputImage" multiple class="form-control @error('images') is-invalid @enderror">
+                        </div>
+                        <input type="submit" class="btn btn-block btn-outline-success" style="width:20%" value="Salvar Dados">
+                    </div>
+                </div>
             </form>
         </div>
     </div>
-    @endsection
+</div>
+
+@endsection

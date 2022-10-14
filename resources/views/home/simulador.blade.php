@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container mt-5 row col-12 text-center d-flex justify-content-center" >
+<div class="container mt-5 row col-12 text-center d-flex justify-content-center">
   <h1>Financiamento e bancos</h1>
   <p>Escolha um banco e faça a sua simulação:</p>
   <div class="container row col-6 d-flex justify-content-around">
@@ -32,5 +32,6 @@
     </div>
   </div>
 </div>
+
 
 @endsection

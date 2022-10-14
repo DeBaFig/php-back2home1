@@ -44,50 +44,19 @@ class PropertyController extends Controller
             'title' => 'required',
             'purpose' => 'required',
         ]);
-        $user = Auth::user()->id;
-        $property = new Property();
-        $property->title = $request->title;
-        $property->purpose = $request->purpose;
-        $property->reference_n = $request->reference_n;
-        $property->price = $request->price;
-        $property->property_type = $request->property_type;
-        $property->townhouse_price = $request->townhouse_price;
-        $property->address = $request->address;
-        $property->number_property = $request->number_property;
-        $property->cep = $request->cep;
-        $property->district = $request->district;
-        $property->city = $request->city;
-        $property->state = $request->state;
-        $property->master_bedrooms = $request->master_bedrooms;
-        $property->bedrooms = $request->bedrooms;
-        $property->bathroom = $request->bathroom;
-        $property->parking_lot = $request->parking_lot;
-        $property->useful_size = $request->useful_size;
-        $property->private_size = $request->private_size;
-        $property->total_size = $request->total_size;
-        $property->description = $request->description;
-        $property->comments = $request->comments;
-        $property->user_id = $user;
-
-        if ($request->image_property) {
-            foreach ($request->image_property as $key => $image) {
-                $imageName = time().'.'.$image->getClientOriginalExtension(); 
-                // $image->move(public_path('uploads/photos/'), $imageName); 
-                $image->storeAs('images', $imageName);
-                $images[]['name'] = $imageName;
-                $images[]['property_id'] = $property->reference_n;
-                $images[]['create_at'] = now();
-            }
-            foreach ($images as $key => $image) {
-                Photo::create($image);
-            }
+        $property = Property::create($request->all());
+        foreach($request->images as $image){
+            $filename = $image->store('images');
+            $image->move(public_path('images'), $filename);
+            Photo::create([
+                'property_id' => $property->id,
+                'photo_image' => $filename
+            ]);
         }
-        $property->save();
-        // return "Imóvel cadastrado com sucesso!";
-        return redirect()->back();
+        return redirect('home');
     }
 
-    /**
+    /**'home'
      * Display the specified resource.
      *
      * @param  \App\Models\Property  $property
@@ -100,7 +69,6 @@ class PropertyController extends Controller
         $viewData['property'] = Property::where('id', '=', $id)->get();
         $viewData['photos'] = Photo::join('properties', 'properties.id', '=', 'photos.property_id')
             ->where('properties.id', '=', $id)->get();
-        // dd($viewData);
         return view('property.show')
             ->with('viewData', $viewData);
     }
