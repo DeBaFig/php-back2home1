@@ -17,6 +17,10 @@
                         <label for="title" class="form-label">Titúlo do Anúncio:</label>
                         <input type="text" name="title" id="title" class="form-control" required="true" autofocus>
                     </div>
+                    <div class="col-md-10">
+                        <label for="title" class="form-label">CPF do proprietário:</label>
+                        <input type="text" name="title" id="title" class="form-control" required="true" >
+                    </div>
                 </div>
                 <div class="row g-3">
                     <div class="col-md-6">
