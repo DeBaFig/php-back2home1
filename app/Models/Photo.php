@@ -17,7 +17,6 @@ class Photo extends Model
     protected $fillable = [
         'photo_image',
         'property_id',
-        'create_at',
     ];
 
     /**

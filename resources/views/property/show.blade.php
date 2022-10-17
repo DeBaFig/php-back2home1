@@ -13,7 +13,7 @@
                         <div class="carousel-inner">
                             @foreach($viewData['photos'] as $key => $image)
                             <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                <img src="{{ $image['photo_image']  }}" class="d-block w-100" alt="...">
+                                <img src="{{ asset($image['photo_image'])  }}" class="d-block w-100">
                             </div>
                             @endforeach
                         </div>
@@ -40,37 +40,37 @@
                         <p>{{ ($detalhes['purpose'] == 'alugar' && $detalhes['townhouse_price'] < 0)? ('Valor do condomínio:' . $detalhes['townhouse_price']): " "}}</p>
                         <h5>Cidade: {{ $detalhes['city'] . "-" . $detalhes['state'] }}</h5>
                         <h5>Bairro: {{ $detalhes['district'] }}</h5><br>
-                            <div class="row align-items-center col-7">
-                                @if($detalhes['master_bedrooms'] >= 1)
-                                <div class="col-2">
-                                    <small><img src="{{asset('assets/img/icons/bed-solid.svg')}}"></small>
-                                    <p class="text-center">{{ $detalhes['master_bedrooms'] }}</p>
-                                </div>
-                                @endif
-                                @if($detalhes['parking_lot'] >= 1)
-                                <div class="col-2">
-                                    <small><img src="{{asset('assets/img/icons/car-solid.svg')}}"></small>
-                                    <p class="text-center">{{ $detalhes['parking_lot']}}</p>
-                                </div>
-                                @endif
-                                @if($detalhes['bedrooms'] >= 1)
-                                <div class="col-2">
-                                    <small><img src="{{asset('assets/img/icons/bed-solid.svg')}}"></small>
-                                    <p class="text-center">{{ $detalhes['bedrooms'] }}</p>
-                                </div>
-                                @endif
-                                @if($detalhes['bathroom'] >= 1)
-                                <div class="col-2">
-                                    <small><img src="{{asset('assets/img/icons/shower-solid.svg')}}"></small>
-                                    <p class="text-center">{{ $detalhes['bathroom'] }}</p>
-                                </div>
-                                @endif
-                                @if($detalhes['private_size'] >= 1) <div class="col-2">
-                                    <small><img src="{{asset('assets/img/icons/ruler-solid.svg')}}"></small>
-                                    <p class="text-center">{{ number_format((float)($detalhes['private_size'] / 100), 2, ',', '') . 'm²'}}</p>
-                                </div>
-                                @endif
+                        <div class="row align-items-center col-7">
+                            @if($detalhes['master_bedrooms'] >= 1)
+                            <div class="col-2">
+                                <small><img src="{{asset('assets/img/icons/bed-solid.svg')}}"></small>
+                                <p class="text-center">{{ $detalhes['master_bedrooms'] }}</p>
                             </div>
+                            @endif
+                            @if($detalhes['parking_lot'] >= 1)
+                            <div class="col-2">
+                                <small><img src="{{asset('assets/img/icons/car-solid.svg')}}"></small>
+                                <p class="text-center">{{ $detalhes['parking_lot']}}</p>
+                            </div>
+                            @endif
+                            @if($detalhes['bedrooms'] >= 1)
+                            <div class="col-2">
+                                <small><img src="{{asset('assets/img/icons/bed-solid.svg')}}"></small>
+                                <p class="text-center">{{ $detalhes['bedrooms'] }}</p>
+                            </div>
+                            @endif
+                            @if($detalhes['bathroom'] >= 1)
+                            <div class="col-2">
+                                <small><img src="{{asset('assets/img/icons/shower-solid.svg')}}"></small>
+                                <p class="text-center">{{ $detalhes['bathroom'] }}</p>
+                            </div>
+                            @endif
+                            @if($detalhes['private_size'] >= 1) <div class="col-2">
+                                <small><img src="{{asset('assets/img/icons/ruler-solid.svg')}}"></small>
+                                <p class="text-center">{{ number_format((float)($detalhes['private_size'] / 100), 2, ',', '') . 'm²'}}</p>
+                            </div>
+                            @endif
+                        </div>
                     </div>
 
                 </div>
@@ -79,40 +79,41 @@
         </div>
         <!-- termina card -->
     </div>
-    
+
 </section>
 <section class="bg-light">
     <div class="container pb-5">
-    <div class="row">
-        <div class="col-lg-5 mt-5">
-            <div class="card">
-                <div class="card-body">
-                    @foreach($viewData['property'] as $key => $detalhes)
+        <div class="row">
+            <div class="col-lg-5 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        @foreach($viewData['property'] as $key => $detalhes)
 
-                    <h4>Descrição</h4>
-                    <p>{{ $detalhes['description']}}</p>
-                    <br>
-                    <h4>Metragem:</h4>
-                    <p>Área terreno: {{ number_format((float)($detalhes['total_size'] / 100), 2, ',', ''). 'm²' }}<br>
-                        Área útil: {{ number_format((float)($detalhes['useful_size'] / 100), 2, ',', ''). 'm²' }}<br>
-                        Área privativa: {{ number_format((float)($detalhes['private_size'] / 100), 2, ',', ''). 'm²' }}</p>
-                    <h4>Outras Informações</h4>
-                    <p>{{ $detalhes['comments']}}</p>
-                    @endforeach
+                        <h4>Descrição</h4>
+                        <p>{{ $detalhes['description']}}</p>
+                        <br>
+                        <h4>Metragem:</h4>
+                        <p>Área terreno: {{ number_format((float)($detalhes['total_size'] / 100), 2, ',', ''). 'm²' }}<br>
+                            Área útil: {{ number_format((float)($detalhes['useful_size'] / 100), 2, ',', ''). 'm²' }}<br>
+                            Área privativa: {{ number_format((float)($detalhes['private_size'] / 100), 2, ',', ''). 'm²' }}</p>
+                        <h4>Outras Informações</h4>
+                        <p>{{ $detalhes['comments']}}</p>
+                        @endforeach
+                    </div>
                 </div>
+                <!-- termina card -->
             </div>
-            <!-- termina card -->
-        </div>
-        <div class="col-lg-7 mt-5">
-            <div class="card">
-                <!-- map  -->
-                <div class="card-body">
-                   
+            <div class="col-lg-7 mt-5">
+                <div class="card">
+                    <!-- map  -->
+                    <div class="card-body">
+
+                    </div>
                 </div>
+                <!-- termina card -->
             </div>
-            <!-- termina card -->
         </div>
-    </div>
     </div>
 </section>
+
 @endsection

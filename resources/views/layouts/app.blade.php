@@ -35,7 +35,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ _('Back2Home1') }}
+                {{ __('Back2Home1') }}
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
@@ -101,8 +101,6 @@
     <div id="app">
         @yield('content')
     </div>
-
-
     <footer class="w-100 py-4 flex-shrink-0">
         <div class="container py-4">
             <div class="row gy-4 gx-5">
@@ -134,7 +132,7 @@
                 <div class="col-lg-2 col-md-10">
                     <h5 class="text-white mb-3">Contato</h5>
                     <ul class="list-unstyled text-white">
-                        <li><a class="text-white" href="#">Fale conosco</a></li>
+                        <li><a class="text-white" href="mailto:h2h1@gmai.com">Fale conosco</a></li>
                         <li><a class="text-white" href="#">Política de privacidade</a></li>
                     </ul>
                 </div>

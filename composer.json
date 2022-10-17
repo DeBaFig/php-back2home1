@@ -2,7 +2,10 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
@@ -10,7 +13,8 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "laravel/ui": "^4.0"
+        "laravel/ui": "^4.0",
+        "symfony/error-handler": "^6.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12",
@@ -28,7 +32,11 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "classmap": [
+            "database/seeders",
+            "database/factories"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

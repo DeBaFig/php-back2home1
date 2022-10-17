@@ -40,60 +40,23 @@ class PropertyController extends Controller
      */
     public function store(Request $request)
     {
-        $property = new Property();
-        $email_user = Auth::user()->email;
-        $reference_n = $request->reference_n;
-        $title = $request->title;
-        $price = $request->price;
-        $purpose = $request->purpose;
-        $property_type = $request->property_type;
-        $description = $request->description;
-        $address_immobile = $request->address_immobile;
-        $number_immobile = $request->number_immobile;
-        $district_immobile = $request->district_immobile;
-        $city_immobile = $request->city_immobile;
-        $state_immobile = $request->state_immobile;
-        $cep_immobile = $request->cep_immobile;
-        $master_bedrooms = $request->master_bedrooms;
-        $bedrooms = $request->bedrooms;
-        $bathroom = $request->bathroom;
-        $parking_lot = $request->parking_lot;
-        $useful_size = $request->useful_size;
-        $private_size = $request->private_size;
-        $total_size = $request->total_size;
-        $townhouse_price = $request->townhouse_price;
-        $comments = $request->comments;
-
-        $property->create_by = $email_user;
-        $property->title = $title;
-        $property->description = $description;
-        $property->address_immobile = $address_immobile;
-        $property->number_immobile = $number_immobile;
-        $property->reference_n = $reference_n;
-        $property->district_immobile = $district_immobile;
-        $property->city_immobile = $city_immobile;
-        $property->state_immobile = $state_immobile;
-        $property->cep_immobile = $cep_immobile;
-        $property->total_size = $total_size;
-        $property->useful_size = $useful_size;
-        $property->private_size = $private_size;
-        $property->price = $price;
-        $property->townhouse_price = $townhouse_price;
-        $property->master_bedrooms = $master_bedrooms;
-        $property->bedrooms = $bedrooms;
-        $property->bathroom = $bathroom;
-        $property->parking_lot = $parking_lot;
-        $property->property_type = $property_type;
-        $property->purpose = $purpose;
-        $property->comments = $comments;
-
-        $property->save();
-
-        // return "Imóvel cadastrado com sucesso!";
-        return redirect()->back();
+        $this->validate($request, [
+            'title' => 'required',
+            'purpose' => 'required',
+        ]);
+        $property = Property::create($request->all());
+        foreach($request->images as $image){
+            $filename = $image->store('images');
+            $image->move(public_path('images'), $filename);
+            Photo::create([
+                'property_id' => $property->id,
+                'photo_image' => $filename
+            ]);
+        }
+        return redirect('home');
     }
 
-    /**
+    /**'home'
      * Display the specified resource.
      *
      * @param  \App\Models\Property  $property
@@ -104,13 +67,12 @@ class PropertyController extends Controller
         $viewData = [];
         $viewData["title"] = "Home-Back2Home1";
         $viewData['property'] = Property::where('id', '=', $id)->get();
-        $viewData['photos'] = Photo::join('properties','properties.id','=', 'photos.property_id')
-        ->where('properties.id','=', $id)->get();
-        // dd($viewData);
+        $viewData['photos'] = Photo::join('properties', 'properties.id', '=', 'photos.property_id')
+            ->where('properties.id', '=', $id)->get();
         return view('property.show')
             ->with('viewData', $viewData);
     }
-   
+
     /**
      * Show the form for editing the specified resource.
      *

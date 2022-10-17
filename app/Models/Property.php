@@ -20,7 +20,7 @@ class Property extends Model
         'reference_n',
         'description',
         'address',
-        'number',
+        'number_property',
         'district',
         'city',
         'state',

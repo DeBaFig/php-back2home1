@@ -10,7 +10,8 @@ a:focus {
 }
 
 footer {
-    background: #255d00;
+    background-image: url('/assets/img/home/footer.png');
+    background-size:cover;
 }
 
 body,

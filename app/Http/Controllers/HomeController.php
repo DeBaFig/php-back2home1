@@ -47,34 +47,30 @@ class HomeController extends Controller
     {
         $viewData = [];
         $viewData["title"] = "Home-Back2Home1";
-        $viewData['comprar'] = Property::select('photo_image', 'properties.id', 'properties.title', 'property_id')
-            ->join('photos', 'properties.id', '=', 'photos.property_id')
+        $query = Photo::select('photo_image', 'properties.id', 'title', 'property_id')
+            ->leftJoin('properties', 'properties.id', '=', 'photos.property_id')
             ->where('purpose', '=', 'comprar')
-            ->limit(48)
-            ->orderby('publish_at')
             ->get();
-        // dd($viewData);
+        $viewData['comprar'] = collect($query)->unique('property_id');
         return view('home.buy')
             ->with('viewData', $viewData);
     }
     public function rent()
     {
         $viewData = [];
-        $viewData["title"] = "Home-Back2Home1";
-        $viewData['comprar'] = Property::select('photo_image', 'properties.id', 'properties.title', 'property_id')
-            ->join('photos', 'properties.id', '=', 'photos.property_id')
+        $viewData["title"] = "Alugar-Back2Home1";
+        $query = Photo::select('photo_image', 'properties.id', 'title', 'property_id')
+            ->leftJoin('properties', 'properties.id', '=', 'photos.property_id')
             ->where('purpose', '=', 'alugar')
-            ->limit(48)
-            ->orderby('publish_at')
             ->get();
+        $viewData['alugar'] = collect($query)->unique('property_id');
         return view('home.rent')
             ->with('viewData', $viewData);
     }
     public function simulador()
     {
         $viewData = [];
-        $viewData["title"] = "Home-Back2Home1";
-
+        $viewData["title"] = "Simulador-Back2Home1";
         return view('home.simulador')
             ->with('viewData', $viewData);
     }
