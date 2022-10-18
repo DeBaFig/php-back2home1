@@ -1,41 +1,58 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container text-center">
+    <div class="row justify-content-center m-5">
+        <h2>Adicionar Proprietário</h2>
         <div class="col-md-8">
-            <div class="card">
-                <div class="card mb-4">
-                    <h5 class="card-header"> Cadastro do Proprietário</h5>
+            <form action="{{ route('owner.store') }}" class="row g-3 container flex-column w-30 d-flex justify-content-evenly" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Nome:</label>
+                        <input type="text" name="name" id="name" class="form-control" required="true" autofocus>
+                    </div>
+                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" />
+                    <div class="col-md-6">
+                        <label for="cpf" class="form-label">CPF:</label>
+                        <input type="text" name="cpf" id="cpf" class="form-control" required="true">
+                    </div>
                 </div>
-                <div class="card mb-4">
-                    <button type="button" class="card-header" data-bs-toggle="collapse" data-bs-target="#owner">
-                        Dados do Proprietário
-                    </button>
-                    <div class="collapse" id="owner">
-                        <form action="{{ route('owner.store') }}" class="container flex-column w-100 d-flex justify-content-evenly" method="POST">
-                            @csrf
-                            <label for="exampleInputEmail1">Nome</label>
-                            <input type="text" id="desc" name="name" class="form-control" required="true">
-                            <br>
-                            <label for="exampleInputEmail1">CPF</label>
-                            <input type="text" id="cpf" name="cpf" class="form-control cpf-mask" placeholder="Ex.: 000.000.000-00" data-mask="000.000.000-00" maxlength="14" autocomplete="off" required="true">
-                            <br>
-                            <label for="exampleInputEmail1">Email</label>
-                            <input type="email" name="email_owner" class="form-control" required="true">
-                            <br>
-                            <label for="exampleInputEmail1">Endereço</label>
-                            <input type="text" id="address" name="adress" class="form-control" placeholder="Rua" required="true">
-                            <br>
-                            <label for="exampleInputEmail1">Número</label>
-                            <input type="text" id="number" name="number" class="form-control" required="true">
-                            <br>
-                            <label for="exampleInputEmail1">Bairro</label>
-                            <input type="text" id="district" name="district" class="form-control" required="true">
-                            <br>
-                            <label for="exampleInputEmail1">Cidade</label>
-                            <input type="text" id="city" name="city" class="form-control" required="true">
-                            <br>
-                            <label class="form-group">Estado</label>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" id="email" name="email" class="form-control" require="true">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="phone" class="form-label">Telefone</label>
+                        <input type="text" id="phone" name="phone" class="form-control" placeholder="Somente números">
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="address" class="form-label">Endereço</label>
+                            <input type="text" id="address" name="address" class="form-control">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="number_owner" class="form-label">Número</label>
+                            <input type="number_owner" min="0" id="number" name="number_owner" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="cep" class="form-label">CEP</label>
+                            <input type="text" id="cep" name="cep" class="form-control" placeholder="Ex: 00000-000" maxlength="15">
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label for="district" class="form-label">Bairro</label>
+                            <input type="text" id="district" name="district" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="city" class="form-label">Cidade</label>
+                            <input type="text" id="city" name="city" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Estado</label>
                             <select class="form-select " id="state">
                                 <option selected>Selecione</option>
                                 <option value="1">Acre</option>
@@ -66,22 +83,15 @@
                                 <option value="26">Sergipe</option>
                                 <option value="27">Tocantins</option>
                             </select>
-                            <br>
-                            <label for="exampleInputEmail1">CEP</label>
-                            <input type="text" id="cep" name="cep" class="form-control" placeholder="Ex: 00000-000" data-mask="00000-000" maxlength="15" autocomplete="off" required="true">
-                            <br>
-                            <label for="exampleInputEmail1">Telefone</label>
-                            <input type="text" id="phone1" name="phone1" class="form-control" placeholder="Ex: (00) 00000-0000" data-mask="(00) 00000-0000" maxlength="15" autocomplete="off" required="true">
-                            <br>
-                            <label for="exampleInputEmail1">Celular</label>
-                            <input type="text" id="phone2" name="phone2" class="form-control" placeholder="Ex: (00) 00000-0000" data-mask="(00) 00000-0000" maxlength="15" required="true">
-                            <br>
-                            <input type="submit" class="btn btn-block btn-outline-success float-right" style="width:20%" value="Salvar">
-                        </form>
+                        </div>
+                        <div class="row g-3">
+                            <input type="submit" class="btn btn-block btn-outline-success" style="width:20%" value="Salvar Dados">
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
+
 @endsection

@@ -18,16 +18,15 @@ class Owner extends Model
     protected $fillable = [
         'name',
         'cpf',
-        'email_owner',
+        'email',
         'address',
-        'number',
+        'number_owner',
         'district',
         'city',
         'state',
         'cep',
-        'phone1',
-        'phone2',
-        'publish_at',
+        'phone',
+        'user_id'
     ];
 
     /**
