@@ -19,7 +19,7 @@
                     </div>
                     <div class="col-md-10">
                         <label for="title" class="form-label">CPF do proprietário:</label>
-                        <input type="text" name="title" id="title" class="form-control" required="true" >
+                        <input type="cpf" name="cpf" id="cpf" class="form-control" required="true" >
                     </div>
                 </div>
                 <div class="row g-3">

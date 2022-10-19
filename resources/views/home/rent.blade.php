@@ -15,7 +15,9 @@
           <div class="work-info">
             <h3>{{ $detalhe['title'] }}</h3>
           </div>
-          <img class="img-fluid rounded" src="{{asset($detalhe['photo_image']) }}" style="overflow: hidden;">
+          <div class="container" >
+            <img class="img-fluid" src="{{  $detalhe['photo_image'] }}" style="background-size:cover;  overflow: hidden; width:300px; height:300px;">
+          </div>
         </a>
       </div>
       @endforeach
