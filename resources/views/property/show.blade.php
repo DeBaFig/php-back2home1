@@ -107,7 +107,13 @@
                 <div class="card">
                     <!-- map  -->
                     <div class="card-body">
-
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="google-map">
+                                    <div id="map"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- termina card -->

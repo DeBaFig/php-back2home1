@@ -38,6 +38,7 @@ Route::get('/propriedade/{id}', [PropertyController::class, 'show'])->name("prop
 Route::prefix('admin')->group(function(){
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+    Route::get('/editar/destaques', [PropertyController::class, 'destaque'])->name('property.destaque')->middleware('is_admin');
 
     Route::get('/property/new', [PropertyController::class, 'create'])->name('property.property')->middleware('is_admin');
     Route::post('/property/new', [PropertyController::class, 'store'])->name('property.store')->middleware('is_admin');

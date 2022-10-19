@@ -1,5 +1,7 @@
+*{
+  font-family: "Raleway", sans-serif;
+}
 body {
-    font-family: "Inconsolata", monospace;
     color: #0d1e2d;
   }
   
@@ -7,19 +9,12 @@ body {
     color: #777;
     text-decoration: none;
   }
-  
+  #map {
+    height: 600px;
+    margin: 0px auto;
+  }
   a:hover {
     color: #000;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  .font-heading {
-    font-family: "Raleway", sans-serif;
   }
   
   .section {
