@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('title', $viewData["title"])
 @section('content')
-<!-- Open Content -->
 <section class="bg-light">
     <div class="container pb-5">
         <div class="row">
@@ -116,7 +115,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- termina card -->
             </div>
         </div>
     </div>

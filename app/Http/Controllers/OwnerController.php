@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Owner;
+use App\Models\Property;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -17,7 +18,11 @@ class OwnerController extends Controller
     {
         return view('property.index');
     }
-
+    public function table()
+    {
+        $viewData = Owner::all();
+        return view('owner.all')->with('viewData', $viewData);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -37,9 +42,6 @@ class OwnerController extends Controller
 
     public function store(Request $request)
     {
-        // $cpf = preg_replace("@[./-]@", "", $request->cpf);
-        // $phone = preg_replace("@[./-]@", "", $request->phone);
-        // dd($request);
         Owner::create($request->all());
         return redirect()->back();
     }
@@ -52,6 +54,14 @@ class OwnerController extends Controller
      */
     public function show($id)
     {
+        $viewData = Property::select('*')
+        ->join('owners', 'owners.cpf', '=', 'properties.cpf')
+        ->where('owners.id', '=', $id)
+        ->get();
+    $ownerData = Owner::where('id', '=', $id)->get();
+    return view('owner.show')
+        ->with('viewData', $viewData)
+        ->with('ownerData', $ownerData);
     }
 
     /**

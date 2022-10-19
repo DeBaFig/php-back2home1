@@ -21,8 +21,8 @@
                         <input type="text" name="title" id="title" class="form-control" required="true" autofocus>
                     </div>
                     <div class="col-md-6">
-                        <label for="title" class="form-label">CPF do proprietário:</label>
-                        <input type="text" name="title" id="title" class="form-control" required="true">
+                        <label for="cpf" class="form-label">CPF do proprietário:</label>
+                        <input type="cpf" name="cpf" id="cpf" class="form-control" required="true">
                     </div>
                     <div class="col-md-3">
                         <label for="price" class="form-label">Valor de Venda</label>
@@ -192,8 +192,6 @@
         </div>
     </div>
     </form>
-</div>
-</div>
 </div>
 
 @endsection

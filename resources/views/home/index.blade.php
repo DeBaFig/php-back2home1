@@ -26,7 +26,7 @@
         <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
             @foreach($viewData['destaque'] as $key => $detalhe)
             <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-                <a href="{{ route('property.show', ['id' => $detalhe['id'] ] ) }}" class="item-wrap fancybox">
+                <a href="{{ route('home.show', ['id' => $detalhe['id'] ] ) }}" class="item-wrap fancybox">
                     <div class="work-info">
                         <h3>{{ $detalhe['title'] }}</h3>
                     </div>
@@ -46,7 +46,7 @@
         <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
             @foreach($viewData['popular'] as $key => $detalhe)
             <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-                <a href="{{ route('property.show', ['id' => $detalhe['id'] ] ) }}" class="item-wrap fancybox">
+                <a href="{{ route('home.show', ['id' => $detalhe['id'] ] ) }}" class="item-wrap fancybox">
                     <div class="work-info">
                         <h3>{{ $detalhe['title'] }}</h3>
                     </div>

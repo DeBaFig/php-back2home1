@@ -14,9 +14,8 @@
 
     <title>{{ config('app.name') }}</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
     <link rel="stylesheet" href="{{asset('assets-admin/css/style.css') }}">
     <script src="https://kit.fontawesome.com/6e7aa9ccc9.js" crossorigin="anonymous"></script>
     
@@ -35,20 +34,22 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa-solid fa-house"></i>Propriedades</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('property.property') }}">Adicionar</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{ route('home') }}">Editar</a></li>
-                            <li><i class="fa fa-bars"></i><a href="{{ route('home') }}">Excluir</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="{{ route('home') }}">Tornar Destaque</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{ route('home') }}">Tornar Popular</a></li>
+                            <li><i class="fa-solid fa-star"></i><a href="{{ route('property.all') }}">Todos Imóveis</a></li>
+                            <li><i class="fa-duotone fa-plus"></i><a href="{{ route('property.add') }}">Adicionar</a></li>
+                            <li><i class="fa-solid fa-pen-to-square"></i><a href="{{ route('admin.dashboard') }}">Editar</a></li>
+                            <li><i class="fa-solid fa-trash"></i><a href="{{ route('admin.dashboard') }}">Excluir</a></li>
+                            <li><i class="fa fa-id-card-o"></i><a href="{{ route('admin.dashboard') }}">Tornar Destaque</a></li>
+                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{ route('admin.dashboard') }}">Tornar Popular</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="menu-icon fa-solid fa-user"></i>Proprietários</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{ route('home') }}">Adicionar</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{ route('home') }}">Editar</a></li>
-                            <li><i class="fa fa-bars"></i><a href="{{ route('home') }}">Excluir</a></li>
+                            <li><i class="fa-solid fa-star"></i><a href="{{ route('owner.all') }}">Todos Proprietários</a></li>
+                            <li><i class="fa-duotone fa-plus"></i><a href="{{ route('owner.add') }}">Adicionar</a></li>
+                            <li><i class="fa-solid fa-pen-to-square"></i><a href="{{ route('admin.dashboard') }}">Editar</a></li>
+                            <li><i class="fa-solid fa-trash"></i><a href="{{ route('admin.dashboard') }}">Excluir</a></li>
                         </ul>
                     </li>
                     <li class="menu-icon">

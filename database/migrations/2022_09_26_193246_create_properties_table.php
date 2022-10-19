@@ -21,6 +21,7 @@ class CreatePropertiesTable extends Migration
             $table->string('user_id');
             $table->integer('reference_n');
             $table->string('title');
+            $table->string('cpf');
             $table->longText('description')->nullable();
             $table->string('address')->nullable();
             $table->integer('number_property')->nullable();

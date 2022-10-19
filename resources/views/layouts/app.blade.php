@@ -73,7 +73,7 @@
                             <a class="dropdown-item" href="{{ route('owner.add') }}">
                                 {{ __('Adicionar Proprietário') }}
                             </a>
-                            <a class="dropdown-item" href="{{ route('property.property') }}">
+                            <a class="dropdown-item" href="{{ route('property.add') }}">
                                 {{ __('Adicionar Imóvel') }}
                             </a>
                             <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
