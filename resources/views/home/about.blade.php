@@ -18,17 +18,17 @@
                 <div class="card-header">
                   Adriana E F Rocha
                 </div>
-                <img src="{{ asset('assets/img/team/team1.jpeg')}}" class="card-img-top" alt="">
+                <img src="{{ asset('assets/img/team/team1.jpeg')}}" class="card-img-top" alt="Imagem mostrando a fotografia de uma mulher chamada Adriana">
                 <div class="card-body">
                   <p class="card-text">Administradora e Desenvolvedora</p>
                   <!-- <a href="#" class="btn btn-success">Go somewhere</a> -->
                 </div>
                 <div class="card-footer text-muted">
                   <div class="inline">
-                    <a href="mailto:adrianalibras@gmail.com"><img src="{{ asset('assets/img/icons/gmail.png')}}" class="col-2" alt=""></a>
-                    <a href="https://www.linkedin.com/in/adriana-ewerling-ferreira-da-rocha/"><img src="{{ asset('assets/img/icons/linkedin.png')}}" class="col-2" alt=""></a>
-                    <a href="https://github.com/AdrianaEFRocha" title='Github'><img src="{{ asset('assets/img/icons/github-sign.png')}}" class="col-2" alt=""></a>
-                    <a href="https://whatsa.me/5549999733703" title='Whatsapp'><img src="{{ asset('assets/img/icons/whatsapp.png')}}" class="col-2" alt=""></a>
+                    <a href="mailto:adrianalibras@gmail.com"><img src="{{ asset('assets/img/icons/gmail.png')}}" class="col-2" alt="Imagem mostrando o ícone da aplicação Gmail"></a>
+                    <a href="https://www.linkedin.com/in/adriana-ewerling-ferreira-da-rocha/"><img src="{{ asset('assets/img/icons/linkedin.png')}}" class="col-2" alt="Imagem mostrando o ícone da aplicação Linkedin"></a>
+                    <a href="https://github.com/AdrianaEFRocha" title='Github'><img src="{{ asset('assets/img/icons/github-sign.png')}}" class="col-2" alt="Imagem mostrando o ícone da aplicação Github"></a>
+                    <a href="https://whatsa.me/5549999733703" title='Whatsapp'><img src="{{ asset('assets/img/icons/whatsapp.png')}}" class="col-2" alt="Imagem mostrando o ícone da aplicação Whatsapp"></a>
                   </div>
                 </div>
               </div>
@@ -38,17 +38,17 @@
                 <div class="card-header">
                   Denize B Figueiredo
                 </div>
-                <img src="{{ asset('assets/img/team/team2.jpeg')}}" class="card-img-top" alt="">
+                <img src="{{ asset('assets/img/team/team2.jpeg')}}" class="card-img-top" alt="Imagem mostrando a fotografia de uma mulher chamada Denize">
                 <div class="card-body">
                   <p class="card-text">Desenvolvedora</p>
                   <!-- <a href="#" class="btn btn-success">Go somewhere</a> -->
                 </div>
                 <div class="card-footer text-muted">
                   <div class="inline">
-                    <a href="mailto:denize.f.bassi@gmail.com"><img src="{{ asset('assets/img/icons/gmail.png')}}" class="col-2" alt=""></a>
-                    <a href="https://www.linkedin.com/in/dbfigueiredo/"><img src="{{ asset('assets/img/icons/linkedin.png')}}" class="col-2" alt=""></a>
-                    <a href="https://github.com/DeBaFig" title='Github'><img src="{{ asset('assets/img/icons/github-sign.png')}}" class="col-2" alt=""></a>
-                    <a href="https://whatsa.me/5547988184372" title='Whatsapp'><img src="{{ asset('assets/img/icons/whatsapp.png')}}" class="col-2" alt=""></a>
+                    <a href="mailto:denize.f.bassi@gmail.com"><img src="{{ asset('assets/img/icons/gmail.png')}}" class="col-2" alt="Imagem mostrando o ícone da aplicação Gmail"></a>
+                    <a href="https://www.linkedin.com/in/dbfigueiredo/"><img src="{{ asset('assets/img/icons/linkedin.png')}}" class="col-2" alt="Imagem mostrando o ícone da aplicação Linkedin"></a>
+                    <a href="https://github.com/DeBaFig" title='Github'><img src="{{ asset('assets/img/icons/github-sign.png')}}" class="col-2" alt="Imagem mostrando o ícone da aplicação Github"></a>
+                    <a href="https://whatsa.me/5547988184372" title='Whatsapp'><img src="{{ asset('assets/img/icons/whatsapp.png')}}" class="col-2" alt="Imagem mostrando o ícone da aplicação Whatsapp"></a>
                   </div>
                 </div>
               </div>

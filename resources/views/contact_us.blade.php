@@ -6,7 +6,7 @@
     <div class="misc-wrapper">
       <h1 class="mb-2 mx-2">EM CONSTRUÇÃO</h1>
       <div class="mt-4">
-        <img src="{{ asset('assets\img\building\building.png')}}" alt="Imagem mostrando uma desenho de contrução de site" width="500" class="img-fluid"/>
+        <img src="{{ asset('assets\img\building\building.png')}}" alt="Imagem mostrando um desenho de contrução de site" width="500" class="img-fluid"/>
       </div>
     </div>
   </div>

@@ -7,7 +7,7 @@
         <div class="carousel-inner">
             @foreach($viewData['images'] as $key => $image)
             <div class="carousel-item {{ $key == 0 ? 'active' : '' }}" data-bs-interval="2000">
-                <img src="{{ asset('assets/img/home/' . $image)  }}" class="d-block w-100" style="max-height: 500px; opacity: 0.7; object-fit: cover; " alt="...">
+                <img src="{{ asset('assets/img/home/' . $image)  }}" class="d-block w-100" style="max-height: 500px; opacity: 0.7; object-fit: cover; " alt="Imagnes de imóveis passando na tela em movimento em forma de carrocel">
             </div>
             @endforeach
         </div>
