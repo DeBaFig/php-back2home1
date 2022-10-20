@@ -7,16 +7,18 @@
         <div class="card m-1">
           <div class="card-header h1">Sobre Nós</div>
           <div class="container">
-            Somos alunas do curso de PHP - do Projeto Entra 21 - 2022.<br>
-            Gostamos muito de aprender e amamos tecnologia. Tivemos o privilégio de participar deste projeto de capacitação e empregabilidade. E, como presente, recebemos a oportunidade de trabalharmos juntas para desenvolver este projeto para Conclusão de Curso. <br><br>
-            Esta é uma aplicação web, desenvolvida com: linguagem de programação PHP; MySql, Laravel, HTML, CSS, Bootstrap e Javascript. Professor orientador do projeto: Adriano Machado.
+            <p>Somos alunas do curso de PHP - do Projeto Entra 21 - 2022.<br></p>
+            <p>Gostamos muito de aprender e amamos tecnologia. Tivemos o privilégio de participar deste projeto de capacitação e empregabilidade. E, como presente, recebemos a oportunidade de trabalharmos juntas para desenvolver este projeto para Conclusão de Curso. <br><br></p>
+            <p>Esta é uma aplicação web, desenvolvida com: linguagem de programação PHP; MySql, Laravel, HTML, CSS, Bootstrap e Javascript. </p>
+            <p>Professor orientador do projeto: Adriano Machado.</p>
           </div>
+          <br>
           <h2 style="text-align:center">❤️ Nosso Time ❤️ </h2>
 
 
           <!-- ----------------  -->
           <div id="portfolio-grid" class="row  no-gutter" >
-            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4 d-flex align-items-baseline">
+            <div class="item web col-sm-6 col-md-4 col-lg-6 mb-4 d-flex align-items-baseline">
               <div class="card text-center justify-content-between">
                 <div class="card-header">
                   Adriana E F Rocha
@@ -35,7 +37,7 @@
                 </div>
               </div>
             </div>
-            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
+            <div class="item web col-sm-6 col-md-4 col-lg-6 mb-4">
               <div class="card text-center justify-content-between">
                 <div class="card-header">
                   Denize B Figueiredo
@@ -54,7 +56,9 @@
                 </div>
               </div>
             </div>
-            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
+          </div>
+          <div id="portfolio-grid" class="row justify-content-around" >
+            <div class="item web col-sm-6 col-md-4 col-lg-6 mb-4">
               <div class="card text-center justify-content-between">
                 <div class="card-header">
                   Adriano Machado
