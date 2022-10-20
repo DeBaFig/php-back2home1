@@ -21,7 +21,6 @@
                 <img src="{{ asset('assets/img/team/team1.jpeg')}}" class="card-img-top" alt="">
                 <div class="card-body">
                   <p class="card-text">Administradora e Desenvolvedora</p>
-                  <!-- <a href="#" class="btn btn-success">Go somewhere</a> -->
                 </div>
                 <div class="card-footer text-muted">
                   <div class="inline">
@@ -41,7 +40,6 @@
                 <img src="{{ asset('assets/img/team/team2.jpeg')}}" class="card-img-top" alt="">
                 <div class="card-body">
                   <p class="card-text">Desenvolvedora</p>
-                  <!-- <a href="#" class="btn btn-success">Go somewhere</a> -->
                 </div>
                 <div class="card-footer text-muted">
                   <div class="inline">
@@ -49,6 +47,25 @@
                     <a href="https://www.linkedin.com/in/dbfigueiredo/"><img src="{{ asset('assets/img/icons/linkedin.png')}}" class="col-2" alt=""></a>
                     <a href="https://github.com/DeBaFig" title='Github'><img src="{{ asset('assets/img/icons/github-sign.png')}}" class="col-2" alt=""></a>
                     <a href="https://whatsa.me/5547988184372" title='Whatsapp'><img src="{{ asset('assets/img/icons/whatsapp.png')}}" class="col-2" alt=""></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-5 p-2 m-4">
+              <div class="card text-center justify-content-between">
+                <div class="card-header">
+                  Adriano Machado
+                </div>
+                <img src="{{ asset('assets/img/team/team3.jpg')}}" class="card-img-top" alt="">
+                <div class="card-body">
+                  <p class="card-text">Instrutor e Desenvolvedor</p>
+                </div>
+                <div class="card-footer text-muted">
+                  <div class="inline">
+                    <a href="mailto:adriano@sol.app.br"><img src="{{ asset('assets/img/icons/gmail.png')}}" class="col-2" alt=""></a>
+                    <a href="https://www.linkedin.com/in/xadrak/"><img src="{{ asset('assets/img/icons/linkedin.png')}}" class="col-2" alt=""></a>
+                    <a href="https://github.com/Machado-tec" title='Github'><img src="{{ asset('assets/img/icons/github-sign.png')}}" class="col-2" alt=""></a>
+                    <a href="https://whatsa.me/5567992636781" title='Whatsapp'><img src="{{ asset('assets/img/icons/whatsapp.png')}}" class="col-2" alt=""></a>
                   </div>
                 </div>
               </div>
