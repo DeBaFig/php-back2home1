@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Owner;
+use App\Models\Property;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -17,7 +18,11 @@ class OwnerController extends Controller
     {
         return view('property.index');
     }
-
+    public function table()
+    {
+        $viewData = Owner::all();
+        return view('owner.all')->with('viewData', $viewData);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -37,9 +42,6 @@ class OwnerController extends Controller
 
     public function store(Request $request)
     {
-        // $cpf = preg_replace("@[./-]@", "", $request->cpf);
-        // $phone = preg_replace("@[./-]@", "", $request->phone);
-        // dd($request);
         Owner::create($request->all());
         return redirect()->back();
     }
@@ -52,6 +54,14 @@ class OwnerController extends Controller
      */
     public function show($id)
     {
+        $viewData = Property::select('*')
+            ->join('owners', 'owners.cpf', '=', 'properties.cpf')
+            ->where('owners.id', '=', $id)
+            ->get();
+        $ownerData = Owner::where('id', '=', $id)->get();
+        return view('owner.show')
+            ->with('viewData', $viewData)
+            ->with('ownerData', $ownerData);
     }
 
     /**
@@ -60,11 +70,29 @@ class OwnerController extends Controller
      * @param  \App\Models\owner  $owner
      * @return \Illuminate\Http\Response
      */
-    public function edit(owner $owner)
+    public function edit(Request $request)
     {
-        //
+        $owner = Owner::find($request->id);
+        $owner->name = $request->name;
+        $owner->cpf = $request->cpf;
+        $owner->email = $request->email;
+        $owner->address = $request->address;
+        $owner->number_owner = $request->number_owner;
+        $owner->district = $request->district;
+        $owner->city = $request->city;
+        $owner->state = $request->state;
+        $owner->cep = $request->phone;
+        $owner->save();
+        return redirect()->back();
     }
 
+    // create the form with the data 
+    public function formEdit($id)
+    {
+        $ownerData = Owner::where('id', '=', $id)->get();
+        return view('owner.edit')
+            ->with('ownerData', $ownerData);
+    }
     /**
      * Update the specified resource in storage.
      *

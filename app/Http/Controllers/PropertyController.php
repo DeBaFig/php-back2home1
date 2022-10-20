@@ -20,7 +20,11 @@ class PropertyController extends Controller
     {
         return view('property.index');
     }
-
+    public function table()
+    {
+        $viewData = Property::all();
+        return view('property.all')->with('viewData', $viewData);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -29,7 +33,7 @@ class PropertyController extends Controller
     public function create()
     {
         $reference = Property::count() + 1;
-        return view('property.property')->with('reference_n', $reference);
+        return view('property.add')->with('reference_n', $reference);
     }
 
     /**
@@ -45,15 +49,19 @@ class PropertyController extends Controller
             'purpose' => 'required',
         ]);
         $property = Property::create($request->all());
-        foreach($request->images as $image){
-            $filename = $image->store('images');
-            $image->move(public_path('images'), $filename);
-            Photo::create([
-                'property_id' => $property->id,
-                'photo_image' => $filename
-            ]);
+
+        if ($request->images) {
+            foreach ($request->images as $image) {
+                $filename = $image->store('images');
+                $image->move(public_path('images'), $filename);
+                Photo::create([
+                    'property_id' => $property->id,
+                    'photo_image' => $filename
+                ]);
+            }
         }
-        return redirect('home');
+
+        return redirect()->back();
     }
 
     /**'home'
@@ -62,16 +70,7 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $viewData = [];
-        $viewData["title"] = "Home-Back2Home1";
-        $viewData['property'] = Property::where('id', '=', $id)->get();
-        $viewData['photos'] = Photo::join('properties', 'properties.id', '=', 'photos.property_id')
-            ->where('properties.id', '=', $id)->get();
-        return view('property.show')
-            ->with('viewData', $viewData);
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -81,9 +80,15 @@ class PropertyController extends Controller
      */
     public function edit(Property $property)
     {
-        //
+        $viewData = Property::where('id', '=', $property);
+        return view('property.all')->with('viewData', $viewData);
     }
-
+    
+    public function formEdit(Property $property)
+    {
+        $viewData = Property::where('id', '=', $property);
+        return view('property.all')->with('viewData', $viewData);
+    }
     /**
      * Update the specified resource in storage.
      *

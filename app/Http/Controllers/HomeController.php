@@ -87,4 +87,14 @@ class HomeController extends Controller
     {
         return view('admin.home');
     }
+    public function show($id)
+    {
+        $viewData = [];
+        $viewData["title"] = "Home-Back2Home1";
+        $viewData['property'] = Property::where('id', '=', $id)->get();
+        $viewData['photos'] = Photo::join('properties', 'properties.id', '=', 'photos.property_id')
+            ->where('properties.id', '=', $id)->get();
+        return view('home.show')
+            ->with('viewData', $viewData);
+    }
 }

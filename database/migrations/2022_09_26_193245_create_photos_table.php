@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Photo;
 
 class CreatePhotosTable extends Migration
 {
@@ -19,6 +20,8 @@ class CreatePhotosTable extends Migration
             $table->string('property_id');
             $table->timestamps();
         });
+        DB::statement("ALTER TABLE photos ADD img_blob LONGBLOB");
+
     }
 
     /**

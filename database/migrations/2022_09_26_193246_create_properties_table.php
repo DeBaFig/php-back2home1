@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Property;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,12 +21,13 @@ class CreatePropertiesTable extends Migration
             $table->string('user_id');
             $table->integer('reference_n');
             $table->string('title');
+            $table->string('cpf');
             $table->longText('description')->nullable();
             $table->string('address')->nullable();
             $table->integer('number_property')->nullable();
             $table->string('district', 100)->nullable();
             $table->string('city', 100)->nullable();
-            $table->string('cep', 10)->nullable();
+            $table->string('cep', 25)->nullable();
             $table->enum('state', ["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"])->nullable();
             $table->integer('total_size')->nullable();
             $table->integer('useful_size')->nullable();
@@ -43,6 +45,7 @@ class CreatePropertiesTable extends Migration
             $table->string('comments', 255)->nullable();
             $table->timestamps();
         });
+
     }
 
     /**

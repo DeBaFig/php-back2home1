@@ -1,44 +1,38 @@
+* {
+    font-family: "Raleway", sans-serif;
+}
 body {
-    font-family: "Inconsolata", monospace;
     color: #0d1e2d;
-  }
-  
-  a {
+}
+
+a {
     color: #777;
     text-decoration: none;
-  }
-  
-  a:hover {
+}
+#map {
+    height: 600px;
+    margin: 0px auto;
+}
+a:hover {
     color: #000;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  .font-heading {
-    font-family: "Raleway", sans-serif;
-  }
-  
-  .section {
+}
+
+.section {
     padding: 7rem 0;
-  }
-  
-  
-  .item {
+}
+
+.item {
     border: none;
     margin-bottom: 30px;
-  }
-  
-  .item .item-wrap {
+}
+
+.item .item-wrap {
     display: block;
     position: relative;
     overflow: hidden;
-  }
-  
-  .item .item-wrap:after {
+}
+
+.item .item-wrap:after {
     z-index: 2;
     position: absolute;
     content: "";
@@ -50,14 +44,14 @@ body {
     visibility: hidden;
     opacity: 0;
     transition: 0.3s all ease-in-out;
-  }
-  
-  .item .item-wrap img {
+}
+
+.item .item-wrap img {
     transition: 0.3s transform ease;
     transform: scale(1);
-  }
-  
-  .item .item-wrap>.work-info {
+}
+
+.item .item-wrap > .work-info {
     position: absolute;
     top: 50%;
     width: 100%;
@@ -69,35 +63,67 @@ body {
     visibility: hidden;
     margin-top: 20px;
     transition: 0.3s all ease;
-  }
-  
-  .item .item-wrap>.work-info h3 {
+}
+
+.item .item-wrap > .work-info h3 {
     font-size: 20px;
     margin-bottom: 0;
-  }
-  
-  .item .item-wrap>.work-info span {
+}
+
+.item .item-wrap > .work-info span {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-  }
-  
-  .item .item-wrap:hover {
+}
+
+.item .item-wrap:hover {
     text-decoration: none;
-  }
-  
-  .item .item-wrap:hover img {
+}
+
+.item .item-wrap:hover img {
     transform: scale(1.05);
-  }
-  
-  .item .item-wrap:hover:after {
+}
+
+.item .item-wrap:hover:after {
     opacity: 1;
     visibility: visible;
-  }
-  
-  .item .item-wrap:hover .work-info {
+}
+
+.item .item-wrap:hover .work-info {
     margin-top: 0px;
     opacity: 1;
     visibility: visible;
-  }
-  
+}
+#weatherWidget .currentDesc {
+    color: #ffffff!important;
+}
+    .traffic-chart {
+        min-height: 335px;
+    }
+    #flotPie1  {
+        height: 150px;
+    }
+    #flotPie1 td {
+        padding:3px;
+    }
+    #flotPie1 table {
+        top: 20px!important;
+        right: -10px!important;
+    }
+    .chart-container {
+        display: table;
+        min-width: 270px ;
+        text-align: left;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    #flotLine5  {
+         height: 105px;
+    }
+
+    #flotBarChart {
+        height: 150px;
+    }
+    #cellPaiChart{
+        height: 160px;
+    }

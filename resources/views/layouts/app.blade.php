@@ -16,19 +16,13 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" />
-
-    <!-- Include Styles -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-
-    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/css/app.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('assets/show/css/templatemo.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/show/css/slick.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/show/css/slick-theme.css') }}">
     <!-- Ícones -->
     <script src="https://kit.fontawesome.com/6e7aa9ccc9.js" crossorigin="anonymous"></script>
-    <!-- Scripts -->
+    <!-- Include Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="{{asset('assets/css/app.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -79,8 +73,11 @@
                             <a class="dropdown-item" href="{{ route('owner.add') }}">
                                 {{ __('Adicionar Proprietário') }}
                             </a>
-                            <a class="dropdown-item" href="{{ route('property.property') }}">
+                            <a class="dropdown-item" href="{{ route('property.add') }}">
                                 {{ __('Adicionar Imóvel') }}
+                            </a>
+                            <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
+                                {{ __('Voltar para o Dashboard') }}
                             </a>
                             @endif
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -101,6 +98,27 @@
     <div id="app">
         @yield('content')
     </div>
+
+
+
+
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Google Map -->
+    <script src="{{ asset('plugins/google-map/map.js')}}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>
+
     <footer class="w-100 py-4 flex-shrink-0">
         <div class="container py-4">
             <div class="row gy-4 gx-5">
@@ -110,7 +128,7 @@
                     <p class="small text-white">Avenida XXXXX, 00 - Sala 00</p>
                     <p class="small text-white">Bairro - Cidade - Estado</p>
                     <br><br>
-                    <p class="small text-white mb-0">&copy; Copyrights. All rights reserved.  <a class="text-white" href="https://back2home1.herokuapp.com/"> ---  h2b1</a></p>
+                    <p class="small text-white mb-0">&copy; Copyrights. All rights reserved. <a class="text-white" href="https://back2home1.herokuapp.com/"> --- h2b1</a></p>
                 </div>
                 <div class="col-lg-3 col-md-10">
                     <h5 class="text-white mb-3">Instituição</h5>
@@ -123,8 +141,6 @@
                 <div class="col-lg-3 col-md-10">
                     <h5 class="text-white mb-3">Imóveis</h5>
                     <ul class="list-unstyled text-white">
-                        <!-- <li><a class="text-white" href="#">Cadastre seu Imóvel</a></li> -->
-                        <!-- <li><a class="text-white" href="#">Peça um imóvel do seu jeito</a></li> -->
                         <li><a class="text-white" href="{{ route('home.simulador') }}">Financiamentos e bancos</a></li>
                         <li><a href="#"></a></li>
                     </ul>
@@ -139,18 +155,8 @@
             </div>
         </div>
     </footer>
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
-        </div>
-    </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<!-- <script src="{{ asset('assets/js/script.js')}}"></script> -->
+
+
 </body>
 
 </html>
