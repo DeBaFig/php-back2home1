@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Photo;
 use App\Models\Property;
-// use App\Models\Owner;
+use App\Models\Owner;
 use Illuminate\Http\Request;
-use Auth;
 
 class PropertyController extends Controller
 {
@@ -24,6 +23,18 @@ class PropertyController extends Controller
     {
         $viewData = Property::all();
         return view('property.all')->with('viewData', $viewData);
+    }
+
+    public function show($id)
+    {
+        $propertyData = Property::select('*')
+            ->join('owners', 'owners.cpf', '=', 'properties.cpf')
+            ->where('owners.id', '=', $id)
+            ->get();
+        $ownerData = Owner::where('id', '=', $id)->get();
+        return view('property.show')
+            ->with('propertyData', $propertyData)
+            ->with('ownerData', $ownerData);
     }
     /**
      * Show the form for creating a new resource.
@@ -78,27 +89,16 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function edit(Property $property)
+    public function edit($id)
     {
-        $viewData = Property::where('id', '=', $property);
+        $viewData = Property::find($id)->get();
         return view('property.all')->with('viewData', $viewData);
     }
     
-    public function formEdit(Property $property)
+    public function formEdit($id)
     {
-        $viewData = Property::where('id', '=', $property);
+        $viewData = Property::find($id)->get();
         return view('property.all')->with('viewData', $viewData);
-    }
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Property  $property
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Property $property)
-    {
-        //
     }
 
     /**
@@ -107,8 +107,11 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Property $property)
+    public function destroy($id)
     {
-        //
+        $propertyData = Property::find($id);
+        $propertyData->isActive = 0;
+        $propertyData->save();
+        return redirect()->back();
     }
 }

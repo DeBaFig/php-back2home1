@@ -45,6 +45,7 @@ Route::prefix('admin')->group(function(){
     Route::get('/property/form/{id}', [PropertyController::class, 'formEdit'])->name('property.form.edit')->middleware('is_admin');
     Route::post('/property/edit/{id}', [PropertyController::class, 'edit'])->name('property.edit')->middleware('is_admin');
     Route::get('/property/destaques', [PropertyController::class, 'destaque'])->name('property.destaque')->middleware('is_admin');
+    Route::post('/property/delete/{id}', [PropertyController::class, 'destroy'])->name('property.delete')->middleware('is_admin');
 
     Route::get('/owner/new', [OwnerController::class, 'create'])->name('owner.add')->middleware('is_admin');
     Route::get('/owner/all', [OwnerController::class, 'table'])->name('owner.all')->middleware('is_admin');
