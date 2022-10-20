@@ -12,8 +12,11 @@
             Esta é uma aplicação web, desenvolvida com: linguagem de programação PHP; MySql, Laravel, HTML, CSS, Bootstrap e Javascript. Professor orientador do projeto: Adriano Machado.
           </div>
           <h2 style="text-align:center">❤️ Nosso Time ❤️ </h2>
-          <div class="card-body row">
-            <div class="col-5 p-2 m-4">
+
+
+          <!-- ----------------  -->
+          <div id="portfolio-grid" class="row  no-gutter" >
+            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4 d-flex align-items-baseline">
               <div class="card text-center justify-content-between">
                 <div class="card-header">
                   Adriana E F Rocha
@@ -32,7 +35,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-5 p-2 m-4">
+            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
               <div class="card text-center justify-content-between">
                 <div class="card-header">
                   Denize B Figueiredo
@@ -51,7 +54,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-5 p-2 m-4">
+            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
               <div class="card text-center justify-content-between">
                 <div class="card-header">
                   Adriano Machado
@@ -71,6 +74,12 @@
               </div>
             </div>
           </div>
+
+
+
+
+          <!-- ------------------------  -->
+
         </div>
       </div>
     </div>

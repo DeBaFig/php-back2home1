@@ -19,32 +19,32 @@
                     </div>
                     <div class="col-md-10">
                         <label for="title" class="form-label">Titúlo do Anúncio:</label>
-                        <input type="text" name="title" value="{{ $property['id'] }}" id="title" class="form-control" required="true" autofocus>
+                        <input type="text" name="title" value="{{ $property['title'] }}" id="title" class="form-control" required="true" autofocus>
                     </div>
                     <div class="col-md-6">
                         <label for="cpf" class="form-label">CPF do proprietário:</label>
-                        <input type="cpf" name="cpf" id="cpf" value="{{ $property['id'] }}" class="form-control" required="true">
+                        <input type="cpf" name="cpf" id="cpf" value="{{ $property['cpf'] }}" class="form-control" required="true">
                     </div>
                     <div class="col-md-3">
                         <label for="price" class="form-label">Valor de Venda</label>
-                        <input type="number" min="0" id="price" value="{{ $property['id'] }}" name="price" class="form-control" placeholder="R$ 0,00">
+                        <input type="number" min="0" id="price" value="{{ $property['price'] }}" name="price" class="form-control" placeholder="R$ 0,00">
                     </div>
                     <div class="col-md-3">
                         <label for="townhouse_price" class="form-label">Valor Condomínio</label>
-                        <input type="number" id="townhouse_price" value="{{ $property['id'] }}" name="townhouse_price" class="form-control">
+                        <input type="number" id="townhouse_price" value="{{ $property['townhouse_price'] }}" name="townhouse_price" class="form-control">
                     </div>
                 </div>
                 <div class="row g-3 mt-4">
                     <div class="col-md-6 mt-2">
                         <label for="purpose" class="form-label">Objetivo:</label>
-                        <select class="form-select" id="purpose" value="{{ $property['id'] }}" name="purpose" required="true">
+                        <select class="form-select" id="purpose" value="{{ $property['purpose'] }}" name="purpose" required="true">
                             <option value="1">Vender</option>
                             <option value="2">Alugar</option>
                         </select>
                     </div>
                     <div class="col-md-6 mt-2">
                         <label for="property_type" class="form-label">Tipo do Imóvel:</label>
-                        <select class="form-select " id="property_type" value="{{ $property['id'] }}" name="property_type">
+                        <select class="form-select " id="property_type" value="{{ $property['property_type'] }}" name="property_type">
                             <option value="1">Apartamento</option>
                             <option value="2">Kitnet</option>
                             <option value="3">Cobertura</option>
@@ -63,29 +63,29 @@
                 <div class="row g-3">
                     <div class="col-md-6">
                         <label for="address" class="form-label">Endereço</label>
-                        <input type="text" id="address" name="address" value="{{ $property['id'] }}" class="form-control">
+                        <input type="text" id="address" name="address" value="{{ $property['address'] }}" class="form-control">
                     </div>
                     <div class="col-md-2">
                         <label for="number" class="form-label">Número</label>
-                        <input type="number" min="0" id="number" value="{{ $property['id'] }}" name="number_property" class="form-control">
+                        <input type="number" min="0" id="number" value="{{ $property['number_property'] }}" name="number_property" class="form-control">
                     </div>
                     <div class="col-md-4">
                         <label for="cep_" class="form-label">CEP</label>
-                        <input type="text" id="cep" name="cep" value="{{ $property['id'] }}" class="form-control" placeholder="Ex: 00000-000" maxlength="15">
+                        <input type="text" id="cep" name="cep" value="{{ $property['cep'] }}" class="form-control" placeholder="Ex: 00000-000" maxlength="15">
                     </div>
                 </div>
                 <div class="row g-3">
                     <div class="col-md-4">
                         <label for="district" class="form-label">Bairro</label>
-                        <input type="text" id="district" value="{{ $property['id'] }}" name="district" class="form-control">
+                        <input type="text" id="district" value="{{ $property['district'] }}" name="district" class="form-control">
                     </div>
                     <div class="col-md-4">
                         <label for="city" class="form-label">Cidade</label>
-                        <input type="text" id="city" value="{{ $property['id'] }}" name="city" class="form-control">
+                        <input type="text" id="city" value="{{ $property['city'] }}" name="city" class="form-control">
                     </div>
                     <div class="col-md-4 mt-2">
                         <label for="state" class="form-label">Estado</label>
-                        <select class="form-select " value="{{ $property['id'] }}" id="state" name="state">
+                        <select class="form-select " value="{{ $property['state'] }}" id="state" name="state">
                             <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>
                             <option value="AP">Amapá</option>
@@ -119,7 +119,7 @@
                 <div class="row g-3">
                     <div class="col-md-3">
                         <label class="form-label" for="master_bedrooms">Nº de Suítes:</label>
-                        <select class="form-select " id="master_bedrooms" value="{{ $property['id'] }}" name="master_bedrooms">
+                        <select class="form-select " id="master_bedrooms" value="{{ $property['master_bedrooms'] }}" name="master_bedrooms">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -129,7 +129,7 @@
                     </div>
                     <div class="col-md-3">
                         <label class="form-label" for="bedrooms">Nº de Quartos:</label>
-                        <select class="form-select " value="{{ $property['id'] }}" id="bedrooms" name="bedrooms">
+                        <select class="form-select " value="{{ $property['bedrooms'] }}" id="bedrooms" name="bedrooms">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -139,7 +139,7 @@
                     </div>
                     <div class="col-md-3">
                         <label class="form-label" for="bathroom">Nº de Banheiros:</label>
-                        <select class="form-select " value="{{ $property['id'] }}"id="bathroom" name="bathroom">
+                        <select class="form-select " value="{{ $property['bathroom'] }}"id="bathroom" name="bathroom">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -149,7 +149,7 @@
                     </div>
                     <div class="col-md-3">
                         <label class="form-label" for="parking_lot">Vagas de Garagem:</label>
-                        <select class="form-select " value="{{ $property['id'] }}"id="parking_lot" name="parking_lot">
+                        <select class="form-select " value="{{ $property['parking_lot'] }}"id="parking_lot" name="parking_lot">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -161,27 +161,27 @@
                 <div class="row g-3">
                     <div class="col-md-4">
                         <label for="useful_size" class="form-label">Área Útil:</label>
-                        <input type="number" min="0" value="{{ $property['id'] }}"id="useful_size" name="useful_size" class="form-control" placeholder="m²">
+                        <input type="number" min="0" value="{{ $property['useful_size'] }}"id="useful_size" name="useful_size" class="form-control" placeholder="m²">
                     </div>
                     <div class="col-md-4">
                         <label for="private_size" class="form-label"> Área Privada: </label>
-                        <input type="number" min="0" value="{{ $property['id'] }}"id="private_size" name="private_size" class="form-control" placeholder="m²">
+                        <input type="number" min="0" value="{{ $property['private_size'] }}"id="private_size" name="private_size" class="form-control" placeholder="m²">
                     </div>
                     <div class="col-md-4">
                         <label for="total_size" class="form-label">Tamanho Total:</label>
-                        <input type="number" min="0" value="{{ $property['id'] }}"id="total_size" name="total_size" class="form-control" placeholder="m²">
+                        <input type="number" min="0" value="{{ $property['total_size'] }}"id="total_size" name="total_size" class="form-control" placeholder="m²">
                     </div>
                 </div>
                 <div class="row g-3">
                     <div class="col-md-12">
                         <label for="description" class="form-label">Descrição:</label>
-                        <textarea name="description" value="{{ $property['id'] }}" rows="10" id="description" class="form-control"></textarea>
+                        <textarea name="description" value="{{ $property['description'] }}" rows="10" id="description" class="form-control"></textarea>
                     </div>
                 </div>
                 <div class="row g-3">
                     <div class="col-md-12">
                         <label for="comments" class="form-label">Observações:</label>
-                        <textarea name="comments" value="{{ $property['id'] }}" id="comments" class="form-control"></textarea>
+                        <textarea name="comments" value="{{ $property['comments'] }}" id="comments" class="form-control"></textarea>
                     </div>
 
                 </div>

@@ -16,9 +16,9 @@
             <h3>{{ $detalhe['title'] }}</h3>
           </div>
           <div class="container" style="width:300px; height:300px; background-size:cover;">
-                    <img class="img-fluid" src="{{  $detalhe['photo_image'] }}" style="overflow: hidden;" >
+            <img class="img-fluid" src="{{  $detalhe['photo_image'] }}" style="overflow: hidden;">
 
-                    </div>
+          </div>
         </a>
       </div>
       @endforeach
