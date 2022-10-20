@@ -80,10 +80,15 @@ class PropertyController extends Controller
      */
     public function edit(Property $property)
     {
-        $viewData = Property::all();
+        $viewData = Property::where('id', '=', $property);
         return view('property.all')->with('viewData', $viewData);
     }
-
+    
+    public function formEdit(Property $property)
+    {
+        $viewData = Property::where('id', '=', $property);
+        return view('property.all')->with('viewData', $viewData);
+    }
     /**
      * Update the specified resource in storage.
      *

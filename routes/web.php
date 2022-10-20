@@ -43,11 +43,15 @@ Route::prefix('admin')->group(function(){
     Route::get('/property/all', [PropertyController::class, 'table'])->name('property.all')->middleware('is_admin');
     Route::post('/property/new', [PropertyController::class, 'store'])->name('property.store')->middleware('is_admin');
     Route::get('/property/show/{id}', [PropertyController::class, 'show'])->name('property.show')->middleware('is_admin');
+    Route::get('/property/form/{id}', [PropertyController::class, 'formEdit'])->name('property.form.edit')->middleware('is_admin');
+    Route::post('/property/edit/{id}', [PropertyController::class, 'edit'])->name('property.edit')->middleware('is_admin');
 
     Route::get('/owner/new', [OwnerController::class, 'create'])->name('owner.add')->middleware('is_admin');
     Route::get('/owner/all', [OwnerController::class, 'table'])->name('owner.all')->middleware('is_admin');
     Route::post('/owner/new', [OwnerController::class, 'store'])->name('owner.store')->middleware('is_admin');
     Route::get('/owner/show/{id}', [OwnerController::class, 'show'])->name('owner.show')->middleware('is_admin');
+    Route::get('/owner/form/{id}', [OwnerController::class, 'formEdit'])->name('owner.form.edit')->middleware('is_admin');
+    Route::post('/owner/edit/{id}', [OwnerController::class, 'edit'])->name('owner.edit')->middleware('is_admin');
     
 });
 

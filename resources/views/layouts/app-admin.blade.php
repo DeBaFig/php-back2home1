@@ -70,7 +70,7 @@
             <div class="top-left">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="{{ route('admin.dashboard') }}"><img  src="{{ asset('assets/img/logo/b2h1-2.png') }}" style="max-width:30px; height:auto;" alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="{{ route('admin.dashboard') }}"><img src="images/logo2.png" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="{{ route('admin.dashboard') }}"><img src="{{ asset('assets/img/logo/b2h1-1.png') }}" alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>
