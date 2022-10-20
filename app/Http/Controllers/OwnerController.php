@@ -93,16 +93,6 @@ class OwnerController extends Controller
         return view('owner.edit')
             ->with('ownerData', $ownerData);
     }
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\owner  $owner
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, owner $owner)
-    {
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -110,8 +100,11 @@ class OwnerController extends Controller
      * @param  \App\Models\owner  $owner
      * @return \Illuminate\Http\Response
      */
-    public function destroy(owner $owner)
+    public function destroy($id)
     {
-        //
+        $ownerData = Owner::find($id);
+        $ownerData->isActive = 0;
+        $ownerData->save();
+        return redirect()->back();
     }
 }

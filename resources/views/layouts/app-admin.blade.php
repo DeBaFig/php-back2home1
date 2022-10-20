@@ -48,8 +48,6 @@
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa-solid fa-star"></i><a href="{{ route('owner.all') }}">Todos Proprietários</a></li>
                             <li><i class="fa-duotone fa-plus"></i><a href="{{ route('owner.add') }}">Adicionar</a></li>
-                            <li><i class="fa-solid fa-pen-to-square"></i><a href="{{ route('admin.dashboard') }}">Editar</a></li>
-                            <li><i class="fa-solid fa-trash"></i><a href="{{ route('admin.dashboard') }}">Excluir</a></li>
                         </ul>
                     </li>
                     <li class="menu-icon">
