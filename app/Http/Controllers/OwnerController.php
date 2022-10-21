@@ -43,7 +43,7 @@ class OwnerController extends Controller
     public function store(Request $request)
     {
         Owner::create($request->all());
-        return redirect()->back();
+        return redirect()->route('owner.all');
     }
 
     /**
@@ -81,9 +81,9 @@ class OwnerController extends Controller
         $owner->district = $request->district;
         $owner->city = $request->city;
         $owner->state = $request->state;
-        $owner->cep = $request->phone;
+        $owner->cep = $request->cep;
         $owner->save();
-        return redirect()->back();
+        return redirect()->route('owner.all');
     }
 
     // create the form with the data 
@@ -93,16 +93,6 @@ class OwnerController extends Controller
         return view('owner.edit')
             ->with('ownerData', $ownerData);
     }
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\owner  $owner
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, owner $owner)
-    {
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -110,8 +100,11 @@ class OwnerController extends Controller
      * @param  \App\Models\owner  $owner
      * @return \Illuminate\Http\Response
      */
-    public function destroy(owner $owner)
+    public function destroy($id)
     {
-        //
+        $ownerData = Owner::select('*')->where('id', '=', $id)->first();
+        $ownerData->isActive = 0;
+        $ownerData->save();
+        return redirect()->back();
     }
 }

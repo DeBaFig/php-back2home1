@@ -26,7 +26,8 @@ class Owner extends Model
         'state',
         'cep',
         'phone',
-        'user_id'
+        'user_id',
+        'isActive'
     ];
 
     /**

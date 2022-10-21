@@ -16,6 +16,7 @@
         </tr>
     </thead>
     @foreach($viewData as $owner)
+    @if($owner['isActive'] == 1)
     <tbody class="table-success border border-success">
         <tr>
             <td>{{ $owner['name']}}</td>
@@ -24,11 +25,14 @@
             <td>{{ $owner['phone']}}</td>
             <td>{{ $owner['city'] . "-" . $owner['state'] }}</td>
             <td>{{ $owner['cep']}}</td>
-            <td><a href="{{ route('owner.show', ['id' => $owner['id'] ] ) }}"><i class="fa-solid fa-eye"></i></a></td>
-            <td><a href="{{ route('owner.form.edit', ['id' => $owner['id'] ] ) }}"><i class="fa-solid fa-pen"></i></a></td>
-            <td><a href="{{ route('owner.show', ['id' => $owner['id'] ] ) }}"><i class="fa-solid fa-trash"></i></a></td>
+            <td><a href="/admin/owner/show/{{$owner['id']}}"><i class="fa-solid fa-eye"></i></a></td>
+            <td><a href="/admin/owner/form/{{$owner['id']}}"><i class="fa-solid fa-pen"></i></a></td>
+            <td><a href="/admin/owner/delete/{{$owner['id']}}"><i class="fa-solid fa-trash"></i>
+                </a></td>
         </tr>
     </tbody>
+    @endif
     @endforeach
 </table>
+
 @endsection

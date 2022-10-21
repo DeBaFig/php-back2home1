@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Photo;
 use App\Models\Property;
-// use App\Models\Owner;
+use App\Models\Owner;
 use Illuminate\Http\Request;
-use Auth;
 
 class PropertyController extends Controller
 {
@@ -24,6 +23,19 @@ class PropertyController extends Controller
     {
         $viewData = Property::all();
         return view('property.all')->with('viewData', $viewData);
+    }
+
+    public function show($id)
+    {
+        $propertyData = Property::find($id)->get();
+        if ($propertyData->cpf != null) {
+            $ownerData = Owner::where('cpf', '=', $propertyData->cpf)->get();
+            return view('property.show')
+                ->with('propertyData', $propertyData)
+                ->with('ownerData', $ownerData);
+        } else {
+            return view('property.show')->with('error', 'Não foi possivel encontrar o cpf do proprietário, por gentileza verifique se está cadastrado.');
+        }
     }
     /**
      * Show the form for creating a new resource.
@@ -48,20 +60,37 @@ class PropertyController extends Controller
             'title' => 'required',
             'purpose' => 'required',
         ]);
-        $property = Property::create($request->all());
+        $cpf = Owner::select('cpf')->where('cpf', '=', $request->cpf)->get();
+        if (!$cpf->isEmpty()) {
+            $property = Property::create($request->all());
 
-        if ($request->images) {
-            foreach ($request->images as $image) {
-                $filename = $image->store('images');
-                $image->move(public_path('images'), $filename);
-                Photo::create([
-                    'property_id' => $property->id,
-                    'photo_image' => $filename
-                ]);
+            if ($request->images) {
+                foreach ($request->images as $image) {
+                    $filename = $image->store('images');
+                    $image->move(public_path('images'), $filename);
+                    Photo::create([
+                        'property_id' => $property->id,
+                        'photo_image' => $filename
+                    ]);
+                }
             }
+            return redirect()->route('property.all');
         }
+        return redirect()->route('property.add')->with('error', 'CPF não encontrado, por gentileza cadastrar o proprietário primeiro.');
+    }
 
-        return redirect()->back();
+
+
+    public function ownerCheck(Request $request)
+    {
+        $cpfFinded = Owner::select('cpf')->where('cpf', '=', $request->cpf)->get();
+        if ($cpfFinded->isEmpty()) {
+            return redirect()->route('property.add')->with('error', 'CPF não encontrado');
+        } else {
+            return redirect()->route('property.add')
+                ->with('result', 'CPF encontrado.')
+                ->with('cpfFinded', $cpfFinded);
+        }
     }
 
     /**'home'
@@ -78,27 +107,16 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function edit(Property $property)
+    public function edit($id)
     {
-        $viewData = Property::where('id', '=', $property);
+        $viewData = Property::find($id)->get();
         return view('property.all')->with('viewData', $viewData);
     }
-    
-    public function formEdit(Property $property)
+
+    public function formEdit($id)
     {
-        $viewData = Property::where('id', '=', $property);
+        $viewData = Property::find($id)->get();
         return view('property.all')->with('viewData', $viewData);
-    }
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Property  $property
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Property $property)
-    {
-        //
     }
 
     /**
@@ -107,8 +125,32 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Property $property)
+    public function destroy($id)
     {
-        //
+        $propertyData = Property::select('*')->where('id', '=', $id)->first();
+        $propertyData->isActive = 0;
+        $propertyData->save();
+        return redirect()->back();
+    }
+    
+    public function destaqueOn($id)
+    {
+        Property::where('id', '=', $id)->update(['destaque' => 1]);
+        return redirect()->back();
+    }
+    public function destaqueOff($id)
+    {
+        Property::where('id', '=', $id)->update(['destaque' => 0]);
+        return redirect()->back();
+    }
+    public function popularOn($id)
+    {
+        Property::where('id', '=', $id)->update(['popular' => 1]);
+        return redirect()->back();
+    }
+    public function popularOff($id)
+    {
+        Property::where('id', '=', $id)->update(['popular' => 0]);
+        return redirect()->back();
     }
 }

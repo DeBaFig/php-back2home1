@@ -27,7 +27,7 @@ class CreatePropertiesTable extends Migration
             $table->integer('number_property')->nullable();
             $table->string('district', 100)->nullable();
             $table->string('city', 100)->nullable();
-            $table->string('cep', 25)->nullable();
+            $table->string('cep')->nullable();
             $table->enum('state', ["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"])->nullable();
             $table->integer('total_size')->nullable();
             $table->integer('useful_size')->nullable();
