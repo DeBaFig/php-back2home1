@@ -18,8 +18,8 @@
 
     <link rel="stylesheet" href="{{asset('assets-admin/css/style.css') }}">
     <script src="https://kit.fontawesome.com/6e7aa9ccc9.js" crossorigin="anonymous"></script>
-    
-    
+
+
 </head>
 
 <body>
@@ -36,15 +36,11 @@
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa-solid fa-star"></i><a href="{{ route('property.all') }}">Todos Imóveis</a></li>
                             <li><i class="fa-duotone fa-plus"></i><a href="{{ route('property.add') }}">Adicionar</a></li>
-                            <li><i class="fa-solid fa-pen-to-square"></i><a href="{{ route('admin.dashboard') }}">Editar</a></li>
-                            <li><i class="fa-solid fa-trash"></i><a href="{{ route('admin.dashboard') }}">Excluir</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="{{ route('admin.dashboard') }}">Tornar Destaque</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="{{ route('admin.dashboard') }}">Tornar Popular</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="menu-icon fa-solid fa-user"></i>Proprietários</a>
+                            <i class="menu-icon fa-solid fa-user"></i>Proprietários</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa-solid fa-star"></i><a href="{{ route('owner.all') }}">Todos Proprietários</a></li>
                             <li><i class="fa-duotone fa-plus"></i><a href="{{ route('owner.add') }}">Adicionar</a></li>
@@ -67,7 +63,7 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="{{ route('admin.dashboard') }}"><img  src="{{ asset('assets/img/logo/b2h1-2.png') }}" style="max-width:30px; height:auto;" alt="Logo"></a>
+                    <a class="navbar-brand" href="{{ route('admin.dashboard') }}"><img src="{{ asset('assets/img/logo/b2h1-2.png') }}" style="max-width:30px; height:auto;" alt="Logo"></a>
                     <a class="navbar-brand hidden" href="{{ route('admin.dashboard') }}"><img src="{{ asset('assets/img/logo/b2h1-1.png') }}" alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
@@ -88,7 +84,7 @@
         <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
         <script src="{{asset('assets-admin/js/main.js') }}"></script>
 
-       
+
 </body>
 
 </html>

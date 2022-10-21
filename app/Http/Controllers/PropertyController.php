@@ -27,14 +27,15 @@ class PropertyController extends Controller
 
     public function show($id)
     {
-        $propertyData = Property::select('*')
-            ->join('owners', 'owners.cpf', '=', 'properties.cpf')
-            ->where('owners.id', '=', $id)
-            ->get();
-        $ownerData = Owner::where('id', '=', $id)->get();
-        return view('property.show')
-            ->with('propertyData', $propertyData)
-            ->with('ownerData', $ownerData);
+        $propertyData = Property::find($id)->get();
+        if ($propertyData->cpf != null) {
+            $ownerData = Owner::where('cpf', '=', $propertyData->cpf)->get();
+            return view('property.show')
+                ->with('propertyData', $propertyData)
+                ->with('ownerData', $ownerData);
+        } else {
+            return view('property.show')->with('error', 'Não foi possivel encontrar o cpf do proprietário, por gentileza verifique se está cadastrado.');
+        }
     }
     /**
      * Show the form for creating a new resource.
@@ -59,20 +60,37 @@ class PropertyController extends Controller
             'title' => 'required',
             'purpose' => 'required',
         ]);
-        $property = Property::create($request->all());
+        $cpf = Owner::select('cpf')->where('cpf', '=', $request->cpf)->get();
+        if (!$cpf->isEmpty()) {
+            $property = Property::create($request->all());
 
-        if ($request->images) {
-            foreach ($request->images as $image) {
-                $filename = $image->store('images');
-                $image->move(public_path('images'), $filename);
-                Photo::create([
-                    'property_id' => $property->id,
-                    'photo_image' => $filename
-                ]);
+            if ($request->images) {
+                foreach ($request->images as $image) {
+                    $filename = $image->store('images');
+                    $image->move(public_path('images'), $filename);
+                    Photo::create([
+                        'property_id' => $property->id,
+                        'photo_image' => $filename
+                    ]);
+                }
             }
+            return redirect()->route('property.all');
         }
+        return redirect()->route('property.add')->with('error', 'CPF não encontrado, por gentileza cadastrar o proprietário primeiro.');
+    }
 
-        return redirect()->back();
+
+
+    public function ownerCheck(Request $request)
+    {
+        $cpfFinded = Owner::select('cpf')->where('cpf', '=', $request->cpf)->get();
+        if ($cpfFinded->isEmpty()) {
+            return redirect()->route('property.add')->with('error', 'CPF não encontrado');
+        } else {
+            return redirect()->route('property.add')
+                ->with('result', 'CPF encontrado.')
+                ->with('cpfFinded', $cpfFinded);
+        }
     }
 
     /**'home'
@@ -94,7 +112,7 @@ class PropertyController extends Controller
         $viewData = Property::find($id)->get();
         return view('property.all')->with('viewData', $viewData);
     }
-    
+
     public function formEdit($id)
     {
         $viewData = Property::find($id)->get();
@@ -109,9 +127,30 @@ class PropertyController extends Controller
      */
     public function destroy($id)
     {
-        $propertyData = Property::find($id);
+        $propertyData = Property::select('*')->where('id', '=', $id)->first();
         $propertyData->isActive = 0;
         $propertyData->save();
+        return redirect()->back();
+    }
+    
+    public function destaqueOn($id)
+    {
+        Property::where('id', '=', $id)->update(['destaque' => 1]);
+        return redirect()->back();
+    }
+    public function destaqueOff($id)
+    {
+        Property::where('id', '=', $id)->update(['destaque' => 0]);
+        return redirect()->back();
+    }
+    public function popularOn($id)
+    {
+        Property::where('id', '=', $id)->update(['popular' => 1]);
+        return redirect()->back();
+    }
+    public function popularOff($id)
+    {
+        Property::where('id', '=', $id)->update(['popular' => 0]);
         return redirect()->back();
     }
 }

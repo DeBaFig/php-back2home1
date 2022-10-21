@@ -23,7 +23,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="cpf" class="form-label">CPF do proprietário:</label>
-                        <input type="cpf" name="cpf" id="cpf" value="{{ $property['id'] }}" class="form-control" required="true">
+                        <input type="text" name="cpf" id="cpf" value="{{ $property['id'] }}" class="form-control" required="true">
                     </div>
                     <div class="col-md-3">
                         <label for="price" class="form-label">Valor de Venda</label>
