@@ -26,10 +26,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'denize.f.bassi@gmail.com',
             'is_admin' => 1,
         ]);
-        \App\Models\User::factory(1)->create([
-            'name' => 'Denize',
-            'email' => 'denize.f.bassi@gmail.com',
-            'is_admin' => 1,
-        ]);
+      
     }
 }

@@ -37,6 +37,7 @@ class PropertyController extends Controller
             'cpf' => 'required|exists:owners',
             'title' => 'required',
             'purpose' => 'required',
+            'cep' => 'numeric',
         ]);
         $property = Property::create($request->all());
         Photo::create([

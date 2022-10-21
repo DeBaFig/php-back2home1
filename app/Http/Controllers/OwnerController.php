@@ -43,7 +43,9 @@ class OwnerController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'cpf' => 'required|unique:owners',
+            'cpf' => 'required|unique:owners|numeric',
+            'phone' => 'numeric',
+            'cep' => 'numeric',
         ]);
         Owner::create($request->all());
         return redirect()->route('owner.all');
