@@ -29,20 +29,19 @@ class CreatePropertiesTable extends Migration
             $table->string('city', 100)->nullable();
             $table->string('cep')->nullable();
             $table->enum('state', ["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"])->nullable();
-            $table->integer('total_size')->nullable();
-            $table->integer('useful_size')->nullable();
-            $table->integer('private_size')->nullable();
-            $table->integer('price')->nullable();
-            $table->integer('isActive')->default(1);
-            $table->integer('townhouse_price')->nullable();
+            $table->decimal('price', 8, 2, true)->nullable();
+            $table->decimal('townhouse_price', 8, 2, true)->nullable();
+            $table->decimal('private_size', 8, 2, true)->nullable();
+            $table->decimal('useful_size', 8, 2, true)->nullable();
+            $table->decimal('total_size', 8, 2, true)->nullable();
+            $table->tinyInteger('isActive')->default(1);
             $table->enum('master_bedrooms', ["1","2","3","4","5+"])->nullable();
             $table->enum('bedrooms', ["1","2","3","4","5+"])->nullable();
             $table->enum('bathroom', ["1","2","3","4","5+"])->nullable();
             $table->enum('parking_lot', ["1","2","3","4","5+"])->nullable();
             $table->enum('property_type', ["Apartamento","Kitnet","Cobertura","Triplex","Casa","Chácara","Comercial","Geminado","Loja","Pousada","Sobrado","Terreno"]);
-            $table->timestamp('publish_at');
             $table->enum('purpose', ["comprar","alugar"]);
-            $table->string('comments', 255)->nullable();
+            $table->string('comments')->nullable();
             $table->timestamps();
         });
 

@@ -56,24 +56,24 @@ class PropertyController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'purpose' => 'required',
+            'cpf' => 'required',
         ]);
-        $cpf = Owner::find($request->cpf)->get();
-        if (!$cpf->isEmpty()) {
-            $property = Property::create($request->all());
-
-            if ($request->images) {
-                foreach ($request->images as $image) {
-                    $filename = $image->store('images');
-                    $image->move(public_path('images'), $filename);
-                    Photo::create([
-                        'property_id' => $property->id,
-                        'photo_image' => $filename
-                    ]);
-                }
-            }
-            return redirect()->route('property.all');
-        }
-        return redirect()->route('property.add')->with('error', 'CPF não encontrado, por gentileza cadastrar o proprietário primeiro.');
+        $property = Property::create($request->all());
+        Photo::create([
+            'property_id' => $property->id,
+            'photo_url' => $request->url_photo
+        ]);
+        // if ($request->images) {
+        //     foreach ($request->images as $image) {
+        //         $filename = $image->store('images');
+        //         $image->move(public_path('images'), $filename);
+        //         Photo::create([
+        //             'property_id' => $property->id,
+        //             'photo_image' => $filename
+        //         ]);
+        //     }
+        // }
+        return redirect()->route('property.all');
     }
 
 
@@ -135,7 +135,10 @@ class PropertyController extends Controller
     public function formEdit($id)
     {
         $propertyData = Property::where('id', $id)->get();
-        return view('property.edit')->with('propertyData', $propertyData);
+        $photos = Photo::where('property_id', $id)->get();
+        return view('property.edit')
+        ->with('propertyData', $propertyData)
+        ->with('photos', $photos);
     }
 
     /**

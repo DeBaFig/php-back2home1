@@ -1,5 +1,6 @@
 @extends('layouts.app-admin')
 @section('propertyData', $propertyData)
+@section('photos', $photos)
 @section('admin_content')
 <div class="row g-3 text-center">
     <p class="h4 col-md-12">Editar imóvel</p>
@@ -27,11 +28,11 @@
                     </div>
                     <div class="col-md-3">
                         <label for="price" class="form-label">Valor de Venda</label>
-                        <input type="number" min="0" id="price" value="{{ $property['price'] }}" name="price" class="form-control" placeholder="R$ 0,00">
+                        <input type="number" min="0" id="price" step="0.01"value="{{ $property['price'] }}" name="price" class="form-control" placeholder="R$ 0,00">
                     </div>
                     <div class="col-md-3">
                         <label for="townhouse_price" class="form-label">Valor Condomínio</label>
-                        <input type="number" id="townhouse_price" value="{{ $property['townhouse_price'] }}" name="townhouse_price" class="form-control">
+                        <input type="number" id="townhouse_price"step="0.01" value="{{ $property['townhouse_price'] }}" name="townhouse_price" class="form-control">
                     </div>
                 </div>
                 <div class="row g-3 mt-4">
@@ -161,15 +162,15 @@
                 <div class="row g-3">
                     <div class="col-md-4">
                         <label for="useful_size" class="form-label">Área Útil:</label>
-                        <input type="number" min="0" value="{{ $property['useful_size'] }}"id="useful_size" name="useful_size" class="form-control" placeholder="m²">
+                        <input type="number" min="0"step="0.01" value="{{ $property['useful_size'] }}"id="useful_size" name="useful_size" class="form-control" placeholder="m²">
                     </div>
                     <div class="col-md-4">
                         <label for="private_size" class="form-label"> Área Privada: </label>
-                        <input type="number" min="0" value="{{ $property['private_size'] }}"id="private_size" name="private_size" class="form-control" placeholder="m²">
+                        <input type="number" min="0"step="0.01" value="{{ $property['private_size'] }}"id="private_size" name="private_size" class="form-control" placeholder="m²">
                     </div>
                     <div class="col-md-4">
                         <label for="total_size" class="form-label">Tamanho Total:</label>
-                        <input type="number" min="0" value="{{ $property['total_size'] }}"id="total_size" name="total_size" class="form-control" placeholder="m²">
+                        <input type="number" min="0"step="0.01" value="{{ $property['total_size'] }}"id="total_size" name="total_size" class="form-control" placeholder="m²">
                     </div>
                 </div>
                 <div class="row g-3">
@@ -185,10 +186,18 @@
                     </div>
 
                 </div>
-                <div class="mb-3">
-                    <label class="form-label" for="inputImage">Adicionar Fotos:</label>
-                    <input type="file" name="images[]" id="inputImage" multiple class="form-control @error('images') is-invalid @enderror">
-                </div>
+                <div class="row g-3">
+                        <div class="mb-6">
+                            <label class="form-label" for="inputImage">Adicionar Fotos:</label>
+                            <input type="file" name="images[]" id="inputImage" disabled multiple class="form-control @error('images') is-invalid @enderror">
+                        </div>
+                        @foreach($photos as $photo)
+                        <div class="mb-6">
+                            <label class="form-label" for="inputUrlImage">Adicionar Foto Url:</label>
+                            <input type="url" name="url_photo" id="inputUrlImage" class="form-control" value="{{ $photo['photo_url'] }}">
+                        </div>
+                        @endforeach
+                    </div>
                 <input type="submit" class="btn btn-block btn-outline-success" style="width:20%" value="Salvar Dados">
         </div>
     </div>

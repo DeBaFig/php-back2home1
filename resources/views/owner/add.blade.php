@@ -55,7 +55,7 @@
                     <div class="col-md-4 mt-2">
                         <label class="form-label">Estado</label>
                         <select class="form-select " id="state" name="state_owner">
-                        <option value="AC">Acre</option>
+                            <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>
                             <option value="AP">Amapá</option>
                             <option value="AM">Amazonas</option>

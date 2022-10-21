@@ -23,7 +23,7 @@ class PhotoFactory extends Factory
     public function definition()
     {
         return [
-            'photo_image' => $this->faker->imageUrl(),
+            'photo_url' => $this->faker->imageUrl(),
             'property_id' => $this->faker->numberBetween(1,10),
         ];
     }

@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('number_owner', 50)->nullable();
             $table->string('district_owner', 100)->nullable();
             $table->string('city_owner', 100)->nullable();
-            $table->enum('state_owner', ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27"])->nullable();
+            $table->enum('state_owner', ["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"])->nullable();
             $table->string('cep_owner',9)->nullable();
             $table->string('phone',19)->nullable();
             $table->tinyInteger('isActive')->default(1);

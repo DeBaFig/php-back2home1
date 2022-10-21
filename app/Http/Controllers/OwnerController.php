@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Owner;
 use App\Models\Property;
 use Illuminate\Http\Request;
-use Auth;
 
 class OwnerController extends Controller
 {
@@ -42,6 +41,10 @@ class OwnerController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'cpf' => 'required|unique:owners',
+        ]);
         Owner::create($request->all());
         return redirect()->route('owner.all');
     }
@@ -76,12 +79,12 @@ class OwnerController extends Controller
         $owner->name = $request->name;
         $owner->cpf = $request->cpf;
         $owner->email = $request->email;
-        $owner->address = $request->address;
+        $owner->address_owner = $request->address_owner;
         $owner->number_owner = $request->number_owner;
-        $owner->district = $request->district;
-        $owner->city = $request->city;
-        $owner->state = $request->state;
-        $owner->cep = $request->cep;
+        $owner->district_owner = $request->district_owner;
+        $owner->city_owner = $request->city_owner;
+        $owner->state_owner = $request->state_owner;
+        $owner->cep_owner = $request->cep_owner;
         $owner->save();
         return redirect()->route('owner.all');
     }

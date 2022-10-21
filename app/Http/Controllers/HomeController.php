@@ -28,11 +28,11 @@ class HomeController extends Controller
         $viewData = [];
         $viewData["title"] = "Home-Back2Home1";
         $viewData["images"] = ['home1.jpg', 'home2.jpg', 'home3.jpg', 'home4.jpg', 'home5.jpg', 'home6.jpg'];
-        $viewData['popular'] = Property::select('photo_image', 'properties.id', 'title', 'property_id')
+        $viewData['popular'] = Property::select('photo_image','photo_url', 'properties.id', 'title', 'property_id')
             ->join('photos', 'properties.id', '=', 'photos.property_id')
             ->where('properties.popular', '=', '1')
             ->get();
-        $viewData['destaque'] = Property::select('photo_image', 'properties.id', 'title', 'property_id')
+        $viewData['destaque'] = Property::select('photo_image','photo_url', 'properties.id', 'title', 'property_id')
             ->join('photos', 'properties.id', '=', 'photos.property_id')
             ->where('properties.destaque', '=', '1')
             ->get();
@@ -45,7 +45,7 @@ class HomeController extends Controller
     {
         $viewData = [];
         $viewData["title"] = "Home-Back2Home1";
-        $query = Photo::select('photo_image', 'properties.id', 'title', 'property_id')
+        $query = Photo::select('photo_image', 'photo_url','properties.id', 'title', 'property_id')
             ->leftJoin('properties', 'properties.id', '=', 'photos.property_id')
             ->where('purpose', '=', 'comprar')
             ->get();
@@ -57,7 +57,7 @@ class HomeController extends Controller
     {
         $viewData = [];
         $viewData["title"] = "Alugar-Back2Home1";
-        $query = Photo::select('photo_image', 'properties.id', 'title', 'property_id')
+        $query = Photo::select('photo_image', 'photo_url','properties.id', 'title', 'property_id')
             ->leftJoin('properties', 'properties.id', '=', 'photos.property_id')
             ->where('purpose', '=', 'alugar')
             ->get();

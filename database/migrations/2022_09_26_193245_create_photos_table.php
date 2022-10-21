@@ -16,11 +16,12 @@ class CreatePhotosTable extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
-            $table->string('photo_image');
+            $table->string('photo_image')->nullable();
+            $table->string('photo_url')->nullable();
             $table->string('property_id');
             $table->timestamps();
         });
-        DB::statement("ALTER TABLE photos ADD img_blob LONGBLOB");
+        // DB::statement("ALTER TABLE photos ADD img_blob LONGBLOB");
 
     }
 

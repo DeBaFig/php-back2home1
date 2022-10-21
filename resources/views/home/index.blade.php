@@ -30,10 +30,7 @@
                     <div class="work-info">
                         <h3>{{ $detalhe['title'] }}</h3>
                     </div>
-                    <div class="container" style="width:300px; height:300px; background-size:cover;">
-                    <img class="img-fluid" src="{{  $detalhe['photo_image'] }}" style="overflow: hidden;" >
-
-                    </div>
+                    <img class="img-fluid" src="{{  $detalhe['photo_image']??$detalhe['photo_url'] }}" style="overflow: hidden;">
                 </a>
             </div>
             @endforeach
@@ -50,7 +47,7 @@
                     <div class="work-info">
                         <h3>{{ $detalhe['title'] }}</h3>
                     </div>
-                    <img class="img-fluid" src="{{  $detalhe['photo_image'] }}" style="overflow: hidden;">
+                    <img class="img-fluid" src="{{  $detalhe['photo_image']??$detalhe['photo_url'] }}" style="overflow: hidden;">
                 </a>
             </div>
             @endforeach

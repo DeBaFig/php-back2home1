@@ -12,7 +12,7 @@
                         <div class="carousel-inner">
                             @foreach($viewData['photos'] as $key => $image)
                             <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                <img src="{{ asset($image['photo_image'])  }}" class="d-block w-100">
+                                <img src="{{ asset($image['photo_image']??$detalhe['photo_url'])  }}" class="d-block w-100">
                             </div>
                             @endforeach
                         </div>
@@ -35,7 +35,7 @@
 
                         <h3>{{ $detalhes['title']}}</h3>
                         <p>Ref.{{ $detalhes['reference_n']}}</p>
-                        <p class="h4 py-1">Valor {{ $detalhes['purpose'] == 'comprar' ?'de venda':'do aluguel' }}: {{ number_format((float)($detalhes['price'] / 100), 2, ',', '') }}</p>
+                        <p class="h4 py-1">Valor {{ $detalhes['purpose'] == 'comprar' ?'de venda':'do aluguel' }}: {{ $detalhes['price'] }}</p>
                         <p>{{ ($detalhes['purpose'] == 'alugar' && $detalhes['townhouse_price'] < 0)? ('Valor do condomínio:' . $detalhes['townhouse_price']): " "}}</p>
                         <h5>Cidade: {{ $detalhes['city'] . "-" . $detalhes['state'] }}</h5>
                         <h5>Bairro: {{ $detalhes['district'] }}</h5><br>
@@ -66,7 +66,7 @@
                             @endif
                             @if($detalhes['private_size'] >= 1) <div class="col-2">
                                 <small><img src="{{asset('assets/img/icons/ruler-solid.svg')}}"></small>
-                                <p class="text-center">{{ number_format((float)($detalhes['private_size'] / 100), 2, ',', '') . 'm²'}}</p>
+                                <p class="text-center">{{ $detalhes['private_size'] . 'm²'}}</p>
                             </div>
                             @endif
                         </div>
@@ -92,9 +92,9 @@
                         <p>{{ $detalhes['description']}}</p>
                         <br>
                         <h4>Metragem:</h4>
-                        <p>Área terreno: {{ number_format((float)($detalhes['total_size'] / 100), 2, ',', ''). 'm²' }}<br>
-                            Área útil: {{ number_format((float)($detalhes['useful_size'] / 100), 2, ',', ''). 'm²' }}<br>
-                            Área privativa: {{ number_format((float)($detalhes['private_size'] / 100), 2, ',', ''). 'm²' }}</p>
+                        <p>Área terreno: {{ $detalhes['total_size']. 'm²' }}<br>
+                            Área útil: {{ $detalhes['useful_size']. 'm²' }}<br>
+                            Área privativa: {{ $detalhes['private_size']. 'm²' }}</p>
                         <h4>Outras Informações</h4>
                         <p>{{ $detalhes['comments']}}</p>
                         @endforeach

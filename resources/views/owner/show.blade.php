@@ -13,10 +13,10 @@
             <h5 class="card-title">{{'Telefone: ' . $owner['phone'] }}</h5>
         </div>
         <div class=" col-md-6 ">
-            <h5 class="card-title">{{'Endereço: ' . $owner['address'] . ' Num: ' . $owner['number_owner'] }}</h5>
-            <h5 class="card-title">{{'Bairro: ' . $owner['district'] }}</h5>
-            <h5 class="card-title">{{'Cidade: ' . $owner['city'] . '-'. $owner['state'] }}</h5>
-            <h5 class="card-title">{{'CEP: ' . $owner['cep']}}</h5>
+            <h5 class="card-title">{{'Endereço: ' . $owner['address_owner'] . ' Num: ' . $owner['number_owner'] }}</h5>
+            <h5 class="card-title">{{'Bairro: ' . $owner['district_owner'] }}</h5>
+            <h5 class="card-title">{{'Cidade: ' . $owner['city_owner'] . '-'. $owner['state_owner'] }}</h5>
+            <h5 class="card-title">{{'CEP: ' . $owner['cep_owner']}}</h5>
         </div>
     </div>
     @endforeach
@@ -28,9 +28,9 @@
         <div class="p-2">
             <div class="row pb-3">
                 <div class=" col-md-6 ">
-                    <h5 class="card-title">{{ 'Área total: ' . number_format((float)($property['total_size'] / 100), 2, ',', '') . 'm²' }}</h5>
-                    <h5 class="card-title">{{ 'Área Útil: ' . number_format((float)($property['useful_size'] / 100), 2, ',', '') . 'm²' }}</h5>
-                    <h5 class="card-title">{{ 'Área Privada: ' . number_format((float)($property['private_size'] / 100), 2, ',', '') . 'm²' }}</h5>
+                    <h5 class="card-title">{{ 'Área total: ' . $property['total_size'] . 'm²' }}</h5>
+                    <h5 class="card-title">{{ 'Área Útil: ' . $property['useful_size'] . 'm²' }}</h5>
+                    <h5 class="card-title">{{ 'Área Privada: ' . $property['private_size'] . 'm²' }}</h5>
                 </div>
                 <div class=" col-md-6 ">
                     <h5 class="card-title">{{'Endereço: ' . $property['address'] . ' Num: ' . $property['number_owner'] }}</h5>
@@ -42,8 +42,8 @@
             <hr style="margin:0 auto;max-width:250px;">
             <div class="row py-3">
                 <div class=" col-md-5 ">
-                    <h5 class="card-title">{{ 'Valor: R$ ' . number_format((float)($property['price'] / 100), 2, ',', '') }}</h5>
-                    <h5 class="card-title">{{ 'Condominio: R$ ' . number_format((float)($property['townhouse_price'] / 100), 2, ',', '') }}</h5>
+                    <h5 class="card-title">{{ 'Valor: R$ ' . $property['price'] }}</h5>
+                    <h5 class="card-title">{{ 'Condominio: R$ ' . $property['townhouse_price'] }}</h5>
                 </div>
                 <div class="row col-md-7 ">
                     <div class="col-md-5">

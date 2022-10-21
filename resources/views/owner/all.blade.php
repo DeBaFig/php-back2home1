@@ -23,8 +23,8 @@
             <td>{{ $owner['cpf']}}</td>
             <td>{{ $owner['email']}}</td>
             <td>{{ $owner['phone']}}</td>
-            <td>{{ $owner['city'] . "-" . $owner['state'] }}</td>
-            <td>{{ $owner['cep']}}</td>
+            <td>{{ $owner['city_owner'] . "-" . $owner['state_owner'] }}</td>
+            <td>{{ $owner['cep_owner']}}</td>
             <td><a href="/admin/owner/show/{{$owner['id']}}"><i class="fa-solid fa-eye"></i></a></td>
             <td><a href="/admin/owner/form/{{$owner['id']}}"><i class="fa-solid fa-pen"></i></a></td>
             <td><a href="/admin/owner/delete/{{$owner['id']}}"><i class="fa-solid fa-trash"></i>
