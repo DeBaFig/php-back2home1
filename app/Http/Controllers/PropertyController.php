@@ -27,15 +27,12 @@ class PropertyController extends Controller
 
     public function show($id)
     {
-        $propertyData = Property::find($id)->get();
-        if ($propertyData->cpf != null) {
-            $ownerData = Owner::where('cpf', '=', $propertyData->cpf)->get();
-            return view('property.show')
-                ->with('propertyData', $propertyData)
-                ->with('ownerData', $ownerData);
-        } else {
-            return view('property.show')->with('error', 'Não foi possivel encontrar o cpf do proprietário, por gentileza verifique se está cadastrado.');
-        }
+        $propertyData = Property::select('*')
+            ->join('owners', 'owners.cpf', '=', 'properties.cpf')
+            ->where('properties.id', '=', $id)
+            ->get();
+        return view('property.show')
+            ->with('propertyData', $propertyData);
     }
     /**
      * Show the form for creating a new resource.
@@ -60,7 +57,7 @@ class PropertyController extends Controller
             'title' => 'required',
             'purpose' => 'required',
         ]);
-        $cpf = Owner::select('cpf')->where('cpf', '=', $request->cpf)->get();
+        $cpf = Owner::find($request->cpf)->get();
         if (!$cpf->isEmpty()) {
             $property = Property::create($request->all());
 
@@ -107,16 +104,38 @@ class PropertyController extends Controller
      * @param  \App\Models\Property  $property
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        $viewData = Property::find($id)->get();
-        return view('property.all')->with('viewData', $viewData);
+        $propertyData = Property::find($request->id);
+        $propertyData->title = $request->title;
+        $propertyData->cpf = $request->cpf;
+        $propertyData->description = $request->description;
+        $propertyData->address = $request->address;
+        $propertyData->number_property = $request->number_property;
+        $propertyData->district = $request->district;
+        $propertyData->city = $request->city;
+        $propertyData->state = $request->state;
+        $propertyData->cep = $request->cep;
+        $propertyData->price = $request->price;
+        $propertyData->townhouse_price = $request->townhouse_price;
+        $propertyData->master_bedrooms = $request->master_bedrooms;
+        $propertyData->bedrooms = $request->bedrooms;
+        $propertyData->bathroom = $request->bathroom;
+        $propertyData->parking_lot = $request->parking_lo;
+        $propertyData->property_type = $request->property_type;
+        $propertyData->purpose = $request->purpose;
+        $propertyData->useful_size = $request->useful_size;
+        $propertyData->total_size = $request->total_size;
+        $propertyData->private_size = $request->private_size;
+        $propertyData->comments = $request->comments;
+        $propertyData->save();
+        return redirect()->route('property.all');
     }
 
     public function formEdit($id)
     {
-        $viewData = Property::find($id)->get();
-        return view('property.all')->with('viewData', $viewData);
+        $propertyData = Property::where('id', $id)->get();
+        return view('property.edit')->with('propertyData', $propertyData);
     }
 
     /**
@@ -132,7 +151,7 @@ class PropertyController extends Controller
         $propertyData->save();
         return redirect()->back();
     }
-    
+
     public function destaqueOn($id)
     {
         Property::where('id', '=', $id)->update(['destaque' => 1]);

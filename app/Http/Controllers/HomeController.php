@@ -31,12 +31,10 @@ class HomeController extends Controller
         $viewData['popular'] = Property::select('photo_image', 'properties.id', 'title', 'property_id')
             ->join('photos', 'properties.id', '=', 'photos.property_id')
             ->where('properties.popular', '=', '1')
-            ->limit(6)
             ->get();
         $viewData['destaque'] = Property::select('photo_image', 'properties.id', 'title', 'property_id')
             ->join('photos', 'properties.id', '=', 'photos.property_id')
             ->where('properties.destaque', '=', '1')
-            ->limit(6)
             ->get();
         $viewData["title"] = "Home-Back2Home1";
         $viewData["images"] = ['home1.jpg', 'home2.jpg', 'home3.jpg', 'home4.jpg', 'home5.jpg', 'home6.jpg'];

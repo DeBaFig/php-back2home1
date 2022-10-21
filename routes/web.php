@@ -43,7 +43,7 @@ Route::prefix('admin')->group(function(){
     Route::post('/property/new', [PropertyController::class, 'store'])->name('property.store')->middleware('is_admin');
     Route::get('/property/show/{id}', [PropertyController::class, 'show'])->name('property.show')->middleware('is_admin');
     Route::get('/property/form/{id}', [PropertyController::class, 'formEdit'])->name('property.form.edit')->middleware('is_admin');
-    Route::get('/property/edit/{id}', [PropertyController::class, 'edit'])->name('property.edit')->middleware('is_admin');
+    Route::post('/property/edit/{id}', [PropertyController::class, 'edit'])->name('property.edit')->middleware('is_admin');
     Route::get('/property/delete/{id}', [PropertyController::class, 'destroy'])->name('property.delete')->middleware('is_admin');
     Route::get('/property/destaquesOn/{id}', [PropertyController::class, 'destaqueOn'])->name('property.destaque')->middleware('is_admin');
     Route::get('/property/destaquesOff/{id}', [PropertyController::class, 'destaqueOff'])->name('property.destaque')->middleware('is_admin');

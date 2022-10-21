@@ -26,11 +26,8 @@ class Property extends Model
         'city',
         'state',
         'cep',
-        'total_size',
-        'useful_size',
         'popular',
         'destaque',
-        'private_size',
         'price',
         'townhouse_price',
         'master_bedrooms',
@@ -41,8 +38,8 @@ class Property extends Model
         'publish_at',
         'purpose',
         'useful_size',
-        'private-size',
         'total_size',
+        'private_size',
         'comments',
     ];
 

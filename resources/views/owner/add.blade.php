@@ -32,7 +32,7 @@
                 <div class="row g-3">
                     <div class="col-md-6">
                         <label for="address" class="form-label">Endereço</label>
-                        <input type="text" id="address" name="address" class="form-control">
+                        <input type="text" id="address" name="address_owner" class="form-control">
                     </div>
                     <div class="col-md-2">
                         <label for="number_owner" class="form-label">Número</label>
@@ -40,21 +40,21 @@
                     </div>
                     <div class="col-md-4">
                         <label for="cep" class="form-label">CEP</label>
-                        <input type="text" id="cep" name="cep" class="form-control" placeholder="Ex: 00000-000" maxlength="15">
+                        <input type="text" id="cep" name="cep_owner" class="form-control" placeholder="Ex: 00000-000" maxlength="15">
                     </div>
                 </div>
                 <div class="row g-3">
                     <div class="col-md-4">
                         <label for="district" class="form-label">Bairro</label>
-                        <input type="text" id="district" name="district" class="form-control">
+                        <input type="text" id="district" name="district_owner" class="form-control">
                     </div>
                     <div class="col-md-4">
                         <label for="city" class="form-label">Cidade</label>
-                        <input type="text" id="city" name="city" class="form-control">
+                        <input type="text" id="city" name="city_owner" class="form-control">
                     </div>
                     <div class="col-md-4 mt-2">
                         <label class="form-label">Estado</label>
-                        <select class="form-select " id="state">
+                        <select class="form-select " id="state" name="state_owner">
                         <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>
                             <option value="AP">Amapá</option>
