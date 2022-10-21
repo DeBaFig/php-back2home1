@@ -11,7 +11,7 @@
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text"><span class="count">1</span></div>
+                                <div class="stat-text"><span class="count">0</span></div>
                                 <div class="stat-heading">Visitantes</div>
                             </div>
                         </div>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text"><span class="count">1</span></div>
+                                <div class="stat-text"><span class="count">0</span></div>
                                 <div class="stat-heading">Propriedades</div>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text"><span class="count">1</span></div>
+                                <div class="stat-text"><span class="count">0</span></div>
                                 <div class="stat-heading">Corretores</div>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text"><span class="count">1</span></div>
+                                <div class="stat-text"><span class="count">0</span></div>
                                 <div class="stat-heading">Proprietários</div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@
                 </div>
 
             </div>
-        </div><!-- /# column -->
+        </div>
     </div>
 
 </div>

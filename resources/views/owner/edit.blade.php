@@ -90,7 +90,7 @@
                 </div>
                 <div class="row g-3">
                     <div class="col-md-12 mt-5">
-                        <input type="submit" class="btn btn-block btn-outline-success" style="width:30%" value="Atualizar Dados">
+                        <input type="submit" class="btn btn-block btn-outline-success" value="Atualizar Dados">
                     </div>
                 </div>
         </div>

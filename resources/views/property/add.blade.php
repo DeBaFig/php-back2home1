@@ -133,6 +133,7 @@
                         <div class="col-md-3">
                             <label class="form-label" for="master_bedrooms">Nº de Suítes:</label>
                             <select class="form-select " id="master_bedrooms" name="master_bedrooms">
+                                <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -143,6 +144,7 @@
                         <div class="col-md-3">
                             <label class="form-label" for="bedrooms">Nº de Quartos:</label>
                             <select class="form-select " id="bedrooms" name="bedrooms">
+                                <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -153,6 +155,7 @@
                         <div class="col-md-3">
                             <label class="form-label" for="bathroom">Nº de Banheiros:</label>
                             <select class="form-select " id="bathroom" name="bathroom">
+                                <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -163,6 +166,7 @@
                         <div class="col-md-3">
                             <label class="form-label" for="parking_lot">Vagas de Garagem:</label>
                             <select class="form-select " id="parking_lot" name="parking_lot">
+                                <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -199,16 +203,18 @@
 
                     </div>
                     <div class="row g-3">
-                        <div class="mb-6">
-                            <label class="form-label" for="inputImage">Adicionar Fotos:</label>
+                        <div class="col-md-5">
+                            <label class="form-label" for="inputImage">Adicionar Fotos:(Não implementado)</label>
                             <input type="file" name="images[]" id="inputImage" disabled multiple class="form-control @error('images') is-invalid @enderror">
                         </div>
-                        <div class="mb-6">
+                        <div class="col-md-5 ">
                             <label class="form-label" for="inputUrlImage">Adicionar Foto Url:</label>
                             <input type="url" name="url_photo" id="inputUrlImage" class="form-control">
                         </div>
+                        <div class="col-md-2 mt-5">
+                            <input type="submit" class="btn btn-block btn-outline-success" value="Salvar Dados">
+                        </div>
                     </div>
-                    <input type="submit" class="btn btn-block btn-outline-success" style="width:20%" value="Salvar Dados">
             </div>
         </div>
         </form>

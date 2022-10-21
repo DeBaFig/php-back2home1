@@ -96,7 +96,7 @@
                 </div>
                 <div class="row g-3">
                     <div class="col-md-12 mt-5">
-                        <input type="submit" class="btn btn-block btn-outline-success" style="width:20%" value="Salvar Dados">
+                        <input type="submit" class="btn btn-block btn-outline-success"  value="Salvar Dados">
                     </div>
                 </div>
         </div>
