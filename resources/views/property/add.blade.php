@@ -7,39 +7,29 @@
 <div class="container text-center">
     <div class="row justify-content-center m-5">
         <div class="col-md-8">
-            <div class="row g-3 container flex-column w-30 d-flex justify-content-evenly" >
-
-                @if(Session::has('error'))
-                <div class="text-danger">
-                    {{ session::get('error') }}
+            <div class="row g-3 container flex-column w-30 d-flex justify-content-evenly">
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
                 @endif
-                @if(Session::has('result'))
-                <div class="text-primary">
-                    {{ session::get('result') }}
-                </div>
-                @endif
-
-                <form action="{{ route('property.owner') }}" method="post">
+                <form action="{{ route('property.store') }}" class="row g-3 container flex-column w-30 d-flex justify-content-evenly" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row g-3">
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <label class="mt-3" class="form-label">Referência: {{ $reference_n }}</label>
+                            <input type="hidden" name="reference_n" value="{{ $reference_n }}" />
                         </div>
                         <div class="col-md-6">
                             <label for="cpf" class="form-label">CPF do proprietário:</label>
-                            <input type="text" name="cpf" id="cpf" class="form-control" required="true" @if(Session::has('cpfFinded')) @foreach(session::get('cpfFinded') as $dado )value="{{ $dado['cpf'] }}" @endforeach @endif>
-                        </div>
-                        <div class="col-md-3">
-                            <input type="submit" class="btn btn-success" value="Verificar">
+                            <input type="text" name="cpf" id="cpf" class="form-control" required="true">
                         </div>
                     </div>
-                </form>
-                <form action="{{ route('property.store') }}" class="row g-3 container flex-column w-30 d-flex justify-content-evenly" method="POST" enctype="multipart/form-data">
-                    @csrf
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" />
-                    <input type="hidden" name="reference_n" value="{{ $reference_n }}" />
-                    <input type="hidden" name="cpf" @if(Session::has('cpfFinded')) @foreach(session::get('cpfFinded') as $dado )value="{{ $dado['cpf'] }}" @endforeach @endif />
                     <div class="row g-3">
                         <div class="col-md-12">
                             <label for="title" class="form-label">Titúlo do Anúncio:</label>

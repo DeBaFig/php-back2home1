@@ -152,7 +152,7 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
+        'validation' => [
             'rule-name' => 'custom-message',
         ],
     ],

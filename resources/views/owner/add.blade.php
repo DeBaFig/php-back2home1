@@ -6,6 +6,15 @@
 <div class="container text-center">
     <div class="row justify-content-center m-5">
         <div class="col-md-8">
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <form action="{{ route('owner.store') }}" class="row g-3 container flex-column w-30 d-flex justify-content-evenly" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row g-3">
@@ -94,7 +103,6 @@
     </div>
     </form>
 </div>
-</div>
-</div>
+
 
 @endsection

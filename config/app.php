@@ -68,7 +68,6 @@ return [
     | ahead and set this to a sensible default for you out of the box.
     |
     */
-
     'timezone' => 'America/Sao_Paulo',
 
     /*
@@ -81,7 +80,6 @@ return [
     | to any of the locales which will be supported by the application.
     |
     */
-
     'locale' => 'pt-BR',
 
     /*
