@@ -72,6 +72,9 @@ class PropertyController extends Controller
         $propertyData->private_size = $request->private_size;
         $propertyData->comments = $request->comments;
         $propertyData->save();
+        $photo = Photo::where('id', '=', $request->id)->first();
+        $photo->photo_url = $request->url_photo;
+        $photo->save();
         return redirect()->route('property.all');
     }
 

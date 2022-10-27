@@ -12,7 +12,7 @@
                         <div class="carousel-inner">
                             @foreach($viewData['photos'] as $key => $image)
                             <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                <img src="{{ asset($image['photo_image']??$image['photo_url'])  }}" class="d-block w-100">
+                                <img src="{{ $image['photo_image']?asset($image['photo_image']):$image['photo_url']  }}" class="d-block w-100">
                             </div>
                             @endforeach
                         </div>
