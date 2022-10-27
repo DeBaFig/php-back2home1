@@ -131,7 +131,6 @@
 
     <!-- Google Map -->
     <script src="{{ asset('plugins/google-map/map.js')}}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>
 
     <footer class="w-100 py-4 flex-shrink-0">
         <div class="container py-4">
